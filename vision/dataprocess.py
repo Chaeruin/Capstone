@@ -17,6 +17,6 @@ date_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
 # id, humadity and temp
 
-# id = 0        # auto increament, 자동 생성으로 바꾸기
-humadity = 0
-temp = 0
+# id = 0            # auto increament, 자동 생성으로 바꾸기
+humadity = 0        # rsp 바로 연동해서 그 값 가져오기
+temp = 0            # rsp 바로 연동해서 그 값 가져오기
