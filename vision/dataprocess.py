@@ -1,5 +1,6 @@
 import imageread
 from datetime import datetime
+from ..rspi import testDHT22 as dht
 
 # Extract information what we want
 ident = imageread.texts[0].description
@@ -15,8 +16,9 @@ else:
 # Take real date time
 date_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
-# id, humadity and temp
 
-# id = 0            # auto increament, 자동 생성으로 바꾸기
-humadity = 0        # rsp 바로 연동해서 그 값 가져오기
-temp = 0            # rsp 바로 연동해서 그 값 가져오기
+# id, humidity and temp
+
+# id = 0                        # auto increament, 자동 생성으로 바꾸기
+humidity = dht.humidity         # rsp 바로 연동해서 그 값 가져오기
+temp = dht.temperature          # rsp 바로 연동해서 그 값 가져오기

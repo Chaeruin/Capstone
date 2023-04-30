@@ -25,16 +25,16 @@ def main():
 
     # 무ㅓ넣을까
     # 일단 DB 새로 생성해놓고 (result db)
-    # result, datetime, temp, humadity? 넘겨야 하나
+    # result, datetime, temp, humidity? 넘겨야 하나
     # 아니면 result fk fk ? 이건 너무 복잡할듯..
-    query = """INSERT INTO result(result, date_time, temp, humadity)
+    query = """INSERT INTO result(result, date_time, temp, humidity)
                 VALUES (%s, %s, %.1f, %.1f)"""
     result = dataprocess.result
     date_time = dataprocess.date_time
     temp = dataprocess.temp
-    humadity = dataprocess.humadity
+    humidity = dataprocess.humidity
 
-    cursor.execute(query, (result, date_time, temp, humadity))
+    cursor.execute(query, (result, date_time, temp, humidity))
     conn.commit()
     
     conn.close()
