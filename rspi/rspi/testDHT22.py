@@ -43,7 +43,7 @@ while True:
         cursor.close()
         connection.close()
 
-        # 5초간 대기
+        # 60초간 대기
         time.sleep(60)
 
     except mysql.connector.Error as error:
