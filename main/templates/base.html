@@ -50,368 +50,379 @@
   </head>
 
   <body>
-      <!-- ======= Header ======= -->
-      <header id="header" class="header fixed-top">
-        <div
-          class="container-fluid container-xl d-flex align-items-center justify-content-between"
-        >
-          <a href="index.html" class="logo d-flex align-items-center">
-            <img src="{%static 'img/logo3.png'%}" alt="" />
-            <span>WhitePepper</span>
-          </a>
-  
-          <nav id="navbar" class="navbar">
-            <ul>
-              <li><a class="nav-link scrollto active" href="main">Home</a></li>
-              <li><a class="nav-link scrollto" href="#scan">카메라</a></li>
-              <li><a class="nav-link scrollto" href="#data">데이터</a></li>
-               <li>
-                <a class="nav-link scrollto" href="#data-Analysis">분석</a>
-              </li>
-              <li><a class="nav-link scrollto" href="#">알림</a></li>
-              <li><a class="nav-link scrollto" href="login">로그인</a></li>
-              <!-- <li class="dropdown">
-                <a href="#"
-                  ><span>Drop Down</span> <i class="bi bi-chevron-down"></i
-                ></a>
-                <ul>
-                  <li><a href="#">Drop Down 1</a></li>
-                  <li class="dropdown">
-                    <a href="#"
-                      ><span>Deep Drop Down</span>
-                      <i class="bi bi-chevron-right"></i
-                    ></a>
-                    <ul>
-                      <li><a href="#">Deep Drop Down 1</a></li>
-                      <li><a href="#">Deep Drop Down 2</a></li>
-                      <li><a href="#">Deep Drop Down 3</a></li>
-                      <li><a href="#">Deep Drop Down 4</a></li>
-                      <li><a href="#">Deep Drop Down 5</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Drop Down 2</a></li>
-                  <li><a href="#">Drop Down 3</a></li>
-                  <li><a href="#">Drop Down 4</a></li>
-                </ul>
-              </li> -->
-              <li>
-                <a class="getstarted scrollto" href="#scan">스캔</a>
-              </li>
-            </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
-          </nav>
-          <!-- .navbar -->
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top">
+      <div
+        class="container-fluid container-xl d-flex align-items-center justify-content-between"
+      >
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="{%static 'img/logo.png'%}" alt="" />
+          <span>WhitePepper</span>
+        </a>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto active" href="#home">Home</a></li>
+            <li><a class="nav-link scrollto" href="#scan">카메라</a></li>
+            <li><a class="nav-link scrollto" href="#data">데이터</a></li>
+             <li>
+              <a class="nav-link scrollto" href="#data-Analysis">분석</a>
+            </li>
+            <li><a class="nav-link scrollto" href="#">알림</a></li>
+            <!-- <li class="dropdown">
+              <a href="#"
+                ><span>Drop Down</span> <i class="bi bi-chevron-down"></i
+              ></a>
+              <ul>
+                <li><a href="#">Drop Down 1</a></li>
+                <li class="dropdown">
+                  <a href="#"
+                    ><span>Deep Drop Down</span>
+                    <i class="bi bi-chevron-right"></i
+                  ></a>
+                  <ul>
+                    <li><a href="#">Deep Drop Down 1</a></li>
+                    <li><a href="#">Deep Drop Down 2</a></li>
+                    <li><a href="#">Deep Drop Down 3</a></li>
+                    <li><a href="#">Deep Drop Down 4</a></li>
+                    <li><a href="#">Deep Drop Down 5</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Drop Down 2</a></li>
+                <li><a href="#">Drop Down 3</a></li>
+                <li><a href="#">Drop Down 4</a></li>
+              </ul>
+            </li> -->
+            <li>
+              <a class="getstarted scrollto" href="#scan">스캔</a>
+            </li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Home Section ======= -->
+    <section id="home" class="home d-flex align-items-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 d-flex flex-column justify-content-center">
+            <h1 data-aos="fade-up">
+              우리는 건고추 균 검출 <br>시스템을 제공합니다.
+            </h1>
+            <h2 data-aos="fade-up" data-aos-delay="400">
+              We provides dried red pepper bacteria detection results.
+            </h2>
+            <div data-aos="fade-up" data-aos-delay="600">
+              <div class="text-center text-lg-start">
+                <a
+                  href="#scan"
+                  class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center"
+                >
+                  <span>서비스 시작하기</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-6 hero-img"
+            data-aos="zoom-out"
+            data-aos-delay="200"
+          >
+            <img src="{%static 'img/hero-img.png'%}" class="img-fluid" alt="" />
+          </div>
         </div>
-      </header>
-      <!-- End Header -->
-  
-      <!-- ======= Home Section ======= -->
-      <section id="home" class="home d-flex align-items-center">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 d-flex flex-column justify-content-center">
-              <h1 data-aos="fade-up">
-                우리는 건고추 균 검출 <br>시스템을 제공합니다.
-              </h1>
-              <h2 data-aos="fade-up" data-aos-delay="400">
-                We provides dried red pepper bacteria detection results.
-              </h2>
-              <div data-aos="fade-up" data-aos-delay="600">
+      </div>
+    </section>
+    <!-- End Home -->
+
+    <main id="main">
+      <!-- ======= Scan Section ======= -->
+      <section id="scan" class="scan">
+        <div class="container" data-aos="fade-up">
+          <div class="row gx-0">
+            <div
+              class="col-lg-6 d-flex flex-column justify-content-center"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="content">
+                <h3>카메라</h3>
+                <h2>원하는 키트를 스캔해주세요.</h2>
+                <p>한 줄이 나올 경우 음성, 두 줄이 나올 경우 양성입니다.</p>
                 <div class="text-center text-lg-start">
                   <a
-                    href="#scan"
-                    class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center"
+                    href="#data"
+                    class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center"
                   >
-                    <span>서비스 시작하기</span>
+                    <span>스캔</span>
                     <i class="bi bi-arrow-right"></i>
                   </a>
                 </div>
               </div>
             </div>
+
             <div
-              class="col-lg-6 hero-img"
+              class="col-lg-6 d-flex align-items-center"
               data-aos="zoom-out"
               data-aos-delay="200"
             >
-              <img src="{%static 'img/main.png'%}" class="img-fluid" alt="" />
+              <img src="{%static 'img/about.jpg'%}" class="img-fluid" alt="" /> 
             </div>
           </div>
         </div>
       </section>
-      <!-- End Home -->
-  
-      <main id="main">
-        <!-- ======= Scan Section ======= -->
-        <section id="scan" class="scan">
-          <div class="container" data-aos="fade-up">
-            <div class="row gx-0">
-              <div
-                class="col-lg-6 d-flex flex-column justify-content-center"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                <div class="content">
-                  <h3>카메라</h3>
-                  <h2>원하는 키트를 스캔해주세요.</h2>
-                  <p>한 줄이 나올 경우 음성, 두 줄이 나올 경우 양성입니다.</p>
-                  <div class="text-center text-lg-start">
-                    <a
-                      href="scandata"
-                      class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center"
-                    >
-                      <span>스캔</span>
-                      <i class="bi bi-arrow-right"></i></a>
-                    <a href="data"></a>
-                  </div>
-                </div>
-              </div>
-  
-              <div
-                class="col-lg-6 d-flex align-items-center"
-                data-aos="zoom-out"
-                data-aos-delay="200"
-              >
-                <img src="{%static 'img/scan.png'%}" class="img-fluid" alt="" /> 
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- End About Section -->
-  
-        <!-- ======= Data Section ======= -->
-        <section id="data" class="data">
-          <div class="container" data-aos="fade-up">
-            <header class="section-header">
-              <h2>데이터 확인</h2>
-              <p>스캔한 데이터를 확인합니다</p>
-            </header>
-  
-            <div class="row gy-4">
-              <div
-                class="col-lg-4 col-md-6"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                <div class="data-box">
-                  <i class="ri-discuss-line icon"></i>
-                  <h3>양성 / 음성</h3>
-                  <p>
-                    양성
-                  </p>
-                  <!-- <a href="#" class="read-more"
-                    ><span>Read More</span> <i class="bi bi-arrow-right"></i
-                  ></a> -->
-                </div>
-              </div>
-  
-              <div
-                class="col-lg-4 col-md-6"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                <div class="data-box">
-                  <i class="ri-discuss-line icon"></i>
-                  <h3>검사 완료 시간</h3>
-                  <p>
-                    2023/04/14 18:56 
-                  </p>
-                  <!-- <a href="#" class="read-more"
-                    ><span>Read More</span> <i class="bi bi-arrow-right"></i
-                  ></a> -->
-                </div>
-              </div>
-  
-              <div
-                class="col-lg-4 col-md-6"
-                data-aos="fade-up"
-                data-aos-delay="400"
-              >
-                <div class="data-box">
-                  <i class="ri-discuss-line icon"></i>
-                  <h3>온/습도</h3>
-                  <p>
-                    - 6.4 'c
-                  </p>
-                  <!-- <a href="#" class="read-more"
-                    ><span>Read More</span> <i class="bi bi-arrow-right"></i
-                  ></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- End Services Section -->
-  
-        <!-- ======= Data Analysis Section ======= -->
-        <section id="data-Analysis" class="data-Analysis">
-          <div class="container" data-aos="fade-up">
-            <header class="section-header">
-              <h2>데이터 분석</h2>
-              <p>데이터를 분석합니다</p>
-            </header>
-            <div class="row gy-4">
-              <div
-                class="col-lg-4 col-md-6"
-                data-aos="fade-up"
-                data-aos-delay="500"
-              >
-                <div class="data-box">
-                  <i class="ri-discuss-line icon"></i>
-                  <h3>건고추 균 검출<br>총 데이터</h3>
-                  <!-- <p>
-                  </p> -->
-                  <a href="datainner" class="read-more"
-                    ><span>More Data</span> <i class="bi bi-arrow-right"></i
-                  ></a>
-                </div>
-              </div>
-  
-               <div
-                class="col-lg-4 col-md-6"
-                data-aos="fade-up"
-                data-aos-delay="600"
-              >
-                <div class="data-box">
-                  <i class="ri-discuss-line icon"></i>
-                  <h3>건고추 균 검출<br>평균 데이터</h3>
-                  <!-- <p>
-                  </p> -->
-                  <a href="datainner" class="read-more"
-                    ><span>More Data</span> <i class="bi bi-arrow-right"></i
-                  ></a>
-                </div>
-              </div>
-  
-              <div
-                class="col-lg-4 col-md-6"
-                data-aos="fade-up"
-                data-aos-delay="700"
-              >
-                <div class="data-box">
-                  <i class="ri-discuss-line icon"></i>
-                  <h3>이상적인 온습도에서<br> 평균 보관 기간 데이터</h3>
-                  <!-- <p>
-                  </p> -->
-                  <a href="datainner" class="read-more"
-                    ><span>More Data</span> <i class="bi bi-arrow-right"></i
-                  ></a>
-                </div>
-              </div>
-  
-            </div>
-          </div>
-        </section>
-        <!-- End Data Analysis Section -->
-  
-       
-    <!-- ======= Footer ======= -->
-    <footer id="footer" class="footer">
-      
-      <div class="footer-top">
-        <div class="container">
+      <!-- End About Section -->
+
+      <!-- ======= Data Section ======= -->
+      <section id="data" class="data">
+        <div class="container" data-aos="fade-up">
+          <header class="section-header">
+            <h2>데이터 확인</h2>
+            <p>스캔한 데이터를 확인합니다</p>
+          </header>
+
           <div class="row gy-4">
-            <div class="col-lg-5 col-md-12 footer-info">
-              <a href="index.html" class="logo d-flex align-items-center">
-                <img src="{%static 'img/logo1.png'%}" alt="" />
-                <span>WhitePepper</span>
-              </a>
-              <p>
-                We provides dried red pepper bacteria detection results.
-              </p>
-              <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="instagram"
-                  ><i class="bi bi-instagram"></i
-                ></a>
-                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="data-box">
+                <!-- ri -->
+                <i class="ri-discuss-line icon"></i>
+                <h3>양성 / 음성</h3>
+                <p>
+                  양성
+                </p>
+                <!-- <a href="#" class="read-more"
+                  ><span>Read More</span> <i class="bi bi-arrow-right"></i
+                ></a> -->
               </div>
             </div>
-  
-            <div class="col-lg-2 col-6 footer-links">
-              <h4>Useful Links</h4>
-              <ul>
-                <li>
-                  <i class="bi bi-chevron-right"></i> <a href="#home">Home</a>
-                </li>
-                <li>
-                  <i class="bi bi-chevron-right"></i> <a href="#scan">카메라</a>
-                </li>
-                <li>
-                  <i class="bi bi-chevron-right"></i> <a href="#data">데이터</a>
-                </li>
-                <li>
-                  <i class="bi bi-chevron-right"></i>
-                  <a href="#data-Analysis">분석</a>
-                </li>
-                <li>
-                  <i class="bi bi-chevron-right"></i>
-                  <a href="#">알림</a>
-                </li>
-              </ul>
-            </div>
-  
-            <div class="col-lg-2 col-6 footer-links">
-              <h4>Our Services</h4>
-              <ul>
-                <li>
-                  <i class="bi bi-chevron-right"></i> <a href="index.html#scan">Scan Kit</a>
-                </li>
-                <li>
-                  <i class="bi bi-chevron-right"></i>
-                  <a href="scandata.html">Show Data</a>
-                </li>
-                <li>
-                  <i class="bi bi-chevron-right"></i>
-                  <a href="inner-page.html">Total Data</a>
-                </li>
-                <li>
-                  <i class="bi bi-chevron-right"></i> <a href="inner-page.html">Average Data</a>
-                </li>
-                <li>
-                  <i class="bi bi-chevron-right"></i>
-                  <a href="inner-page.html">Period Data</a>
-                </li>
-              </ul>
-            </div>
-  
+
             <div
-              class="col-lg-3 col-md-12 footer-contact text-center text-md-start"
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="300"
             >
-              <h4>Contact Us</h4>
-              <p>
-                경기도 수원시 <br />
-                영통구 광교산로 154-42<br />
-                 경기대학교<br /><br />
-                <strong>Phone :</strong> +82 10 1111 2222<br />
-                <strong>Email :</strong> WhitePepper@gmail.com<br />
-              </p>
+              <div class="data-box">
+                                <!-- ri -->
+
+                <i class="ri-discuss-line icon"></i>
+                <h3>검사 완료 시간</h3>
+                <p>
+                  2023/04/14 18:56 
+                </p>
+                <!-- <a href="#" class="read-more"
+                  ><span>Read More</span> <i class="bi bi-arrow-right"></i
+                ></a> -->
+              </div>
+            </div>
+
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div class="data-box">
+                                <!-- ri -->
+
+                <i class="ri-discuss-line icon"></i>
+                <h3>온/습도</h3>
+                <p>
+                  - 6.4 'c
+                </p>
+                <!-- <a href="#" class="read-more"
+                  ><span>Read More</span> <i class="bi bi-arrow-right"></i
+                ></a> -->
+              </div>
             </div>
           </div>
         </div>
-      </div>
-  
+      </section>
+      <!-- End Services Section -->
+
+      <!-- ======= Data Analysis Section ======= -->
+      <section id="data-Analysis" class="data-Analysis">
+        <div class="container" data-aos="fade-up">
+          <header class="section-header">
+            <h2>데이터 분석</h2>
+            <p>데이터를 분석합니다</p>
+          </header>
+          <div class="row gy-4">
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="500"
+            >
+              <div class="data-box">
+                                <!-- ri -->
+
+                <i class="ri-discuss-line icon"></i>
+                <h3>건고추 균 검출<br>총 데이터</h3>
+                <!-- <p>
+                </p> -->
+                <a href="inner-page.html" class="read-more"
+                  ><span>More Data</span> <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+
+             <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="600"
+            >
+              <div class="data-box">
+                                <!-- ri -->
+
+                <i class="ri-discuss-line icon"></i>
+                <h3>건고추 균 검출<br>평균 데이터</h3>
+                <!-- <p>
+                </p> -->
+                <a href="inner-page.html" class="read-more"
+                  ><span>More Data</span> <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="700"
+            >
+              <div class="data-box">
+
+                                <!-- ri -->
+
+                <i class="ri-discuss-line icon"></i>
+                <h3>이상적인 온습도에서<br> 평균 보관 기간 데이터</h3>
+                <!-- <p>
+                </p> -->
+                <a href="inner-page.html" class="read-more"
+                  ><span>More Data</span> <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <!-- End Data Analysis Section -->
+
+     
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    
+    <div class="footer-top">
       <div class="container">
-        <div class="copyright">
-          <!-- 원래 FlexStart -->
-          &copy; Copyright <strong><span>WhitePepper</span></strong
-          >. All Rights Reserved
-        </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
-          Designed by <a href="https://bootstrapmade.com/">WhitePepper</a>
+        <div class="row gy-4">
+          <div class="col-lg-5 col-md-12 footer-info">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <img src="{%static 'img/logo.png'%}" alt="" />
+              <span>WhitePepper</span>
+            </a>
+            <p>
+              We provides dried red pepper bacteria detection results.
+            </p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="instagram"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li>
+                <i class="bi bi-chevron-right"></i> <a href="#">Home</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i> <a href="#">카메라</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i> <a href="#">데이터</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i>
+                <a href="#">분석</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i>
+                <a href="#">알림</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li>
+                <i class="bi bi-chevron-right"></i> <a href="#">Web Design</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i>
+                <a href="#">Web Development</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i>
+                <a href="#">Product Management</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i> <a href="#">Marketing</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i>
+                <a href="#">Graphic Design</a>
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-12 footer-contact text-center text-md-start"
+          >
+            <h4>Contact Us</h4>
+            <p>
+              경기도 수원시 <br />
+              영통구 광교산로 154-42<br />
+               경기대학교<br /><br />
+              <strong>Phone :</strong> +82 10 1111 2222<br />
+              <strong>Email :</strong> WhitePepper@gmail.com<br />
+            </p>
+          </div>
         </div>
       </div>
-    </footer>
-    <!-- End Footer -->
-      <a
-        href="#"
-        class="back-to-top d-flex align-items-center justify-content-center"
-        ><i class="bi bi-arrow-up-short"></i
-      ></a>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        <!-- 원래 FlexStart -->
+        &copy; Copyright <strong><span>WhitePepper</span></strong
+        >. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">WhitePepper</a>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
 
     <!-- Vendor JS Files -->
     <script src="{%static 'vendor/purecounter/purecounter_vanilla.js'%}"></script>
