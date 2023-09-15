@@ -1,0 +1,306 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Inner Page 3</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="{%static 'img/WP.png'%}" rel="icon" />
+    <link href="{%static 'img/WP.png'%}" rel="apple-touch-icon" />
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link href="{%static 'vendor/aos/aos.css'%}" rel="stylesheet" />
+    <link
+      href="{%static 'vendor/bootstrap/css/bootstrap.min.css'%}"
+      rel="stylesheet"
+    />
+    <link
+      href="{%static 'vendor/bootstrap-icons/bootstrap-icons.css'%}"
+      rel="stylesheet"
+    />
+    <link
+      href="{%static 'vendor/glightbox/css/glightbox.min.css'%}"
+      rel="stylesheet"
+    />
+    <link href="{%static 'vendor/remixicon/remixicon.css'%}" rel="stylesheet" />
+    <link href="{%static 'vendor/swiper/swiper-bundle.min.css'%}" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="{%static 'css/style.css'%}" rel="stylesheet" />
+    <!-- 우리가 추가한 CSS File -->
+    <link href="{%static 'css/header.css'%}" rel="stylesheet" />
+    <link href="{%static 'css/home.css'%}" rel="stylesheet" />
+    <link href="{%static 'css/scan.css'%}" rel="stylesheet" />
+    <link href="{%static 'css/data.css'%}" rel="stylesheet" />
+    <link href="{%static 'css/footer.css'%}" rel="stylesheet" />
+    <link href="{%static 'css/innerPage.css'%}" rel="stylesheet" />
+    <link href="{%static 'css/graph.css'%}" rel="stylesheet" />
+    <script src="{%static 'js/graph.js'%}"></script>
+
+    <!-- =======================================================
+  * Template Name: FlexStart
+  * Updated: Mar 10 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top">
+      <div
+        class="container-fluid container-xl d-flex align-items-center justify-content-between"
+      >
+        <a href="main" class="logo d-flex align-items-center">
+          <img src="{%static 'img/logo3.png'%}" alt="" />
+          <span>WhitePepper</span>
+        </a>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li>
+                <a class="nav-link scrollto active" href="main">Home</a>
+              </li>
+              <li>
+                <a class="nav-link scrollto" href="totaldata"
+                  >Total Data</a
+                >
+              </li>
+              <li>
+                <a class="nav-link scrollto" href="averagedata"
+                  >Average Data</a
+                >
+              </li>
+              <li>
+                <a class="nav-link scrollto" href="perioddata"
+                  >Period Data</a
+                >
+              </li>
+              {%if memid%}
+                <li><a href="/main/logout">로그아웃</a></li>
+                {%else%}
+                <li><a class="nav-link scrollto" href="login">로그인</a></li>
+                {%endif%}
+            <li>
+              <a class="getstarted scrollto" href="#scan">스캔</a>
+            </li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <main id="main">
+      <!-- ======= Breadcrumbs ======= -->
+      <section class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="main">Home</a></li>
+            <li>Period Data</li>
+          </ol>
+          <h2>이상적인 온습도에서 평균 보관 기간 데이터</h2>
+        </div>
+      </section>
+      <!-- End Breadcrumbs -->
+
+      <section class="inner-page">
+        <div class="container">
+          <figure class="highcharts-figure">
+            <div id="container"></div>
+            <br>
+            <p class="highcharts-description">
+              This graph shows the average retention period of dried peppers at an ideal temperature and humidity.
+            </p>
+          </figure>
+          <script>
+            // Data retrieved https://en.wikipedia.org/wiki/List_of_cities_by_average_temperature
+            Highcharts.chart("container", {
+              chart: {
+                type: "line",
+              },
+              title: {
+                text: "Average retention period data",
+              },
+              // subtitle: {
+              //   text:
+              //     "Source: " +
+              //     '<a href="https://en.wikipedia.org/wiki/List_of_cities_by_average_temperature" ' +
+              //     'target="_blank">Wikipedia.com</a>',
+              // },
+              xAxis: {
+                title:{
+                  text: "count",
+                },
+              },
+              yAxis: {
+                title: {
+                  text: "stay time",
+                },
+              },
+              plotOptions: {
+                line: {
+                  dataLabels: {
+                    enabled: true,
+                  },
+                  enableMouseTracking: false,
+                },
+              },
+              series: [
+                {
+                  name: "retention period",
+                  data: [11.9, 7.5, 15.4, 8.6, 11.2, 9.8, 12.1, 17.6, 17.5, 17.4, 13.9, 7.8, 7.7, 19.9, 15.2, 18.2, 17.2, 17.3, 14.8, 8.7, 10.1, 12.2, 18.1, 5.6, 18.2, 10.9, 7.5, 19.3, 14.4, 18.5, 13.1, 15.2, 8.1, 8.8, 19.2, 10.1, 19.7, 13.4, 5.0, 10.9, 18.5, 13.2, 11.3, 10.0, 15.3, 18.7, 6.9, 12.2, 8.6, 6.9, 17.1, 7.3, 16.4, 15.7, 8.1, 11.6, 5.6, 8.0, 13.1, 8.0, 18.1, 18.1, 13.5, 17.1, 15.4, 10.7, 7.3, 10.3, 10.8, 18.7, 18.9, 16.7, 5.5, 5.5, 9.1, 14.0, 6.1, 9.4, 5.7, 5.5, 7.2, 5.9, 9.2, 18.3, 15.2, 6.5, 11.8, 18.3, 18.3, 15.9, 19.9, 6.5, 15.5, 16.5, 13.7, 6.6, 6.6, 9.2, 13.4, 18.5, 17.3, 11.2, 7.1, 9.9, 8.1, 8.6, 13.9, 11.7, 19.0, 16.5, 7.4, 6.5, 8.0, 19.6, 18.3, 15.8, 5.2, 5.6, 13.8, 11.9, 13.9, 13.2, 7.5, 10.3, 12.3, 8.9, 14.1, 14.0, 10.3, 6.0, 13.0, 12.7, 13.2, 12.5, 12.4, 18.1, 15.3, 12.5, 12.2, 7.8, 6.4, 7.1, 9.4, 9.0, 11.0, 7.3, 7.9, 13.9],
+                },
+                // {
+                //   name: "Tallinn",
+                //   data: [
+                //     -2.9, -3.6, -0.6, 4.8, 10.2, 14.5, 17.6, 16.5, 12.0, 6.5,
+                //     2.0, -0.9,
+                //   ],
+                // },
+              ],
+            });
+          </script>
+        </div>
+      </section>
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row gy-4">
+            <div class="col-lg-5 col-md-12 footer-info">
+              <a href="main" class="logo d-flex align-items-center">
+                <img src="{%static 'img/logo1.png'%}" alt="" />
+                <span>WhitePepper</span>
+              </a>
+              <p>We provides dried red pepper bacteria detection results.</p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"
+                  ><i class="bi bi-instagram"></i
+                ></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-2 col-6 footer-links">
+                <h4>Useful Links</h4>
+                <ul>
+                  <li>
+                    <i class="bi bi-chevron-right"></i> <a href="main#home">Home</a>
+                  </li>
+                  <li>
+                    <i class="bi bi-chevron-right"></i> <a href="main#scan">카메라</a>
+                  </li>
+                  <li>
+                    <i class="bi bi-chevron-right"></i> <a href="main#data">데이터</a>
+                  </li>
+                  <li>
+                    <i class="bi bi-chevron-right"></i>
+                    <a href="main#data-Analysis">분석</a>
+                  </li>
+                  <li>
+                    <i class="bi bi-chevron-right"></i>
+                    <a href="#">알림</a>
+                  </li>
+                </ul>
+              </div>
+    
+              <div class="col-lg-2 col-6 footer-links">
+                <h4>Our Services</h4>
+                <ul>
+                  <li>
+                    <i class="bi bi-chevron-right"></i> <a href="main#scan">Scan Kit</a>
+                  </li>
+                  <li>
+                    <i class="bi bi-chevron-right"></i>
+                    <a href="scandata">Show Data</a>
+                  </li>
+                  <li>
+                    <i class="bi bi-chevron-right"></i>
+                    <a href="totaldata">Total Data</a>
+                  </li>
+                  <li>
+                    <i class="bi bi-chevron-right"></i> 
+                    <a href="averagedata">Average Data</a>
+                  </li>
+                  <li>
+                    <i class="bi bi-chevron-right"></i>
+                    <a href="perioddata">Period Data</a>
+                  </li>
+                </ul>
+              </div>
+
+            <div
+              class="col-lg-3 col-md-12 footer-contact text-center text-md-start"
+            >
+              <h4>Contact Us</h4>
+              <p>
+                경기도 수원시 <br />
+                영통구 광교산로 154-42<br />
+                경기대학교<br /><br />
+                <strong>Phone :</strong> +82 10 1111 2222<br />
+                <strong>Email :</strong> WhitePepper@gmail.com<br />
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="copyright">
+          <!-- 원래 FlexStart -->
+          &copy; Copyright <strong><span>WhitePepper</span></strong
+          >. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
+          Designed by <a href="https://bootstrapmade.com/">WhitePepper</a>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Vendor JS Files -->
+    <script src="{%static 'vendor/purecounter/purecounter_vanilla.js'%}"></script>
+    <script src="{%static 'vendor/aos/aos.js'%}"></script>
+    <script src="{%static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{%static 'vendor/glightbox/js/glightbox.min.js'%}"></script>
+    <script src="{%static 'vendor/isotope-layout/isotope.pkgd.min.js'%}"></script>
+    <script src="{%static 'vendor/swiper/swiper-bundle.min.js'%}"></script>
+    <script src="{%static 'vendor/php-email-form/validate.js'%}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{%static 'js/main.js'%}"></script>
+  </body>
+</html>

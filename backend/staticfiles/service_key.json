@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "solar-imprint-383705",
+  "private_key_id": "780b0c35fe7ee8d2feb4c5362e10d481ca07c52e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDJwv3oPT20qhu/\nxNemJPY6/eJBFTL9K1UBzYKerrxnpujTf7eIKE/J2owOzgIyhtGlyu58czd4n039\n0u/ZG9F0AqTnxFqm7KRXFR1jHQwoJn366esVm3dC5gG10mK8/v7YPKb5A/h4yQzg\nLpDoR++BZPCqvPd8qS1TghC4h2i8kioQUQyNs1REqm/Ih4eK67YVWeLUiJ9VD66i\njVLfKvFe/NmLoqvULMmDQfvlLaj8ID7MVmfeYfcVMfB2cwWKyrpf/Psd2HkUEsrb\nh9NBXSKusurrnDy8sNy4cvoEWsRBpPWkCrXwsnjYqe7oKifX3tl6KtV20aTWH/WM\n4DmhkNeNAgMBAAECggEAEftoB9fVdRGoMXpIwg0PSQixrp1GExxWkjePybbHIfHV\nVGxQnjkBi3sH+pXPylMLwlwIz1yxd/WyzMmNCOuayl0l92YfsjrrFrvSB7BiEf4E\nQmWwxxc5FORNCLh8hl2vtvQI6a656YH5vM1JqvomVYD6li0LXbfySzwPY3LmGdBA\ngdfvguUUd2LAfP8U8vEqajCtbpyxezbPBzUh5GlI/KfxexjQP85gvaiQtmAeprWj\nHvfxJAcKo44MXid3ip6tuY0whsXG3KXqBghl79mZpALBnyfAhAn7pvWMi9/1ieCP\nxlMW8ihwbnuy2H8vYVDk/LIA/24TfhrzzVG2Kv1cXQKBgQD01Ml3Rijo834KMRuz\ng9KzQHq1k0yuHtq81WlQPZGYGZ89G9/i3jL1JYWuZEiTZOLD0W/+XDWfd6IA7VKc\ncDra1h7o8j+OoiaCmzwdEoL7AQxSnVlzil+nNcDn6zkFzrM4xxw3TgUvj/tGlnsl\nLpJcVbknw7pijG8sPpP8vjBu3wKBgQDS9zncPp4gQ1Bt15q6CV8qCsa8vEEQ502y\nYZ+OrpuyrtG0q/fCDXvuZgFyfzybn+fNyeW/+5Gv/Zp1M9gmvoNpMUtrL9XaV2qy\nZ7j5+Wb0BaPkyiWF7fejTW+EeJE5e0+iAFnGJu7qOWFq/rc2LmSJhRXfQAnwRwqY\nHmo9HtQDEwKBgQCxe5P04CqF/QXQs5rmPti+Uy7hdD+xNfLR0099+LQT8/cI4K0j\nlHqSVjobmt015HuzAp/SX9wLlzkcvO4XNBCmVXSg4AQNDSUnpwsj9Ch5d2AMf765\n0ITY/VGzjkSPHjG0JjshKHD/8rtwh2QMJz+4qfgIiI4UJMPu6gpzvRf1NwKBgQCm\n9IJ025VWYQ9QrnVDz1Dhu7+F89HmZ7ckeX/FckfDw/gv7HxZtUQj6dQxYaJ8YrMX\nODW7loK4bZIEOPBR0Sm8YQeXnza14cKNx+oq4gZpDeGjmZrSf/4f3ZNomeYMQJtH\n0NE7MOqYsKp4+3XQyixEbO9fS5XR8tbehgt7rV8JwwKBgQDNk1S/rStsCl3RNjYY\nCWJ0B7k7W5Gu4yJCVC+fA0nAeHjTeT1X4+zJnuN14NA1aFOeETBIxBW9vhk3Le8h\nFg75ReaBgeIGkfa1m7VGP93nbt3HGv5/8lPVJMz6lWqtnIKC0tqAVfP6etUgcS0x\nQzCezzi+AfeF/7nivxwU5VwduA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "capstonetest@solar-imprint-383705.iam.gserviceaccount.com",
+  "client_id": "101021748816158020002",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/capstonetest%40solar-imprint-383705.iam.gserviceaccount.com"
+}

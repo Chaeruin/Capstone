@@ -1,0 +1,6327 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Inner Page 2</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="{%static 'img/WP.png'%}" rel="icon" />
+    <link href="{%static 'img/WP.png'%}" rel="apple-touch-icon" />
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link href="{%static 'vendor/aos/aos.css'%}" rel="stylesheet" />
+    <link
+      href="{%static 'vendor/bootstrap/css/bootstrap.min.css'%}"
+      rel="stylesheet"
+    />
+    <link
+      href="{%static 'vendor/bootstrap-icons/bootstrap-icons.css'%}"
+      rel="stylesheet"
+    />
+    <link
+      href="{%static 'vendor/glightbox/css/glightbox.min.css'%}"
+      rel="stylesheet"
+    />
+    <link href="{%static 'vendor/remixicon/remixicon.css'%}" rel="stylesheet" />
+    <link href="{%static 'vendor/swiper/swiper-bundle.min.css'%}" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="{%static 'css/style.css'%}" rel="stylesheet" />
+    <!-- 우리가 추가한 CSS File -->
+    <link href="{%static 'css/header.css'%}" rel="stylesheet" />
+    <link href="{%static 'css/home.css'%}" rel="stylesheet" />
+    <link href="{%static 'css/scan.css'%}" rel="stylesheet" />
+    <link href="{%static 'css/data.css'%}" rel="stylesheet" />
+    <link href="{%static 'css/footer.css'%}" rel="stylesheet" />
+    <link href="{%static 'css/innerPage.css'%}" rel="stylesheet" />
+    <link href="{%static 'css/table.css'%}" rel="stylesheet" />
+    <script src="{%static 'js/table.js'%}"></script>
+
+    <!-- =======================================================
+  * Template Name: FlexStart
+  * Updated: Mar 10 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top">
+      <div
+        class="container-fluid container-xl d-flex align-items-center justify-content-between"
+      >
+        <a href="main" class="logo d-flex align-items-center">
+          <img src="{%static 'img/logo3.png'%}" alt="" />
+          <span>WhitePepper</span>
+        </a>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li>
+                <a class="nav-link scrollto active" href="main">Home</a>
+              </li>
+              <li>
+                <a class="nav-link scrollto" href="totaldata"
+                  >Total Data</a
+                >
+              </li>
+              <li>
+                <a class="nav-link scrollto" href="averagedata"
+                  >Average Data</a
+                >
+              </li>
+              <li>
+                <a class="nav-link scrollto" href="perioddata"
+                  >Period Data</a
+                >
+              </li>
+              {%if memid%}
+                <li><a href="/main/logout">로그아웃</a></li>
+                {%else%}
+                <li><a class="nav-link scrollto" href="login">로그인</a></li>
+                {%endif%}
+
+            <li>
+              <a class="getstarted scrollto" href="#scan">스캔</a>
+            </li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <main id="main">
+      <!-- ======= Breadcrumbs ======= -->
+      <section class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="main">Home</a></li>
+            <li>Average Data</li>
+          </ol>
+          <h2>건고추 균 검출 평균 데이터</h2>
+        </div>
+      </section>
+      <!-- End Breadcrumbs -->
+
+      <section class="inner-page">
+        <div class="container" style="overflow-y: scroll; height: 590px">
+          <table
+            id="dtVerticalScrollExample"
+            class="dataframe table table-striped table-bordered table-sm"
+            cellspacing="0"
+            width="100%"
+          >
+            <thead>
+              <tr style="text-align: left">
+                <th class="th-sm">id</th>
+                <th class="th-sm">date</th>
+                <th class="th-sm">time</th>
+                <th class="th-sm">temperature</th>
+                <th class="th-sm">humidity</th>
+                <th class="th-sm">date_time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>id_00194</td>
+                <td>2021-07-16</td>
+                <td>7:54:04</td>
+                <td>30.0</td>
+                <td>81</td>
+                <td>2021-07-16 7:54</td>
+              </tr>
+              <tr>
+                <td>id_00566</td>
+                <td>2022-08-04</td>
+                <td>7:16:20</td>
+                <td>29.8</td>
+                <td>79</td>
+                <td>2022-08-04 7:16</td>
+              </tr>
+              <tr>
+                <td>id_00587</td>
+                <td>2022-08-26</td>
+                <td>7:28:41</td>
+                <td>29.8</td>
+                <td>72</td>
+                <td>2022-08-26 7:28</td>
+              </tr>
+              <tr>
+                <td>id_00161</td>
+                <td>2021-06-13</td>
+                <td>7:14:58</td>
+                <td>29.7</td>
+                <td>89</td>
+                <td>2021-06-13 7:14</td>
+              </tr>
+              <tr>
+                <td>id_00190</td>
+                <td>2021-07-12</td>
+                <td>7:50:00</td>
+                <td>29.7</td>
+                <td>88</td>
+                <td>2021-07-12 7:50</td>
+              </tr>
+              <tr>
+                <td>id_00238</td>
+                <td>2021-08-30</td>
+                <td>7:01:10</td>
+                <td>29.7</td>
+                <td>83</td>
+                <td>2021-08-30 7:01</td>
+              </tr>
+              <tr>
+                <td>id_00579</td>
+                <td>2022-08-18</td>
+                <td>7:58:32</td>
+                <td>29.7</td>
+                <td>81</td>
+                <td>2022-08-18 7:58</td>
+              </tr>
+              <tr>
+                <td>id_00525</td>
+                <td>2022-06-22</td>
+                <td>7:22:37</td>
+                <td>29.7</td>
+                <td>80</td>
+                <td>2022-06-22 7:22</td>
+              </tr>
+              <tr>
+                <td>id_00564</td>
+                <td>2022-08-02</td>
+                <td>7:58:34</td>
+                <td>29.6</td>
+                <td>86</td>
+                <td>2022-08-02 7:58</td>
+              </tr>
+              <tr>
+                <td>id_00519</td>
+                <td>2022-06-16</td>
+                <td>7:39:30</td>
+                <td>29.6</td>
+                <td>74</td>
+                <td>2022-06-16 7:39</td>
+              </tr>
+              <tr>
+                <td>id_00178</td>
+                <td>2021-06-30</td>
+                <td>7:36:23</td>
+                <td>29.6</td>
+                <td>73</td>
+                <td>2021-06-30 7:36</td>
+              </tr>
+              <tr>
+                <td>id_00159</td>
+                <td>2021-06-11</td>
+                <td>7:12:42</td>
+                <td>29.5</td>
+                <td>85</td>
+                <td>2021-06-11 7:12</td>
+              </tr>
+              <tr>
+                <td>id_00536</td>
+                <td>2022-07-04</td>
+                <td>7:58:19</td>
+                <td>29.5</td>
+                <td>85</td>
+                <td>2022-07-04 7:58</td>
+              </tr>
+              <tr>
+                <td>id_00166</td>
+                <td>2021-06-18</td>
+                <td>7:42:58</td>
+                <td>29.5</td>
+                <td>70</td>
+                <td>2021-06-18 7:42</td>
+              </tr>
+              <tr>
+                <td>id_00206</td>
+                <td>2021-07-28</td>
+                <td>7:26:08</td>
+                <td>29.4</td>
+                <td>86</td>
+                <td>2021-07-28 7:26</td>
+              </tr>
+              <tr>
+                <td>id_00544</td>
+                <td>2022-07-12</td>
+                <td>7:50:03</td>
+                <td>29.4</td>
+                <td>76</td>
+                <td>2022-07-12 7:50</td>
+              </tr>
+              <tr>
+                <td>id_00550</td>
+                <td>2022-07-18</td>
+                <td>7:21:51</td>
+                <td>29.4</td>
+                <td>73</td>
+                <td>2022-07-18 7:21</td>
+              </tr>
+              <tr>
+                <td>id_00560</td>
+                <td>2022-07-29</td>
+                <td>7:55:37</td>
+                <td>29.4</td>
+                <td>71</td>
+                <td>2022-07-29 7:55</td>
+              </tr>
+              <tr>
+                <td>id_00530</td>
+                <td>2022-06-27</td>
+                <td>7:33:09</td>
+                <td>29.3</td>
+                <td>90</td>
+                <td>2022-06-27 7:33</td>
+              </tr>
+              <tr>
+                <td>id_00520</td>
+                <td>2022-06-17</td>
+                <td>7:44:56</td>
+                <td>29.3</td>
+                <td>89</td>
+                <td>2022-06-17 7:44</td>
+              </tr>
+              <tr>
+                <td>id_00203</td>
+                <td>2021-07-25</td>
+                <td>7:23:56</td>
+                <td>29.3</td>
+                <td>77</td>
+                <td>2021-07-25 7:23</td>
+              </tr>
+              <tr>
+                <td>id_00577</td>
+                <td>2022-08-16</td>
+                <td>7:47:49</td>
+                <td>29.2</td>
+                <td>73</td>
+                <td>2022-08-16 7:47</td>
+              </tr>
+              <tr>
+                <td>id_00589</td>
+                <td>2022-08-28</td>
+                <td>7:55:10</td>
+                <td>29.1</td>
+                <td>88</td>
+                <td>2022-08-28 7:55</td>
+              </tr>
+              <tr>
+                <td>id_00170</td>
+                <td>2021-06-22</td>
+                <td>7:29:12</td>
+                <td>29.1</td>
+                <td>79</td>
+                <td>2021-06-22 7:29</td>
+              </tr>
+              <tr>
+                <td>id_00156</td>
+                <td>2021-06-07</td>
+                <td>7:52:34</td>
+                <td>29.0</td>
+                <td>84</td>
+                <td>2021-06-07 7:52</td>
+              </tr>
+              <tr>
+                <td>id_00586</td>
+                <td>2022-08-25</td>
+                <td>7:38:40</td>
+                <td>29.0</td>
+                <td>81</td>
+                <td>2022-08-25 7:38</td>
+              </tr>
+              <tr>
+                <td>id_00576</td>
+                <td>2022-08-15</td>
+                <td>7:43:37</td>
+                <td>28.9</td>
+                <td>90</td>
+                <td>2022-08-15 7:43</td>
+              </tr>
+              <tr>
+                <td>id_00218</td>
+                <td>2021-08-10</td>
+                <td>7:18:32</td>
+                <td>28.9</td>
+                <td>87</td>
+                <td>2021-08-10 7:18</td>
+              </tr>
+              <tr>
+                <td>id_00151</td>
+                <td>2021-06-01</td>
+                <td>7:46:54</td>
+                <td>28.8</td>
+                <td>78</td>
+                <td>2021-06-01 7:46</td>
+              </tr>
+              <tr>
+                <td>id_00232</td>
+                <td>2021-08-24</td>
+                <td>8:00:04</td>
+                <td>28.7</td>
+                <td>87</td>
+                <td>2021-08-24 8:00</td>
+              </tr>
+              <tr>
+                <td>id_00202</td>
+                <td>2021-07-24</td>
+                <td>7:36:04</td>
+                <td>28.6</td>
+                <td>83</td>
+                <td>2021-07-24 7:36</td>
+              </tr>
+              <tr>
+                <td>id_00532</td>
+                <td>2022-06-30</td>
+                <td>7:07:46</td>
+                <td>28.6</td>
+                <td>83</td>
+                <td>2022-06-30 7:07</td>
+              </tr>
+              <tr>
+                <td>id_00548</td>
+                <td>2022-07-16</td>
+                <td>7:28:36</td>
+                <td>28.6</td>
+                <td>83</td>
+                <td>2022-07-16 7:28</td>
+              </tr>
+              <tr>
+                <td>id_00531</td>
+                <td>2022-06-29</td>
+                <td>7:01:20</td>
+                <td>28.6</td>
+                <td>72</td>
+                <td>2022-06-29 7:01</td>
+              </tr>
+              <tr>
+                <td>id_00547</td>
+                <td>2022-07-15</td>
+                <td>7:26:35</td>
+                <td>28.5</td>
+                <td>87</td>
+                <td>2022-07-15 7:26</td>
+              </tr>
+              <tr>
+                <td>id_00226</td>
+                <td>2021-08-18</td>
+                <td>7:32:03</td>
+                <td>28.5</td>
+                <td>78</td>
+                <td>2021-08-18 7:32</td>
+              </tr>
+              <tr>
+                <td>id_00184</td>
+                <td>2021-07-06</td>
+                <td>7:54:51</td>
+                <td>28.5</td>
+                <td>74</td>
+                <td>2021-07-06 7:54</td>
+              </tr>
+              <tr>
+                <td>id_00239</td>
+                <td>2021-08-31</td>
+                <td>7:31:40</td>
+                <td>28.4</td>
+                <td>80</td>
+                <td>2021-08-31 7:31</td>
+              </tr>
+              <tr>
+                <td>id_00570</td>
+                <td>2022-08-08</td>
+                <td>7:51:21</td>
+                <td>28.4</td>
+                <td>71</td>
+                <td>2022-08-08 7:51</td>
+              </tr>
+              <tr>
+                <td>id_00236</td>
+                <td>2021-08-28</td>
+                <td>7:44:34</td>
+                <td>28.3</td>
+                <td>83</td>
+                <td>2021-08-28 7:44</td>
+              </tr>
+              <tr>
+                <td>id_00522</td>
+                <td>2022-06-19</td>
+                <td>7:25:25</td>
+                <td>28.3</td>
+                <td>75</td>
+                <td>2022-06-19 7:25</td>
+              </tr>
+              <tr>
+                <td>id_00559</td>
+                <td>2022-07-28</td>
+                <td>7:50:01</td>
+                <td>28.2</td>
+                <td>73</td>
+                <td>2022-07-28 7:50</td>
+              </tr>
+              <tr>
+                <td>id_00541</td>
+                <td>2022-07-09</td>
+                <td>7:20:10</td>
+                <td>28.1</td>
+                <td>77</td>
+                <td>2022-07-09 7:20</td>
+              </tr>
+              <tr>
+                <td>id_00539</td>
+                <td>2022-07-07</td>
+                <td>7:32:23</td>
+                <td>27.9</td>
+                <td>89</td>
+                <td>2022-07-07 7:32</td>
+              </tr>
+              <tr>
+                <td>id_00167</td>
+                <td>2021-06-19</td>
+                <td>7:16:06</td>
+                <td>27.9</td>
+                <td>88</td>
+                <td>2021-06-19 7:16</td>
+              </tr>
+              <tr>
+                <td>id_00529</td>
+                <td>2022-06-26</td>
+                <td>7:21:10</td>
+                <td>27.9</td>
+                <td>81</td>
+                <td>2022-06-26 7:21</td>
+              </tr>
+              <tr>
+                <td>id_00551</td>
+                <td>2022-07-19</td>
+                <td>7:06:06</td>
+                <td>27.5</td>
+                <td>88</td>
+                <td>2022-07-19 7:06</td>
+              </tr>
+              <tr>
+                <td>id_00188</td>
+                <td>2021-07-10</td>
+                <td>7:12:58</td>
+                <td>27.5</td>
+                <td>86</td>
+                <td>2021-07-10 7:12</td>
+              </tr>
+              <tr>
+                <td>id_00197</td>
+                <td>2021-07-19</td>
+                <td>7:57:04</td>
+                <td>27.5</td>
+                <td>73</td>
+                <td>2021-07-19 7:57</td>
+              </tr>
+              <tr>
+                <td>id_00569</td>
+                <td>2022-08-07</td>
+                <td>8:00:27</td>
+                <td>27.5</td>
+                <td>72</td>
+                <td>2022-08-07 8:00</td>
+              </tr>
+              <tr>
+                <td>id_00583</td>
+                <td>2022-08-22</td>
+                <td>7:43:38</td>
+                <td>27.4</td>
+                <td>77</td>
+                <td>2022-08-22 7:43</td>
+              </tr>
+              <tr>
+                <td>id_00545</td>
+                <td>2022-07-13</td>
+                <td>7:05:25</td>
+                <td>27.4</td>
+                <td>70</td>
+                <td>2022-07-13 7:05</td>
+              </tr>
+              <tr>
+                <td>id_00590</td>
+                <td>2022-08-29</td>
+                <td>7:23:13</td>
+                <td>27.3</td>
+                <td>75</td>
+                <td>2022-08-29 7:23</td>
+              </tr>
+              <tr>
+                <td>id_00163</td>
+                <td>2021-06-15</td>
+                <td>7:09:42</td>
+                <td>27.2</td>
+                <td>71</td>
+                <td>2021-06-15 7:09</td>
+              </tr>
+              <tr>
+                <td>id_00059</td>
+                <td>2021-03-01</td>
+                <td>7:50:10</td>
+                <td>27.0</td>
+                <td>36</td>
+                <td>2021-03-01 7:50</td>
+              </tr>
+              <tr>
+                <td>id_00558</td>
+                <td>2022-07-27</td>
+                <td>7:55:08</td>
+                <td>26.8</td>
+                <td>70</td>
+                <td>2022-07-27 7:55</td>
+              </tr>
+              <tr>
+                <td>id_00233</td>
+                <td>2021-08-25</td>
+                <td>7:26:24</td>
+                <td>26.7</td>
+                <td>86</td>
+                <td>2021-08-25 7:26</td>
+              </tr>
+              <tr>
+                <td>id_00572</td>
+                <td>2022-08-10</td>
+                <td>7:38:45</td>
+                <td>26.7</td>
+                <td>72</td>
+                <td>2022-08-10 7:38</td>
+              </tr>
+              <tr>
+                <td>id_00182</td>
+                <td>2021-07-04</td>
+                <td>7:34:40</td>
+                <td>26.6</td>
+                <td>81</td>
+                <td>2021-07-04 7:34</td>
+              </tr>
+              <tr>
+                <td>id_00578</td>
+                <td>2022-08-17</td>
+                <td>7:39:34</td>
+                <td>26.5</td>
+                <td>88</td>
+                <td>2022-08-17 7:39</td>
+              </tr>
+              <tr>
+                <td>id_00508</td>
+                <td>2022-06-05</td>
+                <td>7:28:16</td>
+                <td>26.5</td>
+                <td>72</td>
+                <td>2022-06-05 7:28</td>
+              </tr>
+              <tr>
+                <td>id_00562</td>
+                <td>2022-07-31</td>
+                <td>7:40:28</td>
+                <td>26.4</td>
+                <td>83</td>
+                <td>2022-07-31 7:40</td>
+              </tr>
+              <tr>
+                <td>id_00588</td>
+                <td>2022-08-27</td>
+                <td>7:07:54</td>
+                <td>26.4</td>
+                <td>81</td>
+                <td>2022-08-27 7:07</td>
+              </tr>
+              <tr>
+                <td>id_00534</td>
+                <td>2022-07-02</td>
+                <td>7:31:36</td>
+                <td>26.4</td>
+                <td>72</td>
+                <td>2022-07-02 7:31</td>
+              </tr>
+              <tr>
+                <td>id_00220</td>
+                <td>2021-08-12</td>
+                <td>7:56:53</td>
+                <td>26.4</td>
+                <td>70</td>
+                <td>2021-08-12 7:56</td>
+              </tr>
+              <tr>
+                <td>id_00209</td>
+                <td>2021-08-01</td>
+                <td>7:00:25</td>
+                <td>26.3</td>
+                <td>85</td>
+                <td>2021-08-01 7:00</td>
+              </tr>
+              <tr>
+                <td>id_00187</td>
+                <td>2021-07-09</td>
+                <td>7:26:56</td>
+                <td>26.3</td>
+                <td>80</td>
+                <td>2021-07-09 7:26</td>
+              </tr>
+              <tr>
+                <td>id_00563</td>
+                <td>2022-08-01</td>
+                <td>7:09:07</td>
+                <td>26.3</td>
+                <td>70</td>
+                <td>2022-08-01 7:09</td>
+              </tr>
+              <tr>
+                <td>id_00204</td>
+                <td>2021-07-26</td>
+                <td>7:41:04</td>
+                <td>26.2</td>
+                <td>89</td>
+                <td>2021-07-26 7:41</td>
+              </tr>
+              <tr>
+                <td>id_00173</td>
+                <td>2021-06-25</td>
+                <td>7:40:36</td>
+                <td>26.2</td>
+                <td>78</td>
+                <td>2021-06-25 7:40</td>
+              </tr>
+              <tr>
+                <td>id_00584</td>
+                <td>2022-08-23</td>
+                <td>7:59:55</td>
+                <td>26.2</td>
+                <td>72</td>
+                <td>2022-08-23 7:59</td>
+              </tr>
+              <tr>
+                <td>id_00223</td>
+                <td>2021-08-15</td>
+                <td>7:50:24</td>
+                <td>26.1</td>
+                <td>87</td>
+                <td>2021-08-15 7:50</td>
+              </tr>
+              <tr>
+                <td>id_00512</td>
+                <td>2022-06-09</td>
+                <td>7:07:55</td>
+                <td>26.0</td>
+                <td>86</td>
+                <td>2022-06-09 7:07</td>
+              </tr>
+              <tr>
+                <td>id_00533</td>
+                <td>2022-07-01</td>
+                <td>7:11:23</td>
+                <td>26.0</td>
+                <td>78</td>
+                <td>2022-07-01 7:11</td>
+              </tr>
+              <tr>
+                <td>id_00523</td>
+                <td>2022-06-20</td>
+                <td>7:42:46</td>
+                <td>26.0</td>
+                <td>72</td>
+                <td>2022-06-20 7:42</td>
+              </tr>
+              <tr>
+                <td>id_00571</td>
+                <td>2022-08-09</td>
+                <td>7:03:16</td>
+                <td>25.9</td>
+                <td>83</td>
+                <td>2022-08-09 7:03</td>
+              </tr>
+              <tr>
+                <td>id_00535</td>
+                <td>2022-07-03</td>
+                <td>7:55:33</td>
+                <td>25.9</td>
+                <td>82</td>
+                <td>2022-07-03 7:55</td>
+              </tr>
+              <tr>
+                <td>id_00216</td>
+                <td>2021-08-08</td>
+                <td>7:19:32</td>
+                <td>25.9</td>
+                <td>71</td>
+                <td>2021-08-08 7:19</td>
+              </tr>
+              <tr>
+                <td>id_00518</td>
+                <td>2022-06-15</td>
+                <td>7:30:56</td>
+                <td>25.8</td>
+                <td>81</td>
+                <td>2022-06-15 7:30</td>
+              </tr>
+              <tr>
+                <td>id_00217</td>
+                <td>2021-08-09</td>
+                <td>7:18:00</td>
+                <td>25.7</td>
+                <td>70</td>
+                <td>2021-08-09 7:18</td>
+              </tr>
+              <tr>
+                <td>id_00574</td>
+                <td>2022-08-13</td>
+                <td>7:27:55</td>
+                <td>25.5</td>
+                <td>89</td>
+                <td>2022-08-13 7:27</td>
+              </tr>
+              <tr>
+                <td>id_00537</td>
+                <td>2022-07-05</td>
+                <td>7:34:00</td>
+                <td>25.5</td>
+                <td>86</td>
+                <td>2022-07-05 7:34</td>
+              </tr>
+              <tr>
+                <td>id_00189</td>
+                <td>2021-07-11</td>
+                <td>7:04:51</td>
+                <td>25.5</td>
+                <td>71</td>
+                <td>2021-07-11 7:04</td>
+              </tr>
+              <tr>
+                <td>id_00509</td>
+                <td>2022-06-06</td>
+                <td>7:40:21</td>
+                <td>25.5</td>
+                <td>70</td>
+                <td>2022-06-06 7:40</td>
+              </tr>
+              <tr>
+                <td>id_00168</td>
+                <td>2021-06-20</td>
+                <td>7:12:48</td>
+                <td>25.4</td>
+                <td>90</td>
+                <td>2021-06-20 7:12</td>
+              </tr>
+              <tr>
+                <td>id_00219</td>
+                <td>2021-08-11</td>
+                <td>7:01:47</td>
+                <td>25.4</td>
+                <td>85</td>
+                <td>2021-08-11 7:01</td>
+              </tr>
+              <tr>
+                <td>id_00154</td>
+                <td>2021-06-05</td>
+                <td>7:35:16</td>
+                <td>25.4</td>
+                <td>74</td>
+                <td>2021-06-05 7:35</td>
+              </tr>
+              <tr>
+                <td>id_00538</td>
+                <td>2022-07-06</td>
+                <td>7:31:58</td>
+                <td>25.3</td>
+                <td>82</td>
+                <td>2022-07-06 7:31</td>
+              </tr>
+              <tr>
+                <td>id_00164</td>
+                <td>2021-06-16</td>
+                <td>7:59:43</td>
+                <td>25.3</td>
+                <td>75</td>
+                <td>2021-06-16 7:59</td>
+              </tr>
+              <tr>
+                <td>id_00185</td>
+                <td>2021-07-07</td>
+                <td>7:14:06</td>
+                <td>25.3</td>
+                <td>75</td>
+                <td>2021-07-07 7:14</td>
+              </tr>
+              <tr>
+                <td>id_00581</td>
+                <td>2022-08-20</td>
+                <td>7:07:19</td>
+                <td>25.2</td>
+                <td>76</td>
+                <td>2022-08-20 7:07</td>
+              </tr>
+              <tr>
+                <td>id_00527</td>
+                <td>2022-06-24</td>
+                <td>7:51:00</td>
+                <td>25.1</td>
+                <td>82</td>
+                <td>2022-06-24 7:51</td>
+              </tr>
+              <tr>
+                <td>id_00555</td>
+                <td>2022-07-24</td>
+                <td>7:15:06</td>
+                <td>25.1</td>
+                <td>78</td>
+                <td>2022-07-24 7:15</td>
+              </tr>
+              <tr>
+                <td>id_00517</td>
+                <td>2022-06-14</td>
+                <td>7:20:06</td>
+                <td>25.1</td>
+                <td>70</td>
+                <td>2022-06-14 7:20</td>
+              </tr>
+              <tr>
+                <td>id_00152</td>
+                <td>2021-06-02</td>
+                <td>7:02:05</td>
+                <td>25.0</td>
+                <td>82</td>
+                <td>2021-06-02 7:02</td>
+              </tr>
+              <tr>
+                <td>id_00224</td>
+                <td>2021-08-16</td>
+                <td>7:02:57</td>
+                <td>25.0</td>
+                <td>74</td>
+                <td>2021-08-16 7:02</td>
+              </tr>
+              <tr>
+                <td>id_00552</td>
+                <td>2022-07-21</td>
+                <td>7:57:07</td>
+                <td>24.9</td>
+                <td>82</td>
+                <td>2022-07-21 7:57</td>
+              </tr>
+              <tr>
+                <td>id_00543</td>
+                <td>2022-07-11</td>
+                <td>7:49:35</td>
+                <td>24.9</td>
+                <td>70</td>
+                <td>2022-07-11 7:49</td>
+              </tr>
+              <tr>
+                <td>id_00212</td>
+                <td>2021-08-04</td>
+                <td>7:46:38</td>
+                <td>24.8</td>
+                <td>86</td>
+                <td>2021-08-04 7:46</td>
+              </tr>
+              <tr>
+                <td>id_00557</td>
+                <td>2022-07-26</td>
+                <td>7:36:08</td>
+                <td>24.8</td>
+                <td>82</td>
+                <td>2022-07-26 7:36</td>
+              </tr>
+              <tr>
+                <td>id_00561</td>
+                <td>2022-07-30</td>
+                <td>7:48:34</td>
+                <td>24.6</td>
+                <td>82</td>
+                <td>2022-07-30 7:48</td>
+              </tr>
+              <tr>
+                <td>id_00201</td>
+                <td>2021-07-23</td>
+                <td>7:20:37</td>
+                <td>24.6</td>
+                <td>76</td>
+                <td>2021-07-23 7:20</td>
+              </tr>
+              <tr>
+                <td>id_00507</td>
+                <td>2022-06-04</td>
+                <td>7:36:19</td>
+                <td>24.5</td>
+                <td>86</td>
+                <td>2022-06-04 7:36</td>
+              </tr>
+              <tr>
+                <td>id_00198</td>
+                <td>2021-07-20</td>
+                <td>7:43:54</td>
+                <td>24.4</td>
+                <td>78</td>
+                <td>2021-07-20 7:43</td>
+              </tr>
+              <tr>
+                <td>id_00186</td>
+                <td>2021-07-08</td>
+                <td>7:04:45</td>
+                <td>24.4</td>
+                <td>73</td>
+                <td>2021-07-08 7:04</td>
+              </tr>
+              <tr>
+                <td>id_00213</td>
+                <td>2021-08-05</td>
+                <td>7:44:01</td>
+                <td>24.4</td>
+                <td>71</td>
+                <td>2021-08-05 7:44</td>
+              </tr>
+              <tr>
+                <td>id_00567</td>
+                <td>2022-08-05</td>
+                <td>7:20:16</td>
+                <td>24.4</td>
+                <td>70</td>
+                <td>2022-08-05 7:20</td>
+              </tr>
+              <tr>
+                <td>id_00162</td>
+                <td>2021-06-14</td>
+                <td>7:04:39</td>
+                <td>24.2</td>
+                <td>81</td>
+                <td>2021-06-14 7:04</td>
+              </tr>
+              <tr>
+                <td>id_00192</td>
+                <td>2021-07-14</td>
+                <td>7:43:21</td>
+                <td>23.9</td>
+                <td>79</td>
+                <td>2021-07-14 7:43</td>
+              </tr>
+              <tr>
+                <td>id_00513</td>
+                <td>2022-06-10</td>
+                <td>7:30:07</td>
+                <td>23.8</td>
+                <td>84</td>
+                <td>2022-06-10 7:30</td>
+              </tr>
+              <tr>
+                <td>id_00227</td>
+                <td>2021-08-19</td>
+                <td>7:15:36</td>
+                <td>23.7</td>
+                <td>85</td>
+                <td>2021-08-19 7:15</td>
+              </tr>
+              <tr>
+                <td>id_00573</td>
+                <td>2022-08-11</td>
+                <td>7:39:30</td>
+                <td>23.7</td>
+                <td>80</td>
+                <td>2022-08-11 7:39</td>
+              </tr>
+              <tr>
+                <td>id_00565</td>
+                <td>2022-08-03</td>
+                <td>7:19:53</td>
+                <td>23.7</td>
+                <td>79</td>
+                <td>2022-08-03 7:19</td>
+              </tr>
+              <tr>
+                <td>id_00225</td>
+                <td>2021-08-17</td>
+                <td>7:39:29</td>
+                <td>23.7</td>
+                <td>70</td>
+                <td>2021-08-17 7:39</td>
+              </tr>
+              <tr>
+                <td>id_00568</td>
+                <td>2022-08-06</td>
+                <td>7:00:00</td>
+                <td>23.6</td>
+                <td>80</td>
+                <td>2022-08-06 7:00</td>
+              </tr>
+              <tr>
+                <td>id_00515</td>
+                <td>2022-06-12</td>
+                <td>7:54:28</td>
+                <td>23.5</td>
+                <td>86</td>
+                <td>2022-06-12 7:54</td>
+              </tr>
+              <tr>
+                <td>id_00176</td>
+                <td>2021-06-28</td>
+                <td>7:09:01</td>
+                <td>23.4</td>
+                <td>80</td>
+                <td>2021-06-28 7:09</td>
+              </tr>
+              <tr>
+                <td>id_00222</td>
+                <td>2021-08-14</td>
+                <td>7:55:29</td>
+                <td>23.3</td>
+                <td>83</td>
+                <td>2021-08-14 7:55</td>
+              </tr>
+              <tr>
+                <td>id_00205</td>
+                <td>2021-07-27</td>
+                <td>7:49:55</td>
+                <td>23.3</td>
+                <td>78</td>
+                <td>2021-07-27 7:49</td>
+              </tr>
+              <tr>
+                <td>id_00229</td>
+                <td>2021-08-21</td>
+                <td>7:26:40</td>
+                <td>23.2</td>
+                <td>81</td>
+                <td>2021-08-21 7:26</td>
+              </tr>
+              <tr>
+                <td>id_00546</td>
+                <td>2022-07-14</td>
+                <td>7:33:09</td>
+                <td>23.2</td>
+                <td>70</td>
+                <td>2022-07-14 7:33</td>
+              </tr>
+              <tr>
+                <td>id_00549</td>
+                <td>2022-07-17</td>
+                <td>7:20:00</td>
+                <td>23.1</td>
+                <td>83</td>
+                <td>2022-07-17 7:20</td>
+              </tr>
+              <tr>
+                <td>id_00591</td>
+                <td>2022-08-30</td>
+                <td>7:29:14</td>
+                <td>23.0</td>
+                <td>90</td>
+                <td>2022-08-30 7:29</td>
+              </tr>
+              <tr>
+                <td>id_00553</td>
+                <td>2022-07-22</td>
+                <td>7:41:30</td>
+                <td>22.9</td>
+                <td>70</td>
+                <td>2022-07-22 7:41</td>
+              </tr>
+              <tr>
+                <td>id_00200</td>
+                <td>2021-07-22</td>
+                <td>7:25:59</td>
+                <td>22.8</td>
+                <td>74</td>
+                <td>2021-07-22 7:25</td>
+              </tr>
+              <tr>
+                <td>id_00160</td>
+                <td>2021-06-12</td>
+                <td>7:54:10</td>
+                <td>22.7</td>
+                <td>79</td>
+                <td>2021-06-12 7:54</td>
+              </tr>
+              <tr>
+                <td>id_00528</td>
+                <td>2022-06-25</td>
+                <td>7:55:25</td>
+                <td>22.7</td>
+                <td>78</td>
+                <td>2022-06-25 7:55</td>
+              </tr>
+              <tr>
+                <td>id_00230</td>
+                <td>2021-08-22</td>
+                <td>7:16:50</td>
+                <td>22.5</td>
+                <td>90</td>
+                <td>2021-08-22 7:16</td>
+              </tr>
+              <tr>
+                <td>id_00542</td>
+                <td>2022-07-10</td>
+                <td>7:46:58</td>
+                <td>22.4</td>
+                <td>70</td>
+                <td>2022-07-10 7:46</td>
+              </tr>
+              <tr>
+                <td>id_00153</td>
+                <td>2021-06-04</td>
+                <td>7:57:37</td>
+                <td>22.3</td>
+                <td>79</td>
+                <td>2021-06-04 7:57</td>
+              </tr>
+              <tr>
+                <td>id_00208</td>
+                <td>2021-07-31</td>
+                <td>7:22:20</td>
+                <td>22.2</td>
+                <td>85</td>
+                <td>2021-07-31 7:22</td>
+              </tr>
+              <tr>
+                <td>id_00196</td>
+                <td>2021-07-18</td>
+                <td>7:56:19</td>
+                <td>22.2</td>
+                <td>77</td>
+                <td>2021-07-18 7:56</td>
+              </tr>
+              <tr>
+                <td>id_00207</td>
+                <td>2021-07-30</td>
+                <td>7:45:20</td>
+                <td>22.2</td>
+                <td>70</td>
+                <td>2021-07-30 7:45</td>
+              </tr>
+              <tr>
+                <td>id_00580</td>
+                <td>2022-08-19</td>
+                <td>7:24:18</td>
+                <td>22.1</td>
+                <td>90</td>
+                <td>2022-08-19 7:24</td>
+              </tr>
+              <tr>
+                <td>id_00193</td>
+                <td>2021-07-15</td>
+                <td>7:38:43</td>
+                <td>22.0</td>
+                <td>89</td>
+                <td>2021-07-15 7:38</td>
+              </tr>
+              <tr>
+                <td>id_00582</td>
+                <td>2022-08-21</td>
+                <td>7:11:23</td>
+                <td>22.0</td>
+                <td>71</td>
+                <td>2022-08-21 7:11</td>
+              </tr>
+              <tr>
+                <td>id_00175</td>
+                <td>2021-06-27</td>
+                <td>7:50:48</td>
+                <td>21.9</td>
+                <td>86</td>
+                <td>2021-06-27 7:50</td>
+              </tr>
+              <tr>
+                <td>id_00556</td>
+                <td>2022-07-25</td>
+                <td>7:06:27</td>
+                <td>21.9</td>
+                <td>77</td>
+                <td>2022-07-25 7:06</td>
+              </tr>
+              <tr>
+                <td>id_00199</td>
+                <td>2021-07-21</td>
+                <td>7:30:56</td>
+                <td>21.9</td>
+                <td>76</td>
+                <td>2021-07-21 7:30</td>
+              </tr>
+              <tr>
+                <td>id_00524</td>
+                <td>2022-06-21</td>
+                <td>7:08:37</td>
+                <td>21.8</td>
+                <td>89</td>
+                <td>2022-06-21 7:08</td>
+              </tr>
+              <tr>
+                <td>id_00214</td>
+                <td>2021-08-06</td>
+                <td>7:12:28</td>
+                <td>21.8</td>
+                <td>88</td>
+                <td>2021-08-06 7:12</td>
+              </tr>
+              <tr>
+                <td>id_00210</td>
+                <td>2021-08-02</td>
+                <td>7:04:15</td>
+                <td>21.7</td>
+                <td>81</td>
+                <td>2021-08-02 7:04</td>
+              </tr>
+              <tr>
+                <td>id_00171</td>
+                <td>2021-06-23</td>
+                <td>7:46:12</td>
+                <td>21.7</td>
+                <td>73</td>
+                <td>2021-06-23 7:46</td>
+              </tr>
+              <tr>
+                <td>id_00235</td>
+                <td>2021-08-27</td>
+                <td>8:00:40</td>
+                <td>21.7</td>
+                <td>72</td>
+                <td>2021-08-27 8:00</td>
+              </tr>
+              <tr>
+                <td>id_00191</td>
+                <td>2021-07-13</td>
+                <td>7:45:49</td>
+                <td>21.7</td>
+                <td>71</td>
+                <td>2021-07-13 7:45</td>
+              </tr>
+              <tr>
+                <td>id_00593</td>
+                <td>2022-09-02</td>
+                <td>7:33:14</td>
+                <td>21.7</td>
+                <td>66</td>
+                <td>2022-09-02 7:33</td>
+              </tr>
+              <tr>
+                <td>id_00195</td>
+                <td>2021-07-17</td>
+                <td>7:37:34</td>
+                <td>21.5</td>
+                <td>82</td>
+                <td>2021-07-17 7:37</td>
+              </tr>
+              <tr>
+                <td>id_00211</td>
+                <td>2021-08-03</td>
+                <td>7:48:38</td>
+                <td>21.5</td>
+                <td>76</td>
+                <td>2021-08-03 7:48</td>
+              </tr>
+              <tr>
+                <td>id_00221</td>
+                <td>2021-08-13</td>
+                <td>7:35:54</td>
+                <td>21.4</td>
+                <td>78</td>
+                <td>2021-08-13 7:35</td>
+              </tr>
+              <tr>
+                <td>id_00172</td>
+                <td>2021-06-24</td>
+                <td>7:36:45</td>
+                <td>21.4</td>
+                <td>70</td>
+                <td>2021-06-24 7:36</td>
+              </tr>
+              <tr>
+                <td>id_00158</td>
+                <td>2021-06-09</td>
+                <td>7:50:01</td>
+                <td>21.3</td>
+                <td>89</td>
+                <td>2021-06-09 7:50</td>
+              </tr>
+              <tr>
+                <td>id_00183</td>
+                <td>2021-07-05</td>
+                <td>7:14:50</td>
+                <td>21.3</td>
+                <td>82</td>
+                <td>2021-07-05 7:14</td>
+              </tr>
+              <tr>
+                <td>id_00521</td>
+                <td>2022-06-18</td>
+                <td>7:17:14</td>
+                <td>21.3</td>
+                <td>77</td>
+                <td>2022-06-18 7:17</td>
+              </tr>
+              <tr>
+                <td>id_00514</td>
+                <td>2022-06-11</td>
+                <td>8:00:45</td>
+                <td>21.2</td>
+                <td>82</td>
+                <td>2022-06-11 8:00</td>
+              </tr>
+              <tr>
+                <td>id_00155</td>
+                <td>2021-06-06</td>
+                <td>7:49:09</td>
+                <td>21.1</td>
+                <td>88</td>
+                <td>2021-06-06 7:49</td>
+              </tr>
+              <tr>
+                <td>id_00215</td>
+                <td>2021-08-07</td>
+                <td>7:23:10</td>
+                <td>21.0</td>
+                <td>90</td>
+                <td>2021-08-07 7:23</td>
+              </tr>
+              <tr>
+                <td>id_00174</td>
+                <td>2021-06-26</td>
+                <td>7:54:23</td>
+                <td>21.0</td>
+                <td>87</td>
+                <td>2021-06-26 7:54</td>
+              </tr>
+              <tr>
+                <td>id_00505</td>
+                <td>2022-06-02</td>
+                <td>7:39:13</td>
+                <td>21.0</td>
+                <td>87</td>
+                <td>2022-06-02 7:39</td>
+              </tr>
+              <tr>
+                <td>id_00516</td>
+                <td>2022-06-13</td>
+                <td>7:24:42</td>
+                <td>21.0</td>
+                <td>85</td>
+                <td>2022-06-13 7:24</td>
+              </tr>
+              <tr>
+                <td>id_00540</td>
+                <td>2022-07-08</td>
+                <td>7:31:00</td>
+                <td>20.9</td>
+                <td>87</td>
+                <td>2022-07-08 7:31</td>
+              </tr>
+              <tr>
+                <td>id_00237</td>
+                <td>2021-08-29</td>
+                <td>7:30:41</td>
+                <td>20.9</td>
+                <td>73</td>
+                <td>2021-08-29 7:30</td>
+              </tr>
+              <tr>
+                <td>id_00592</td>
+                <td>2022-09-01</td>
+                <td>7:05:30</td>
+                <td>20.9</td>
+                <td>68</td>
+                <td>2022-09-01 7:05</td>
+              </tr>
+              <tr>
+                <td>id_00181</td>
+                <td>2021-07-03</td>
+                <td>7:47:46</td>
+                <td>20.5</td>
+                <td>88</td>
+                <td>2021-07-03 7:47</td>
+              </tr>
+              <tr>
+                <td>id_00506</td>
+                <td>2022-06-03</td>
+                <td>7:33:36</td>
+                <td>20.5</td>
+                <td>71</td>
+                <td>2022-06-03 7:33</td>
+              </tr>
+              <tr>
+                <td>id_00526</td>
+                <td>2022-06-23</td>
+                <td>7:26:18</td>
+                <td>20.5</td>
+                <td>71</td>
+                <td>2022-06-23 7:26</td>
+              </tr>
+              <tr>
+                <td>id_00180</td>
+                <td>2021-07-02</td>
+                <td>7:20:45</td>
+                <td>20.4</td>
+                <td>74</td>
+                <td>2021-07-02 7:20</td>
+              </tr>
+              <tr>
+                <td>id_00165</td>
+                <td>2021-06-17</td>
+                <td>7:37:34</td>
+                <td>20.4</td>
+                <td>73</td>
+                <td>2021-06-17 7:37</td>
+              </tr>
+              <tr>
+                <td>id_00585</td>
+                <td>2022-08-24</td>
+                <td>7:12:04</td>
+                <td>20.3</td>
+                <td>82</td>
+                <td>2022-08-24 7:12</td>
+              </tr>
+              <tr>
+                <td>id_00231</td>
+                <td>2021-08-23</td>
+                <td>7:06:50</td>
+                <td>20.3</td>
+                <td>81</td>
+                <td>2021-08-23 7:06</td>
+              </tr>
+              <tr>
+                <td>id_00177</td>
+                <td>2021-06-29</td>
+                <td>7:01:34</td>
+                <td>20.3</td>
+                <td>77</td>
+                <td>2021-06-29 7:01</td>
+              </tr>
+              <tr>
+                <td>id_00510</td>
+                <td>2022-06-07</td>
+                <td>7:34:16</td>
+                <td>20.3</td>
+                <td>73</td>
+                <td>2022-06-07 7:34</td>
+              </tr>
+              <tr>
+                <td>id_00228</td>
+                <td>2021-08-20</td>
+                <td>7:05:50</td>
+                <td>20.2</td>
+                <td>87</td>
+                <td>2021-08-20 7:05</td>
+              </tr>
+              <tr>
+                <td>id_00511</td>
+                <td>2022-06-08</td>
+                <td>7:52:47</td>
+                <td>20.2</td>
+                <td>78</td>
+                <td>2022-06-08 7:52</td>
+              </tr>
+              <tr>
+                <td>id_00554</td>
+                <td>2022-07-23</td>
+                <td>7:30:45</td>
+                <td>20.1</td>
+                <td>83</td>
+                <td>2022-07-23 7:30</td>
+              </tr>
+              <tr>
+                <td>id_00575</td>
+                <td>2022-08-14</td>
+                <td>7:03:22</td>
+                <td>20.1</td>
+                <td>81</td>
+                <td>2022-08-14 7:03</td>
+              </tr>
+              <tr>
+                <td>id_00179</td>
+                <td>2021-07-01</td>
+                <td>7:42:59</td>
+                <td>20.1</td>
+                <td>79</td>
+                <td>2021-07-01 7:42</td>
+              </tr>
+              <tr>
+                <td>id_00234</td>
+                <td>2021-08-26</td>
+                <td>7:23:00</td>
+                <td>20.0</td>
+                <td>90</td>
+                <td>2021-08-26 7:23</td>
+              </tr>
+              <tr>
+                <td>id_00169</td>
+                <td>2021-06-21</td>
+                <td>7:30:50</td>
+                <td>20.0</td>
+                <td>79</td>
+                <td>2021-06-21 7:30</td>
+              </tr>
+              <tr>
+                <td>id_00157</td>
+                <td>2021-06-08</td>
+                <td>7:41:06</td>
+                <td>20.0</td>
+                <td>74</td>
+                <td>2021-06-08 7:41</td>
+              </tr>
+              <tr>
+                <td>id_00669</td>
+                <td>2022-11-20</td>
+                <td>7:28:28</td>
+                <td>19.9</td>
+                <td>66</td>
+                <td>2022-11-20 7:28</td>
+              </tr>
+              <tr>
+                <td>id_00599</td>
+                <td>2022-09-10</td>
+                <td>7:17:13</td>
+                <td>19.9</td>
+                <td>65</td>
+                <td>2022-09-10 7:17</td>
+              </tr>
+              <tr>
+                <td>id_00277</td>
+                <td>2021-10-08</td>
+                <td>7:30:00</td>
+                <td>19.8</td>
+                <td>66</td>
+                <td>2021-10-08 7:30</td>
+              </tr>
+              <tr>
+                <td>id_00600</td>
+                <td>2022-09-11</td>
+                <td>7:40:54</td>
+                <td>19.6</td>
+                <td>63</td>
+                <td>2022-09-11 7:40</td>
+              </tr>
+              <tr>
+                <td>id_00635</td>
+                <td>2022-10-17</td>
+                <td>7:50:44</td>
+                <td>19.5</td>
+                <td>69</td>
+                <td>2022-10-17 7:50</td>
+              </tr>
+              <tr>
+                <td>id_00316</td>
+                <td>2021-11-16</td>
+                <td>7:21:32</td>
+                <td>19.5</td>
+                <td>66</td>
+                <td>2021-11-16 7:21</td>
+              </tr>
+              <tr>
+                <td>id_00662</td>
+                <td>2022-11-13</td>
+                <td>7:57:10</td>
+                <td>19.4</td>
+                <td>65</td>
+                <td>2022-11-13 7:57</td>
+              </tr>
+              <tr>
+                <td>id_00286</td>
+                <td>2021-10-17</td>
+                <td>7:46:23</td>
+                <td>19.4</td>
+                <td>64</td>
+                <td>2021-10-17 7:46</td>
+              </tr>
+              <tr>
+                <td>id_00649</td>
+                <td>2022-10-31</td>
+                <td>7:10:15</td>
+                <td>19.3</td>
+                <td>70</td>
+                <td>2022-10-31 7:10</td>
+              </tr>
+              <tr>
+                <td>id_00623</td>
+                <td>2022-10-05</td>
+                <td>7:54:40</td>
+                <td>19.2</td>
+                <td>61</td>
+                <td>2022-10-05 7:54</td>
+              </tr>
+              <tr>
+                <td>id_00650</td>
+                <td>2022-11-01</td>
+                <td>7:04:11</td>
+                <td>19.1</td>
+                <td>60</td>
+                <td>2022-11-01 7:04</td>
+              </tr>
+              <tr>
+                <td>id_00257</td>
+                <td>2021-09-18</td>
+                <td>7:01:33</td>
+                <td>19.0</td>
+                <td>64</td>
+                <td>2021-09-18 7:01</td>
+              </tr>
+              <tr>
+                <td>id_00674</td>
+                <td>2022-11-26</td>
+                <td>7:35:57</td>
+                <td>18.9</td>
+                <td>63</td>
+                <td>2022-11-26 7:35</td>
+              </tr>
+              <tr>
+                <td>id_00287</td>
+                <td>2021-10-18</td>
+                <td>7:39:20</td>
+                <td>18.9</td>
+                <td>61</td>
+                <td>2021-10-18 7:39</td>
+              </tr>
+              <tr>
+                <td>id_00262</td>
+                <td>2021-09-23</td>
+                <td>7:32:52</td>
+                <td>18.8</td>
+                <td>60</td>
+                <td>2021-09-23 7:32</td>
+              </tr>
+              <tr>
+                <td>id_00305</td>
+                <td>2021-11-05</td>
+                <td>7:33:01</td>
+                <td>18.7</td>
+                <td>60</td>
+                <td>2021-11-05 7:33</td>
+              </tr>
+              <tr>
+                <td>id_00282</td>
+                <td>2021-10-13</td>
+                <td>7:44:12</td>
+                <td>18.6</td>
+                <td>69</td>
+                <td>2021-10-13 7:44</td>
+              </tr>
+              <tr>
+                <td>id_00296</td>
+                <td>2021-10-27</td>
+                <td>7:04:40</td>
+                <td>18.5</td>
+                <td>64</td>
+                <td>2021-10-27 7:04</td>
+              </tr>
+              <tr>
+                <td>id_00327</td>
+                <td>2021-11-28</td>
+                <td>7:42:59</td>
+                <td>18.5</td>
+                <td>64</td>
+                <td>2021-11-28 7:42</td>
+              </tr>
+              <tr>
+                <td>id_00275</td>
+                <td>2021-10-06</td>
+                <td>7:25:06</td>
+                <td>18.4</td>
+                <td>69</td>
+                <td>2021-10-06 7:25</td>
+              </tr>
+              <tr>
+                <td>id_00252</td>
+                <td>2021-09-13</td>
+                <td>7:38:35</td>
+                <td>18.3</td>
+                <td>64</td>
+                <td>2021-09-13 7:38</td>
+              </tr>
+              <tr>
+                <td>id_00621</td>
+                <td>2022-10-02</td>
+                <td>7:59:12</td>
+                <td>18.2</td>
+                <td>65</td>
+                <td>2022-10-02 7:59</td>
+              </tr>
+              <tr>
+                <td>id_00247</td>
+                <td>2021-09-08</td>
+                <td>7:35:08</td>
+                <td>18.2</td>
+                <td>64</td>
+                <td>2021-09-08 7:35</td>
+              </tr>
+              <tr>
+                <td>id_00274</td>
+                <td>2021-10-05</td>
+                <td>7:50:13</td>
+                <td>18.1</td>
+                <td>64</td>
+                <td>2021-10-05 7:50</td>
+              </tr>
+              <tr>
+                <td>id_00644</td>
+                <td>2022-10-26</td>
+                <td>7:23:22</td>
+                <td>18.1</td>
+                <td>64</td>
+                <td>2022-10-26 7:23</td>
+              </tr>
+              <tr>
+                <td>id_00657</td>
+                <td>2022-11-08</td>
+                <td>7:34:41</td>
+                <td>18.0</td>
+                <td>64</td>
+                <td>2022-11-08 7:34</td>
+              </tr>
+              <tr>
+                <td>id_00440</td>
+                <td>2022-03-27</td>
+                <td>7:54:24</td>
+                <td>18.0</td>
+                <td>61</td>
+                <td>2022-03-27 7:54</td>
+              </tr>
+              <tr>
+                <td>id_00428</td>
+                <td>2022-03-15</td>
+                <td>7:51:27</td>
+                <td>18.0</td>
+                <td>60</td>
+                <td>2022-03-15 7:51</td>
+              </tr>
+              <tr>
+                <td>id_00085</td>
+                <td>2021-03-27</td>
+                <td>7:36:20</td>
+                <td>18.0</td>
+                <td>56</td>
+                <td>2021-03-27 7:36</td>
+              </tr>
+              <tr>
+                <td>id_00142</td>
+                <td>2021-05-23</td>
+                <td>7:10:00</td>
+                <td>18.0</td>
+                <td>55</td>
+                <td>2021-05-23 7:10</td>
+              </tr>
+              <tr>
+                <td>id_00466</td>
+                <td>2022-04-24</td>
+                <td>7:35:34</td>
+                <td>17.9</td>
+                <td>69</td>
+                <td>2022-04-24 7:35</td>
+              </tr>
+              <tr>
+                <td>id_00503</td>
+                <td>2022-05-31</td>
+                <td>7:52:25</td>
+                <td>17.9</td>
+                <td>64</td>
+                <td>2022-05-31 7:52</td>
+              </tr>
+              <tr>
+                <td>id_00500</td>
+                <td>2022-05-28</td>
+                <td>7:12:50</td>
+                <td>17.9</td>
+                <td>63</td>
+                <td>2022-05-28 7:12</td>
+              </tr>
+              <tr>
+                <td>id_00255</td>
+                <td>2021-09-16</td>
+                <td>7:12:26</td>
+                <td>17.8</td>
+                <td>70</td>
+                <td>2021-09-16 7:12</td>
+              </tr>
+              <tr>
+                <td>id_00604</td>
+                <td>2022-09-15</td>
+                <td>7:53:11</td>
+                <td>17.8</td>
+                <td>68</td>
+                <td>2022-09-15 7:53</td>
+              </tr>
+              <tr>
+                <td>id_00123</td>
+                <td>2021-05-04</td>
+                <td>7:42:15</td>
+                <td>17.8</td>
+                <td>60</td>
+                <td>2021-05-04 7:42</td>
+              </tr>
+              <tr>
+                <td>id_00264</td>
+                <td>2021-09-25</td>
+                <td>7:16:43</td>
+                <td>17.7</td>
+                <td>68</td>
+                <td>2021-09-25 7:16</td>
+              </tr>
+              <tr>
+                <td>id_00652</td>
+                <td>2022-11-03</td>
+                <td>7:41:27</td>
+                <td>17.7</td>
+                <td>64</td>
+                <td>2022-11-03 7:41</td>
+              </tr>
+              <tr>
+                <td>id_00279</td>
+                <td>2021-10-10</td>
+                <td>7:44:20</td>
+                <td>17.7</td>
+                <td>62</td>
+                <td>2021-10-10 7:44</td>
+              </tr>
+              <tr>
+                <td>id_00448</td>
+                <td>2022-04-04</td>
+                <td>7:42:53</td>
+                <td>17.6</td>
+                <td>65</td>
+                <td>2022-04-04 7:42</td>
+              </tr>
+              <tr>
+                <td>id_00484</td>
+                <td>2022-05-12</td>
+                <td>7:47:31</td>
+                <td>17.6</td>
+                <td>64</td>
+                <td>2022-05-12 7:47</td>
+              </tr>
+              <tr>
+                <td>id_00309</td>
+                <td>2021-11-09</td>
+                <td>7:06:46</td>
+                <td>17.6</td>
+                <td>63</td>
+                <td>2021-11-09 7:06</td>
+              </tr>
+              <tr>
+                <td>id_00602</td>
+                <td>2022-09-13</td>
+                <td>7:10:21</td>
+                <td>17.5</td>
+                <td>67</td>
+                <td>2022-09-13 7:10</td>
+              </tr>
+              <tr>
+                <td>id_00084</td>
+                <td>2021-03-26</td>
+                <td>7:55:17</td>
+                <td>17.5</td>
+                <td>66</td>
+                <td>2021-03-26 7:55</td>
+              </tr>
+              <tr>
+                <td>id_00470</td>
+                <td>2022-04-28</td>
+                <td>7:35:45</td>
+                <td>17.5</td>
+                <td>56</td>
+                <td>2022-04-28 7:35</td>
+              </tr>
+              <tr>
+                <td>id_00663</td>
+                <td>2022-11-14</td>
+                <td>7:28:52</td>
+                <td>17.3</td>
+                <td>68</td>
+                <td>2022-11-14 7:28</td>
+              </tr>
+              <tr>
+                <td>id_00638</td>
+                <td>2022-10-20</td>
+                <td>7:38:19</td>
+                <td>17.2</td>
+                <td>67</td>
+                <td>2022-10-20 7:38</td>
+              </tr>
+              <tr>
+                <td>id_00675</td>
+                <td>2022-11-27</td>
+                <td>7:38:37</td>
+                <td>17.2</td>
+                <td>61</td>
+                <td>2022-11-27 7:38</td>
+              </tr>
+              <tr>
+                <td>id_00144</td>
+                <td>2021-05-25</td>
+                <td>7:09:43</td>
+                <td>17.2</td>
+                <td>59</td>
+                <td>2021-05-25 7:09</td>
+              </tr>
+              <tr>
+                <td>id_00094</td>
+                <td>2021-04-05</td>
+                <td>7:43:25</td>
+                <td>17.1</td>
+                <td>63</td>
+                <td>2021-04-05 7:43</td>
+              </tr>
+              <tr>
+                <td>id_00326</td>
+                <td>2021-11-26</td>
+                <td>7:48:59</td>
+                <td>17.1</td>
+                <td>62</td>
+                <td>2021-11-26 7:48</td>
+              </tr>
+              <tr>
+                <td>id_00478</td>
+                <td>2022-05-06</td>
+                <td>7:18:53</td>
+                <td>17.1</td>
+                <td>61</td>
+                <td>2022-05-06 7:18</td>
+              </tr>
+              <tr>
+                <td>id_00427</td>
+                <td>2022-03-14</td>
+                <td>7:05:12</td>
+                <td>17.1</td>
+                <td>59</td>
+                <td>2022-03-14 7:05</td>
+              </tr>
+              <tr>
+                <td>id_00483</td>
+                <td>2022-05-11</td>
+                <td>7:04:54</td>
+                <td>17.1</td>
+                <td>57</td>
+                <td>2022-05-11 7:04</td>
+              </tr>
+              <tr>
+                <td>id_00323</td>
+                <td>2021-11-23</td>
+                <td>7:41:14</td>
+                <td>17.0</td>
+                <td>67</td>
+                <td>2021-11-23 7:41</td>
+              </tr>
+              <tr>
+                <td>id_00642</td>
+                <td>2022-10-24</td>
+                <td>7:34:18</td>
+                <td>17.0</td>
+                <td>65</td>
+                <td>2022-10-24 7:34</td>
+              </tr>
+              <tr>
+                <td>id_00079</td>
+                <td>2021-03-21</td>
+                <td>7:31:38</td>
+                <td>17.0</td>
+                <td>51</td>
+                <td>2021-03-21 7:31</td>
+              </tr>
+              <tr>
+                <td>id_00418</td>
+                <td>2022-03-03</td>
+                <td>7:10:01</td>
+                <td>17.0</td>
+                <td>50</td>
+                <td>2022-03-03 7:10</td>
+              </tr>
+              <tr>
+                <td>id_00504</td>
+                <td>2022-06-01</td>
+                <td>7:39:36</td>
+                <td>16.9</td>
+                <td>88</td>
+                <td>2022-06-01 7:39</td>
+              </tr>
+              <tr>
+                <td>id_00646</td>
+                <td>2022-10-28</td>
+                <td>7:54:11</td>
+                <td>16.9</td>
+                <td>70</td>
+                <td>2022-10-28 7:54</td>
+              </tr>
+              <tr>
+                <td>id_00099</td>
+                <td>2021-04-10</td>
+                <td>7:40:42</td>
+                <td>16.9</td>
+                <td>66</td>
+                <td>2021-04-10 7:40</td>
+              </tr>
+              <tr>
+                <td>id_00597</td>
+                <td>2022-09-07</td>
+                <td>7:13:37</td>
+                <td>16.8</td>
+                <td>69</td>
+                <td>2022-09-07 7:13</td>
+              </tr>
+              <tr>
+                <td>id_00459</td>
+                <td>2022-04-15</td>
+                <td>7:15:14</td>
+                <td>16.8</td>
+                <td>59</td>
+                <td>2022-04-15 7:15</td>
+              </tr>
+              <tr>
+                <td>id_00089</td>
+                <td>2021-03-31</td>
+                <td>7:43:36</td>
+                <td>16.8</td>
+                <td>57</td>
+                <td>2021-03-31 7:43</td>
+              </tr>
+              <tr>
+                <td>id_00491</td>
+                <td>2022-05-19</td>
+                <td>7:52:44</td>
+                <td>16.7</td>
+                <td>70</td>
+                <td>2022-05-19 7:52</td>
+              </tr>
+              <tr>
+                <td>id_00241</td>
+                <td>2021-09-02</td>
+                <td>7:36:29</td>
+                <td>16.7</td>
+                <td>69</td>
+                <td>2021-09-02 7:36</td>
+              </tr>
+              <tr>
+                <td>id_00293</td>
+                <td>2021-10-24</td>
+                <td>7:38:02</td>
+                <td>16.7</td>
+                <td>68</td>
+                <td>2021-10-24 7:38</td>
+              </tr>
+              <tr>
+                <td>id_00307</td>
+                <td>2021-11-07</td>
+                <td>7:10:01</td>
+                <td>16.6</td>
+                <td>70</td>
+                <td>2021-11-07 7:10</td>
+              </tr>
+              <tr>
+                <td>id_00632</td>
+                <td>2022-10-14</td>
+                <td>7:04:27</td>
+                <td>16.6</td>
+                <td>66</td>
+                <td>2022-10-14 7:04</td>
+              </tr>
+              <tr>
+                <td>id_00244</td>
+                <td>2021-09-05</td>
+                <td>7:53:51</td>
+                <td>16.5</td>
+                <td>70</td>
+                <td>2021-09-05 7:53</td>
+              </tr>
+              <tr>
+                <td>id_00301</td>
+                <td>2021-11-01</td>
+                <td>7:29:00</td>
+                <td>16.5</td>
+                <td>66</td>
+                <td>2021-11-01 7:29</td>
+              </tr>
+              <tr>
+                <td>id_00312</td>
+                <td>2021-11-12</td>
+                <td>7:06:16</td>
+                <td>16.5</td>
+                <td>63</td>
+                <td>2021-11-12 7:06</td>
+              </tr>
+              <tr>
+                <td>id_00149</td>
+                <td>2021-05-30</td>
+                <td>7:27:06</td>
+                <td>16.5</td>
+                <td>60</td>
+                <td>2021-05-30 7:27</td>
+              </tr>
+              <tr>
+                <td>id_00111</td>
+                <td>2021-04-22</td>
+                <td>7:20:00</td>
+                <td>16.5</td>
+                <td>53</td>
+                <td>2021-04-22 7:20</td>
+              </tr>
+              <tr>
+                <td>id_00417</td>
+                <td>2022-03-02</td>
+                <td>7:00:30</td>
+                <td>16.5</td>
+                <td>50</td>
+                <td>2022-03-02 7:00</td>
+              </tr>
+              <tr>
+                <td>id_00438</td>
+                <td>2022-03-25</td>
+                <td>7:59:07</td>
+                <td>16.5</td>
+                <td>50</td>
+                <td>2022-03-25 7:59</td>
+              </tr>
+              <tr>
+                <td>id_00066</td>
+                <td>2021-03-08</td>
+                <td>7:09:09</td>
+                <td>16.4</td>
+                <td>69</td>
+                <td>2021-03-08 7:09</td>
+              </tr>
+              <tr>
+                <td>id_00302</td>
+                <td>2021-11-02</td>
+                <td>7:46:32</td>
+                <td>16.4</td>
+                <td>68</td>
+                <td>2021-11-02 7:46</td>
+              </tr>
+              <tr>
+                <td>id_00611</td>
+                <td>2022-09-22</td>
+                <td>7:43:22</td>
+                <td>16.4</td>
+                <td>68</td>
+                <td>2022-09-22 7:43</td>
+              </tr>
+              <tr>
+                <td>id_00249</td>
+                <td>2021-09-10</td>
+                <td>7:46:15</td>
+                <td>16.3</td>
+                <td>64</td>
+                <td>2021-09-10 7:46</td>
+              </tr>
+              <tr>
+                <td>id_00321</td>
+                <td>2021-11-21</td>
+                <td>7:09:29</td>
+                <td>16.3</td>
+                <td>60</td>
+                <td>2021-11-21 7:09</td>
+              </tr>
+              <tr>
+                <td>id_00667</td>
+                <td>2022-11-18</td>
+                <td>7:49:47</td>
+                <td>16.2</td>
+                <td>65</td>
+                <td>2022-11-18 7:49</td>
+              </tr>
+              <tr>
+                <td>id_00453</td>
+                <td>2022-04-09</td>
+                <td>7:33:56</td>
+                <td>16.2</td>
+                <td>50</td>
+                <td>2022-04-09 7:33</td>
+              </tr>
+              <tr>
+                <td>id_00072</td>
+                <td>2021-03-14</td>
+                <td>7:16:55</td>
+                <td>16.1</td>
+                <td>61</td>
+                <td>2021-03-14 7:16</td>
+              </tr>
+              <tr>
+                <td>id_00610</td>
+                <td>2022-09-21</td>
+                <td>7:50:46</td>
+                <td>16.1</td>
+                <td>61</td>
+                <td>2022-09-21 7:50</td>
+              </tr>
+              <tr>
+                <td>id_00424</td>
+                <td>2022-03-11</td>
+                <td>7:14:08</td>
+                <td>16.1</td>
+                <td>58</td>
+                <td>2022-03-11 7:14</td>
+              </tr>
+              <tr>
+                <td>id_00143</td>
+                <td>2021-05-24</td>
+                <td>7:19:00</td>
+                <td>16.1</td>
+                <td>55</td>
+                <td>2021-05-24 7:19</td>
+              </tr>
+              <tr>
+                <td>id_00132</td>
+                <td>2021-05-13</td>
+                <td>7:32:53</td>
+                <td>16.0</td>
+                <td>54</td>
+                <td>2021-05-13 7:32</td>
+              </tr>
+              <tr>
+                <td>id_00605</td>
+                <td>2022-09-16</td>
+                <td>7:13:51</td>
+                <td>15.9</td>
+                <td>68</td>
+                <td>2022-09-16 7:13</td>
+              </tr>
+              <tr>
+                <td>id_00077</td>
+                <td>2021-03-19</td>
+                <td>7:11:49</td>
+                <td>15.9</td>
+                <td>56</td>
+                <td>2021-03-19 7:11</td>
+              </tr>
+              <tr>
+                <td>id_00308</td>
+                <td>2021-11-08</td>
+                <td>7:19:57</td>
+                <td>15.8</td>
+                <td>66</td>
+                <td>2021-11-08 7:19</td>
+              </tr>
+              <tr>
+                <td>id_00488</td>
+                <td>2022-05-16</td>
+                <td>7:22:02</td>
+                <td>15.8</td>
+                <td>61</td>
+                <td>2022-05-16 7:22</td>
+              </tr>
+              <tr>
+                <td>id_00457</td>
+                <td>2022-04-13</td>
+                <td>7:06:52</td>
+                <td>15.8</td>
+                <td>52</td>
+                <td>2022-04-13 7:06</td>
+              </tr>
+              <tr>
+                <td>id_00092</td>
+                <td>2021-04-03</td>
+                <td>7:43:35</td>
+                <td>15.7</td>
+                <td>61</td>
+                <td>2021-04-03 7:43</td>
+              </tr>
+              <tr>
+                <td>id_00446</td>
+                <td>2022-04-02</td>
+                <td>7:51:01</td>
+                <td>15.7</td>
+                <td>61</td>
+                <td>2022-04-02 7:51</td>
+              </tr>
+              <tr>
+                <td>id_00454</td>
+                <td>2022-04-10</td>
+                <td>7:27:46</td>
+                <td>15.7</td>
+                <td>59</td>
+                <td>2022-04-10 7:27</td>
+              </tr>
+              <tr>
+                <td>id_00452</td>
+                <td>2022-04-08</td>
+                <td>7:01:26</td>
+                <td>15.7</td>
+                <td>51</td>
+                <td>2022-04-08 7:01</td>
+              </tr>
+              <tr>
+                <td>id_00254</td>
+                <td>2021-09-15</td>
+                <td>7:06:00</td>
+                <td>15.6</td>
+                <td>62</td>
+                <td>2021-09-15 7:06</td>
+              </tr>
+              <tr>
+                <td>id_00070</td>
+                <td>2021-03-12</td>
+                <td>7:14:51</td>
+                <td>15.6</td>
+                <td>55</td>
+                <td>2021-03-12 7:14</td>
+              </tr>
+              <tr>
+                <td>id_00624</td>
+                <td>2022-10-06</td>
+                <td>7:27:51</td>
+                <td>15.5</td>
+                <td>67</td>
+                <td>2022-10-06 7:27</td>
+              </tr>
+              <tr>
+                <td>id_00268</td>
+                <td>2021-09-29</td>
+                <td>7:08:52</td>
+                <td>15.5</td>
+                <td>65</td>
+                <td>2021-09-29 7:08</td>
+              </tr>
+              <tr>
+                <td>id_00067</td>
+                <td>2021-03-09</td>
+                <td>7:29:05</td>
+                <td>15.5</td>
+                <td>60</td>
+                <td>2021-03-09 7:29</td>
+              </tr>
+              <tr>
+                <td>id_00116</td>
+                <td>2021-04-27</td>
+                <td>7:04:47</td>
+                <td>15.5</td>
+                <td>53</td>
+                <td>2021-04-27 7:04</td>
+              </tr>
+              <tr>
+                <td>id_00328</td>
+                <td>2021-11-29</td>
+                <td>7:21:19</td>
+                <td>15.3</td>
+                <td>67</td>
+                <td>2021-11-29 7:21</td>
+              </tr>
+              <tr>
+                <td>id_00283</td>
+                <td>2021-10-14</td>
+                <td>7:40:14</td>
+                <td>15.3</td>
+                <td>63</td>
+                <td>2021-10-14 7:40</td>
+              </tr>
+              <tr>
+                <td>id_00068</td>
+                <td>2021-03-10</td>
+                <td>7:41:38</td>
+                <td>15.3</td>
+                <td>58</td>
+                <td>2021-03-10 7:41</td>
+              </tr>
+              <tr>
+                <td>id_00314</td>
+                <td>2021-11-14</td>
+                <td>7:37:55</td>
+                <td>15.2</td>
+                <td>70</td>
+                <td>2021-11-14 7:37</td>
+              </tr>
+              <tr>
+                <td>id_00250</td>
+                <td>2021-09-11</td>
+                <td>7:25:13</td>
+                <td>15.2</td>
+                <td>63</td>
+                <td>2021-09-11 7:25</td>
+              </tr>
+              <tr>
+                <td>id_00292</td>
+                <td>2021-10-23</td>
+                <td>7:43:22</td>
+                <td>15.1</td>
+                <td>69</td>
+                <td>2021-10-23 7:43</td>
+              </tr>
+              <tr>
+                <td>id_00131</td>
+                <td>2021-05-12</td>
+                <td>7:47:33</td>
+                <td>15.1</td>
+                <td>66</td>
+                <td>2021-05-12 7:47</td>
+              </tr>
+              <tr>
+                <td>id_00299</td>
+                <td>2021-10-30</td>
+                <td>7:33:32</td>
+                <td>15.0</td>
+                <td>69</td>
+                <td>2021-10-30 7:33</td>
+              </tr>
+              <tr>
+                <td>id_00617</td>
+                <td>2022-09-28</td>
+                <td>7:02:26</td>
+                <td>15.0</td>
+                <td>67</td>
+                <td>2022-09-28 7:02</td>
+              </tr>
+              <tr>
+                <td>id_00464</td>
+                <td>2022-04-21</td>
+                <td>7:18:34</td>
+                <td>15.0</td>
+                <td>66</td>
+                <td>2022-04-21 7:18</td>
+              </tr>
+              <tr>
+                <td>id_00647</td>
+                <td>2022-10-29</td>
+                <td>7:26:20</td>
+                <td>15.0</td>
+                <td>66</td>
+                <td>2022-10-29 7:26</td>
+              </tr>
+              <tr>
+                <td>id_00096</td>
+                <td>2021-04-07</td>
+                <td>7:19:58</td>
+                <td>15.0</td>
+                <td>63</td>
+                <td>2021-04-07 7:19</td>
+              </tr>
+              <tr>
+                <td>id_00075</td>
+                <td>2021-03-17</td>
+                <td>7:33:14</td>
+                <td>15.0</td>
+                <td>57</td>
+                <td>2021-03-17 7:33</td>
+              </tr>
+              <tr>
+                <td>id_00069</td>
+                <td>2021-03-11</td>
+                <td>7:55:36</td>
+                <td>14.9</td>
+                <td>66</td>
+                <td>2021-03-11 7:55</td>
+              </tr>
+              <tr>
+                <td>id_00627</td>
+                <td>2022-10-09</td>
+                <td>7:43:35</td>
+                <td>14.9</td>
+                <td>65</td>
+                <td>2022-10-09 7:43</td>
+              </tr>
+              <tr>
+                <td>id_00676</td>
+                <td>2022-11-28</td>
+                <td>7:16:54</td>
+                <td>14.9</td>
+                <td>63</td>
+                <td>2022-11-28 7:16</td>
+              </tr>
+              <tr>
+                <td>id_00063</td>
+                <td>2021-03-05</td>
+                <td>7:56:05</td>
+                <td>14.9</td>
+                <td>60</td>
+                <td>2021-03-05 7:56</td>
+              </tr>
+              <tr>
+                <td>id_00139</td>
+                <td>2021-05-20</td>
+                <td>7:32:50</td>
+                <td>14.8</td>
+                <td>52</td>
+                <td>2021-05-20 7:32</td>
+              </tr>
+              <tr>
+                <td>id_00497</td>
+                <td>2022-05-25</td>
+                <td>7:20:01</td>
+                <td>14.8</td>
+                <td>50</td>
+                <td>2022-05-25 7:20</td>
+              </tr>
+              <tr>
+                <td>id_00482</td>
+                <td>2022-05-10</td>
+                <td>7:26:07</td>
+                <td>14.7</td>
+                <td>56</td>
+                <td>2022-05-10 7:26</td>
+              </tr>
+              <tr>
+                <td>id_00471</td>
+                <td>2022-04-29</td>
+                <td>7:24:14</td>
+                <td>14.7</td>
+                <td>53</td>
+                <td>2022-04-29 7:24</td>
+              </tr>
+              <tr>
+                <td>id_00462</td>
+                <td>2022-04-19</td>
+                <td>7:01:08</td>
+                <td>14.7</td>
+                <td>50</td>
+                <td>2022-04-19 7:01</td>
+              </tr>
+              <tr>
+                <td>id_00434</td>
+                <td>2022-03-21</td>
+                <td>7:50:09</td>
+                <td>14.6</td>
+                <td>70</td>
+                <td>2022-03-21 7:50</td>
+              </tr>
+              <tr>
+                <td>id_00298</td>
+                <td>2021-10-29</td>
+                <td>7:56:44</td>
+                <td>14.6</td>
+                <td>67</td>
+                <td>2021-10-29 7:56</td>
+              </tr>
+              <tr>
+                <td>id_00493</td>
+                <td>2022-05-21</td>
+                <td>7:11:02</td>
+                <td>14.6</td>
+                <td>67</td>
+                <td>2022-05-21 7:11</td>
+              </tr>
+              <tr>
+                <td>id_00472</td>
+                <td>2022-04-30</td>
+                <td>7:22:38</td>
+                <td>14.6</td>
+                <td>66</td>
+                <td>2022-04-30 7:22</td>
+              </tr>
+              <tr>
+                <td>id_00461</td>
+                <td>2022-04-18</td>
+                <td>7:54:42</td>
+                <td>14.6</td>
+                <td>59</td>
+                <td>2022-04-18 7:54</td>
+              </tr>
+              <tr>
+                <td>id_00134</td>
+                <td>2021-05-15</td>
+                <td>7:28:03</td>
+                <td>14.6</td>
+                <td>55</td>
+                <td>2021-05-15 7:28</td>
+              </tr>
+              <tr>
+                <td>id_00322</td>
+                <td>2021-11-22</td>
+                <td>7:40:06</td>
+                <td>14.5</td>
+                <td>60</td>
+                <td>2021-11-22 7:40</td>
+              </tr>
+              <tr>
+                <td>id_00433</td>
+                <td>2022-03-20</td>
+                <td>7:35:17</td>
+                <td>14.5</td>
+                <td>58</td>
+                <td>2022-03-20 7:35</td>
+              </tr>
+              <tr>
+                <td>id_00138</td>
+                <td>2021-05-19</td>
+                <td>7:02:51</td>
+                <td>14.5</td>
+                <td>57</td>
+                <td>2021-05-19 7:02</td>
+              </tr>
+              <tr>
+                <td>id_00487</td>
+                <td>2022-05-15</td>
+                <td>7:39:34</td>
+                <td>14.4</td>
+                <td>62</td>
+                <td>2022-05-15 7:39</td>
+              </tr>
+              <tr>
+                <td>id_00431</td>
+                <td>2022-03-18</td>
+                <td>7:24:43</td>
+                <td>14.4</td>
+                <td>59</td>
+                <td>2022-03-18 7:24</td>
+              </tr>
+              <tr>
+                <td>id_00315</td>
+                <td>2021-11-15</td>
+                <td>7:14:08</td>
+                <td>14.3</td>
+                <td>63</td>
+                <td>2021-11-15 7:14</td>
+              </tr>
+              <tr>
+                <td>id_00133</td>
+                <td>2021-05-14</td>
+                <td>7:42:09</td>
+                <td>14.3</td>
+                <td>62</td>
+                <td>2021-05-14 7:42</td>
+              </tr>
+              <tr>
+                <td>id_00456</td>
+                <td>2022-04-12</td>
+                <td>7:07:25</td>
+                <td>14.3</td>
+                <td>61</td>
+                <td>2022-04-12 7:07</td>
+              </tr>
+              <tr>
+                <td>id_00467</td>
+                <td>2022-04-25</td>
+                <td>7:27:00</td>
+                <td>14.3</td>
+                <td>53</td>
+                <td>2022-04-25 7:27</td>
+              </tr>
+              <tr>
+                <td>id_00613</td>
+                <td>2022-09-24</td>
+                <td>7:28:25</td>
+                <td>14.2</td>
+                <td>65</td>
+                <td>2022-09-24 7:28</td>
+              </tr>
+              <tr>
+                <td>id_00102</td>
+                <td>2021-04-13</td>
+                <td>7:40:14</td>
+                <td>14.2</td>
+                <td>58</td>
+                <td>2021-04-13 7:40</td>
+              </tr>
+              <tr>
+                <td>id_00489</td>
+                <td>2022-05-17</td>
+                <td>7:04:07</td>
+                <td>14.1</td>
+                <td>68</td>
+                <td>2022-05-17 7:04</td>
+              </tr>
+              <tr>
+                <td>id_00129</td>
+                <td>2021-05-10</td>
+                <td>7:24:05</td>
+                <td>14.1</td>
+                <td>66</td>
+                <td>2021-05-10 7:24</td>
+              </tr>
+              <tr>
+                <td>id_00081</td>
+                <td>2021-03-23</td>
+                <td>7:34:03</td>
+                <td>14.1</td>
+                <td>53</td>
+                <td>2021-03-23 7:34</td>
+              </tr>
+              <tr>
+                <td>id_00253</td>
+                <td>2021-09-14</td>
+                <td>7:55:00</td>
+                <td>14.0</td>
+                <td>68</td>
+                <td>2021-09-14 7:55</td>
+              </tr>
+              <tr>
+                <td>id_00620</td>
+                <td>2022-10-01</td>
+                <td>7:53:04</td>
+                <td>14.0</td>
+                <td>63</td>
+                <td>2022-10-01 7:53</td>
+              </tr>
+              <tr>
+                <td>id_00626</td>
+                <td>2022-10-08</td>
+                <td>7:23:48</td>
+                <td>14.0</td>
+                <td>63</td>
+                <td>2022-10-08 7:23</td>
+              </tr>
+              <tr>
+                <td>id_00449</td>
+                <td>2022-04-05</td>
+                <td>7:04:44</td>
+                <td>14.0</td>
+                <td>54</td>
+                <td>2022-04-05 7:04</td>
+              </tr>
+              <tr>
+                <td>id_00136</td>
+                <td>2021-05-17</td>
+                <td>7:40:40</td>
+                <td>14.0</td>
+                <td>50</td>
+                <td>2021-05-17 7:40</td>
+              </tr>
+              <tr>
+                <td>id_00615</td>
+                <td>2022-09-26</td>
+                <td>7:13:45</td>
+                <td>13.9</td>
+                <td>66</td>
+                <td>2022-09-26 7:13</td>
+              </tr>
+              <tr>
+                <td>id_00114</td>
+                <td>2021-04-25</td>
+                <td>7:31:30</td>
+                <td>13.9</td>
+                <td>64</td>
+                <td>2021-04-25 7:31</td>
+              </tr>
+              <tr>
+                <td>id_00300</td>
+                <td>2021-10-31</td>
+                <td>7:59:43</td>
+                <td>13.8</td>
+                <td>67</td>
+                <td>2021-10-31 7:59</td>
+              </tr>
+              <tr>
+                <td>id_00677</td>
+                <td>2022-11-29</td>
+                <td>7:53:17</td>
+                <td>13.8</td>
+                <td>63</td>
+                <td>2022-11-29 7:53</td>
+              </tr>
+              <tr>
+                <td>id_00420</td>
+                <td>2022-03-05</td>
+                <td>7:01:49</td>
+                <td>13.8</td>
+                <td>62</td>
+                <td>2022-03-05 7:01</td>
+              </tr>
+              <tr>
+                <td>id_00443</td>
+                <td>2022-03-30</td>
+                <td>7:45:30</td>
+                <td>13.8</td>
+                <td>60</td>
+                <td>2022-03-30 7:45</td>
+              </tr>
+              <tr>
+                <td>id_00062</td>
+                <td>2021-03-04</td>
+                <td>7:04:12</td>
+                <td>13.6</td>
+                <td>69</td>
+                <td>2021-03-04 7:04</td>
+              </tr>
+              <tr>
+                <td>id_00658</td>
+                <td>2022-11-09</td>
+                <td>7:28:33</td>
+                <td>13.6</td>
+                <td>63</td>
+                <td>2022-11-09 7:28</td>
+              </tr>
+              <tr>
+                <td>id_00310</td>
+                <td>2021-11-10</td>
+                <td>7:32:15</td>
+                <td>13.6</td>
+                <td>62</td>
+                <td>2021-11-10 7:32</td>
+              </tr>
+              <tr>
+                <td>id_00630</td>
+                <td>2022-10-12</td>
+                <td>7:06:21</td>
+                <td>13.6</td>
+                <td>61</td>
+                <td>2022-10-12 7:06</td>
+              </tr>
+              <tr>
+                <td>id_00616</td>
+                <td>2022-09-27</td>
+                <td>7:19:03</td>
+                <td>13.6</td>
+                <td>60</td>
+                <td>2022-09-27 7:19</td>
+              </tr>
+              <tr>
+                <td>id_00245</td>
+                <td>2021-09-06</td>
+                <td>7:46:50</td>
+                <td>13.5</td>
+                <td>69</td>
+                <td>2021-09-06 7:46</td>
+              </tr>
+              <tr>
+                <td>id_00481</td>
+                <td>2022-05-09</td>
+                <td>7:50:50</td>
+                <td>13.5</td>
+                <td>51</td>
+                <td>2022-05-09 7:50</td>
+              </tr>
+              <tr>
+                <td>id_00288</td>
+                <td>2021-10-19</td>
+                <td>7:07:20</td>
+                <td>13.4</td>
+                <td>68</td>
+                <td>2021-10-19 7:07</td>
+              </tr>
+              <tr>
+                <td>id_00265</td>
+                <td>2021-09-26</td>
+                <td>7:20:24</td>
+                <td>13.4</td>
+                <td>60</td>
+                <td>2021-09-26 7:20</td>
+              </tr>
+              <tr>
+                <td>id_00065</td>
+                <td>2021-03-07</td>
+                <td>7:40:10</td>
+                <td>13.4</td>
+                <td>55</td>
+                <td>2021-03-07 7:40</td>
+              </tr>
+              <tr>
+                <td>id_00492</td>
+                <td>2022-05-20</td>
+                <td>7:15:08</td>
+                <td>13.4</td>
+                <td>51</td>
+                <td>2022-05-20 7:15</td>
+              </tr>
+              <tr>
+                <td>id_00121</td>
+                <td>2021-05-02</td>
+                <td>7:34:28</td>
+                <td>13.3</td>
+                <td>70</td>
+                <td>2021-05-02 7:34</td>
+              </tr>
+              <tr>
+                <td>id_00073</td>
+                <td>2021-03-15</td>
+                <td>7:40:24</td>
+                <td>13.3</td>
+                <td>55</td>
+                <td>2021-03-15 7:40</td>
+              </tr>
+              <tr>
+                <td>id_00665</td>
+                <td>2022-11-16</td>
+                <td>7:00:42</td>
+                <td>13.2</td>
+                <td>69</td>
+                <td>2022-11-16 7:00</td>
+              </tr>
+              <tr>
+                <td>id_00631</td>
+                <td>2022-10-13</td>
+                <td>7:04:31</td>
+                <td>13.2</td>
+                <td>62</td>
+                <td>2022-10-13 7:04</td>
+              </tr>
+              <tr>
+                <td>id_00460</td>
+                <td>2022-04-16</td>
+                <td>7:26:41</td>
+                <td>13.1</td>
+                <td>70</td>
+                <td>2022-04-16 7:26</td>
+              </tr>
+              <tr>
+                <td>id_00267</td>
+                <td>2021-09-28</td>
+                <td>7:14:50</td>
+                <td>13.1</td>
+                <td>63</td>
+                <td>2021-09-28 7:14</td>
+              </tr>
+              <tr>
+                <td>id_00463</td>
+                <td>2022-04-20</td>
+                <td>8:00:58</td>
+                <td>13.1</td>
+                <td>61</td>
+                <td>2022-04-20 8:00</td>
+              </tr>
+              <tr>
+                <td>id_00087</td>
+                <td>2021-03-29</td>
+                <td>7:20:10</td>
+                <td>13.0</td>
+                <td>63</td>
+                <td>2021-03-29 7:20</td>
+              </tr>
+              <tr>
+                <td>id_00269</td>
+                <td>2021-09-30</td>
+                <td>7:20:08</td>
+                <td>13.0</td>
+                <td>60</td>
+                <td>2021-09-30 7:20</td>
+              </tr>
+              <tr>
+                <td>id_00080</td>
+                <td>2021-03-22</td>
+                <td>7:18:16</td>
+                <td>12.9</td>
+                <td>69</td>
+                <td>2021-03-22 7:18</td>
+              </tr>
+              <tr>
+                <td>id_00271</td>
+                <td>2021-10-02</td>
+                <td>7:10:01</td>
+                <td>12.9</td>
+                <td>66</td>
+                <td>2021-10-02 7:10</td>
+              </tr>
+              <tr>
+                <td>id_00480</td>
+                <td>2022-05-08</td>
+                <td>7:13:57</td>
+                <td>12.9</td>
+                <td>64</td>
+                <td>2022-05-08 7:13</td>
+              </tr>
+              <tr>
+                <td>id_00128</td>
+                <td>2021-05-09</td>
+                <td>7:58:22</td>
+                <td>12.9</td>
+                <td>52</td>
+                <td>2021-05-09 7:58</td>
+              </tr>
+              <tr>
+                <td>id_00306</td>
+                <td>2021-11-06</td>
+                <td>7:47:34</td>
+                <td>12.8</td>
+                <td>69</td>
+                <td>2021-11-06 7:47</td>
+              </tr>
+              <tr>
+                <td>id_00313</td>
+                <td>2021-11-13</td>
+                <td>7:39:49</td>
+                <td>12.8</td>
+                <td>68</td>
+                <td>2021-11-13 7:39</td>
+              </tr>
+              <tr>
+                <td>id_00614</td>
+                <td>2022-09-25</td>
+                <td>7:32:56</td>
+                <td>12.8</td>
+                <td>68</td>
+                <td>2022-09-25 7:32</td>
+              </tr>
+              <tr>
+                <td>id_00502</td>
+                <td>2022-05-30</td>
+                <td>7:06:31</td>
+                <td>12.8</td>
+                <td>63</td>
+                <td>2022-05-30 7:06</td>
+              </tr>
+              <tr>
+                <td>id_00653</td>
+                <td>2022-11-04</td>
+                <td>7:45:25</td>
+                <td>12.7</td>
+                <td>69</td>
+                <td>2022-11-04 7:45</td>
+              </tr>
+              <tr>
+                <td>id_00496</td>
+                <td>2022-05-24</td>
+                <td>7:35:40</td>
+                <td>12.7</td>
+                <td>68</td>
+                <td>2022-05-24 7:35</td>
+              </tr>
+              <tr>
+                <td>id_00603</td>
+                <td>2022-09-14</td>
+                <td>7:41:51</td>
+                <td>12.7</td>
+                <td>68</td>
+                <td>2022-09-14 7:41</td>
+              </tr>
+              <tr>
+                <td>id_00423</td>
+                <td>2022-03-09</td>
+                <td>7:36:23</td>
+                <td>12.7</td>
+                <td>56</td>
+                <td>2022-03-09 7:36</td>
+              </tr>
+              <tr>
+                <td>id_00673</td>
+                <td>2022-11-24</td>
+                <td>7:12:54</td>
+                <td>12.6</td>
+                <td>64</td>
+                <td>2022-11-24 7:12</td>
+              </tr>
+              <tr>
+                <td>id_00124</td>
+                <td>2021-05-05</td>
+                <td>7:03:41</td>
+                <td>12.6</td>
+                <td>59</td>
+                <td>2021-05-05 7:03</td>
+              </tr>
+              <tr>
+                <td>id_00113</td>
+                <td>2021-04-24</td>
+                <td>7:35:27</td>
+                <td>12.6</td>
+                <td>55</td>
+                <td>2021-04-24 7:35</td>
+              </tr>
+              <tr>
+                <td>id_00071</td>
+                <td>2021-03-13</td>
+                <td>7:26:29</td>
+                <td>12.5</td>
+                <td>65</td>
+                <td>2021-03-13 7:26</td>
+              </tr>
+              <tr>
+                <td>id_00618</td>
+                <td>2022-09-29</td>
+                <td>7:07:57</td>
+                <td>12.5</td>
+                <td>62</td>
+                <td>2022-09-29 7:07</td>
+              </tr>
+              <tr>
+                <td>id_00127</td>
+                <td>2021-05-08</td>
+                <td>7:51:45</td>
+                <td>12.5</td>
+                <td>61</td>
+                <td>2021-05-08 7:51</td>
+              </tr>
+              <tr>
+                <td>id_00498</td>
+                <td>2022-05-26</td>
+                <td>7:18:13</td>
+                <td>12.5</td>
+                <td>51</td>
+                <td>2022-05-26 7:18</td>
+              </tr>
+              <tr>
+                <td>id_00608</td>
+                <td>2022-09-19</td>
+                <td>7:42:19</td>
+                <td>12.4</td>
+                <td>68</td>
+                <td>2022-09-19 7:42</td>
+              </tr>
+              <tr>
+                <td>id_00126</td>
+                <td>2021-05-07</td>
+                <td>7:25:35</td>
+                <td>12.4</td>
+                <td>61</td>
+                <td>2021-05-07 7:25</td>
+              </tr>
+              <tr>
+                <td>id_00112</td>
+                <td>2021-04-23</td>
+                <td>7:53:31</td>
+                <td>12.4</td>
+                <td>57</td>
+                <td>2021-04-23 7:53</td>
+              </tr>
+              <tr>
+                <td>id_00325</td>
+                <td>2021-11-25</td>
+                <td>7:26:34</td>
+                <td>12.3</td>
+                <td>70</td>
+                <td>2021-11-25 7:26</td>
+              </tr>
+              <tr>
+                <td>id_00636</td>
+                <td>2022-10-18</td>
+                <td>7:53:33</td>
+                <td>12.3</td>
+                <td>67</td>
+                <td>2022-10-18 7:53</td>
+              </tr>
+              <tr>
+                <td>id_00290</td>
+                <td>2021-10-21</td>
+                <td>7:42:12</td>
+                <td>12.3</td>
+                <td>66</td>
+                <td>2021-10-21 7:42</td>
+              </tr>
+              <tr>
+                <td>id_00270</td>
+                <td>2021-10-01</td>
+                <td>7:22:39</td>
+                <td>12.3</td>
+                <td>60</td>
+                <td>2021-10-01 7:22</td>
+              </tr>
+              <tr>
+                <td>id_00633</td>
+                <td>2022-10-15</td>
+                <td>7:28:43</td>
+                <td>12.2</td>
+                <td>66</td>
+                <td>2022-10-15 7:28</td>
+              </tr>
+              <tr>
+                <td>id_00104</td>
+                <td>2021-04-15</td>
+                <td>7:13:37</td>
+                <td>12.2</td>
+                <td>63</td>
+                <td>2021-04-15 7:13</td>
+              </tr>
+              <tr>
+                <td>id_00643</td>
+                <td>2022-10-25</td>
+                <td>7:21:00</td>
+                <td>12.2</td>
+                <td>62</td>
+                <td>2022-10-25 7:21</td>
+              </tr>
+              <tr>
+                <td>id_00150</td>
+                <td>2021-05-31</td>
+                <td>7:04:05</td>
+                <td>12.1</td>
+                <td>70</td>
+                <td>2021-05-31 7:04</td>
+              </tr>
+              <tr>
+                <td>id_00329</td>
+                <td>2021-11-30</td>
+                <td>7:11:33</td>
+                <td>12.1</td>
+                <td>65</td>
+                <td>2021-11-30 7:11</td>
+              </tr>
+              <tr>
+                <td>id_00320</td>
+                <td>2021-11-20</td>
+                <td>7:10:06</td>
+                <td>12.0</td>
+                <td>65</td>
+                <td>2021-11-20 7:10</td>
+              </tr>
+              <tr>
+                <td>id_00141</td>
+                <td>2021-05-22</td>
+                <td>7:01:36</td>
+                <td>12.0</td>
+                <td>53</td>
+                <td>2021-05-22 7:01</td>
+              </tr>
+              <tr>
+                <td>id_00281</td>
+                <td>2021-10-12</td>
+                <td>7:43:09</td>
+                <td>11.9</td>
+                <td>66</td>
+                <td>2021-10-12 7:43</td>
+              </tr>
+              <tr>
+                <td>id_00078</td>
+                <td>2021-03-20</td>
+                <td>7:58:57</td>
+                <td>11.9</td>
+                <td>54</td>
+                <td>2021-03-20 7:58</td>
+              </tr>
+              <tr>
+                <td>id_00243</td>
+                <td>2021-09-04</td>
+                <td>7:45:45</td>
+                <td>11.8</td>
+                <td>68</td>
+                <td>2021-09-04 7:45</td>
+              </tr>
+              <tr>
+                <td>id_00668</td>
+                <td>2022-11-19</td>
+                <td>7:04:13</td>
+                <td>11.8</td>
+                <td>66</td>
+                <td>2022-11-19 7:04</td>
+              </tr>
+              <tr>
+                <td>id_00280</td>
+                <td>2021-10-11</td>
+                <td>7:51:32</td>
+                <td>11.8</td>
+                <td>62</td>
+                <td>2021-10-11 7:51</td>
+              </tr>
+              <tr>
+                <td>id_00619</td>
+                <td>2022-09-30</td>
+                <td>7:35:20</td>
+                <td>11.7</td>
+                <td>65</td>
+                <td>2022-09-30 7:35</td>
+              </tr>
+              <tr>
+                <td>id_00106</td>
+                <td>2021-04-17</td>
+                <td>7:28:31</td>
+                <td>11.7</td>
+                <td>52</td>
+                <td>2021-04-17 7:28</td>
+              </tr>
+              <tr>
+                <td>id_00442</td>
+                <td>2022-03-29</td>
+                <td>7:32:08</td>
+                <td>11.6</td>
+                <td>70</td>
+                <td>2022-03-29 7:32</td>
+              </tr>
+              <tr>
+                <td>id_00303</td>
+                <td>2021-11-03</td>
+                <td>8:00:45</td>
+                <td>11.6</td>
+                <td>62</td>
+                <td>2021-11-03 8:00</td>
+              </tr>
+              <tr>
+                <td>id_00660</td>
+                <td>2022-11-11</td>
+                <td>7:42:45</td>
+                <td>11.6</td>
+                <td>62</td>
+                <td>2022-11-11 7:42</td>
+              </tr>
+              <tr>
+                <td>id_00655</td>
+                <td>2022-11-06</td>
+                <td>7:58:56</td>
+                <td>11.5</td>
+                <td>70</td>
+                <td>2022-11-06 7:58</td>
+              </tr>
+              <tr>
+                <td>id_00137</td>
+                <td>2021-05-18</td>
+                <td>7:08:09</td>
+                <td>11.5</td>
+                <td>66</td>
+                <td>2021-05-18 7:08</td>
+              </tr>
+              <tr>
+                <td>id_00648</td>
+                <td>2022-10-30</td>
+                <td>7:35:17</td>
+                <td>11.5</td>
+                <td>66</td>
+                <td>2022-10-30 7:35</td>
+              </tr>
+              <tr>
+                <td>id_00086</td>
+                <td>2021-03-28</td>
+                <td>7:59:20</td>
+                <td>11.5</td>
+                <td>57</td>
+                <td>2021-03-28 7:59</td>
+              </tr>
+              <tr>
+                <td>id_00120</td>
+                <td>2021-05-01</td>
+                <td>7:08:07</td>
+                <td>11.5</td>
+                <td>54</td>
+                <td>2021-05-01 7:08</td>
+              </tr>
+              <tr>
+                <td>id_00641</td>
+                <td>2022-10-23</td>
+                <td>7:29:32</td>
+                <td>11.4</td>
+                <td>67</td>
+                <td>2022-10-23 7:29</td>
+              </tr>
+              <tr>
+                <td>id_00140</td>
+                <td>2021-05-21</td>
+                <td>7:26:36</td>
+                <td>11.4</td>
+                <td>65</td>
+                <td>2021-05-21 7:26</td>
+              </tr>
+              <tr>
+                <td>id_00661</td>
+                <td>2022-11-12</td>
+                <td>7:25:03</td>
+                <td>11.4</td>
+                <td>62</td>
+                <td>2022-11-12 7:25</td>
+              </tr>
+              <tr>
+                <td>id_00622</td>
+                <td>2022-10-04</td>
+                <td>7:17:58</td>
+                <td>11.4</td>
+                <td>60</td>
+                <td>2022-10-04 7:17</td>
+              </tr>
+              <tr>
+                <td>id_00100</td>
+                <td>2021-04-11</td>
+                <td>7:13:33</td>
+                <td>11.3</td>
+                <td>61</td>
+                <td>2021-04-11 7:13</td>
+              </tr>
+              <tr>
+                <td>id_00666</td>
+                <td>2022-11-17</td>
+                <td>7:20:27</td>
+                <td>11.2</td>
+                <td>70</td>
+                <td>2022-11-17 7:20</td>
+              </tr>
+              <tr>
+                <td>id_00607</td>
+                <td>2022-09-18</td>
+                <td>7:36:13</td>
+                <td>11.2</td>
+                <td>68</td>
+                <td>2022-09-18 7:36</td>
+              </tr>
+              <tr>
+                <td>id_00148</td>
+                <td>2021-05-29</td>
+                <td>7:21:02</td>
+                <td>11.2</td>
+                <td>53</td>
+                <td>2021-05-29 7:21</td>
+              </tr>
+              <tr>
+                <td>id_00291</td>
+                <td>2021-10-22</td>
+                <td>7:21:48</td>
+                <td>11.1</td>
+                <td>67</td>
+                <td>2021-10-22 7:21</td>
+              </tr>
+              <tr>
+                <td>id_00285</td>
+                <td>2021-10-16</td>
+                <td>7:55:33</td>
+                <td>11.1</td>
+                <td>63</td>
+                <td>2021-10-16 7:55</td>
+              </tr>
+              <tr>
+                <td>id_00122</td>
+                <td>2021-05-03</td>
+                <td>7:25:00</td>
+                <td>11.1</td>
+                <td>50</td>
+                <td>2021-05-03 7:25</td>
+              </tr>
+              <tr>
+                <td>id_00317</td>
+                <td>2021-11-17</td>
+                <td>7:06:54</td>
+                <td>11.0</td>
+                <td>70</td>
+                <td>2021-11-17 7:06</td>
+              </tr>
+              <tr>
+                <td>id_00318</td>
+                <td>2021-11-18</td>
+                <td>7:38:06</td>
+                <td>11.0</td>
+                <td>70</td>
+                <td>2021-11-18 7:38</td>
+              </tr>
+              <tr>
+                <td>id_00311</td>
+                <td>2021-11-11</td>
+                <td>7:41:49</td>
+                <td>11.0</td>
+                <td>68</td>
+                <td>2021-11-11 7:41</td>
+              </tr>
+              <tr>
+                <td>id_00064</td>
+                <td>2021-03-06</td>
+                <td>7:19:03</td>
+                <td>11.0</td>
+                <td>67</td>
+                <td>2021-03-06 7:19</td>
+              </tr>
+              <tr>
+                <td>id_00146</td>
+                <td>2021-05-27</td>
+                <td>7:42:53</td>
+                <td>11.0</td>
+                <td>67</td>
+                <td>2021-05-27 7:42</td>
+              </tr>
+              <tr>
+                <td>id_00595</td>
+                <td>2022-09-05</td>
+                <td>7:16:01</td>
+                <td>11.0</td>
+                <td>64</td>
+                <td>2022-09-05 7:16</td>
+              </tr>
+              <tr>
+                <td>id_00606</td>
+                <td>2022-09-17</td>
+                <td>7:00:47</td>
+                <td>11.0</td>
+                <td>60</td>
+                <td>2022-09-17 7:00</td>
+              </tr>
+              <tr>
+                <td>id_00426</td>
+                <td>2022-03-13</td>
+                <td>7:14:41</td>
+                <td>10.9</td>
+                <td>70</td>
+                <td>2022-03-13 7:14</td>
+              </tr>
+              <tr>
+                <td>id_00097</td>
+                <td>2021-04-08</td>
+                <td>7:16:35</td>
+                <td>10.9</td>
+                <td>66</td>
+                <td>2021-04-08 7:16</td>
+              </tr>
+              <tr>
+                <td>id_00278</td>
+                <td>2021-10-09</td>
+                <td>7:56:51</td>
+                <td>10.9</td>
+                <td>65</td>
+                <td>2021-10-09 7:56</td>
+              </tr>
+              <tr>
+                <td>id_00091</td>
+                <td>2021-04-02</td>
+                <td>7:57:55</td>
+                <td>10.9</td>
+                <td>61</td>
+                <td>2021-04-02 7:57</td>
+              </tr>
+              <tr>
+                <td>id_00670</td>
+                <td>2022-11-21</td>
+                <td>7:43:39</td>
+                <td>10.9</td>
+                <td>61</td>
+                <td>2022-11-21 7:43</td>
+              </tr>
+              <tr>
+                <td>id_00103</td>
+                <td>2021-04-14</td>
+                <td>7:24:13</td>
+                <td>10.8</td>
+                <td>57</td>
+                <td>2021-04-14 7:24</td>
+              </tr>
+              <tr>
+                <td>id_00117</td>
+                <td>2021-04-28</td>
+                <td>7:28:27</td>
+                <td>10.8</td>
+                <td>54</td>
+                <td>2021-04-28 7:28</td>
+              </tr>
+              <tr>
+                <td>id_00421</td>
+                <td>2022-03-06</td>
+                <td>7:02:26</td>
+                <td>10.8</td>
+                <td>50</td>
+                <td>2022-03-06 7:02</td>
+              </tr>
+              <tr>
+                <td>id_00654</td>
+                <td>2022-11-05</td>
+                <td>7:00:17</td>
+                <td>10.7</td>
+                <td>64</td>
+                <td>2022-11-05 7:00</td>
+              </tr>
+              <tr>
+                <td>id_00101</td>
+                <td>2021-04-12</td>
+                <td>7:33:54</td>
+                <td>10.7</td>
+                <td>61</td>
+                <td>2021-04-12 7:33</td>
+              </tr>
+              <tr>
+                <td>id_00119</td>
+                <td>2021-04-30</td>
+                <td>7:05:34</td>
+                <td>10.7</td>
+                <td>58</td>
+                <td>2021-04-30 7:05</td>
+              </tr>
+              <tr>
+                <td>id_00475</td>
+                <td>2022-05-03</td>
+                <td>7:11:36</td>
+                <td>10.7</td>
+                <td>51</td>
+                <td>2022-05-03 7:11</td>
+              </tr>
+              <tr>
+                <td>id_00637</td>
+                <td>2022-10-19</td>
+                <td>7:33:31</td>
+                <td>10.5</td>
+                <td>70</td>
+                <td>2022-10-19 7:33</td>
+              </tr>
+              <tr>
+                <td>id_00083</td>
+                <td>2021-03-25</td>
+                <td>7:33:30</td>
+                <td>10.5</td>
+                <td>53</td>
+                <td>2021-03-25 7:33</td>
+              </tr>
+              <tr>
+                <td>id_00107</td>
+                <td>2021-04-18</td>
+                <td>7:17:46</td>
+                <td>10.5</td>
+                <td>52</td>
+                <td>2021-04-18 7:17</td>
+              </tr>
+              <tr>
+                <td>id_00499</td>
+                <td>2022-05-27</td>
+                <td>7:59:15</td>
+                <td>10.3</td>
+                <td>63</td>
+                <td>2022-05-27 7:59</td>
+              </tr>
+              <tr>
+                <td>id_00628</td>
+                <td>2022-10-10</td>
+                <td>7:52:55</td>
+                <td>10.3</td>
+                <td>61</td>
+                <td>2022-10-10 7:52</td>
+              </tr>
+              <tr>
+                <td>id_00147</td>
+                <td>2021-05-28</td>
+                <td>7:00:37</td>
+                <td>10.3</td>
+                <td>51</td>
+                <td>2021-05-28 7:00</td>
+              </tr>
+              <tr>
+                <td>id_00656</td>
+                <td>2022-11-07</td>
+                <td>7:44:08</td>
+                <td>10.2</td>
+                <td>68</td>
+                <td>2022-11-07 7:44</td>
+              </tr>
+              <tr>
+                <td>id_00272</td>
+                <td>2021-10-03</td>
+                <td>7:43:55</td>
+                <td>10.2</td>
+                <td>60</td>
+                <td>2021-10-03 7:43</td>
+              </tr>
+              <tr>
+                <td>id_00468</td>
+                <td>2022-04-26</td>
+                <td>7:48:20</td>
+                <td>10.2</td>
+                <td>51</td>
+                <td>2022-04-26 7:48</td>
+              </tr>
+              <tr>
+                <td>id_00672</td>
+                <td>2022-11-23</td>
+                <td>7:16:31</td>
+                <td>10.1</td>
+                <td>70</td>
+                <td>2022-11-23 7:16</td>
+              </tr>
+              <tr>
+                <td>id_00284</td>
+                <td>2021-10-15</td>
+                <td>7:04:59</td>
+                <td>10.1</td>
+                <td>65</td>
+                <td>2021-10-15 7:04</td>
+              </tr>
+              <tr>
+                <td>id_00297</td>
+                <td>2021-10-28</td>
+                <td>7:33:28</td>
+                <td>10.1</td>
+                <td>65</td>
+                <td>2021-10-28 7:33</td>
+              </tr>
+              <tr>
+                <td>id_00060</td>
+                <td>2021-03-02</td>
+                <td>7:32:45</td>
+                <td>10.0</td>
+                <td>55</td>
+                <td>2021-03-02 7:32</td>
+              </tr>
+              <tr>
+                <td>id_00416</td>
+                <td>2022-03-01</td>
+                <td>7:20:11</td>
+                <td>10.0</td>
+                <td>47</td>
+                <td>2022-03-01 7:20</td>
+              </tr>
+              <tr>
+                <td>id_00248</td>
+                <td>2021-09-09</td>
+                <td>7:48:04</td>
+                <td>9.9</td>
+                <td>63</td>
+                <td>2021-09-09 7:48</td>
+              </tr>
+              <tr>
+                <td>id_00093</td>
+                <td>2021-04-04</td>
+                <td>7:50:08</td>
+                <td>9.9</td>
+                <td>50</td>
+                <td>2021-04-04 7:50</td>
+              </tr>
+              <tr>
+                <td>id_00455</td>
+                <td>2022-04-11</td>
+                <td>7:03:11</td>
+                <td>9.9</td>
+                <td>50</td>
+                <td>2022-04-11 7:03</td>
+              </tr>
+              <tr>
+                <td>id_00596</td>
+                <td>2022-09-06</td>
+                <td>7:20:42</td>
+                <td>9.7</td>
+                <td>70</td>
+                <td>2022-09-06 7:20</td>
+              </tr>
+              <tr>
+                <td>id_00664</td>
+                <td>2022-11-15</td>
+                <td>7:15:35</td>
+                <td>9.7</td>
+                <td>70</td>
+                <td>2022-11-15 7:15</td>
+              </tr>
+              <tr>
+                <td>id_00118</td>
+                <td>2021-04-29</td>
+                <td>7:11:57</td>
+                <td>9.7</td>
+                <td>62</td>
+                <td>2021-04-29 7:11</td>
+              </tr>
+              <tr>
+                <td>id_00495</td>
+                <td>2022-05-23</td>
+                <td>7:44:21</td>
+                <td>9.7</td>
+                <td>54</td>
+                <td>2022-05-23 7:44</td>
+              </tr>
+              <tr>
+                <td>id_00246</td>
+                <td>2021-09-07</td>
+                <td>7:43:02</td>
+                <td>9.6</td>
+                <td>69</td>
+                <td>2021-09-07 7:43</td>
+              </tr>
+              <tr>
+                <td>id_00263</td>
+                <td>2021-09-24</td>
+                <td>8:00:46</td>
+                <td>9.6</td>
+                <td>68</td>
+                <td>2021-09-24 8:00</td>
+              </tr>
+              <tr>
+                <td>id_00474</td>
+                <td>2022-05-02</td>
+                <td>7:09:49</td>
+                <td>9.6</td>
+                <td>53</td>
+                <td>2022-05-02 7:09</td>
+              </tr>
+              <tr>
+                <td>id_00295</td>
+                <td>2021-10-26</td>
+                <td>7:43:31</td>
+                <td>9.5</td>
+                <td>69</td>
+                <td>2021-10-26 7:43</td>
+              </tr>
+              <tr>
+                <td>id_00485</td>
+                <td>2022-05-13</td>
+                <td>7:34:48</td>
+                <td>9.5</td>
+                <td>69</td>
+                <td>2022-05-13 7:34</td>
+              </tr>
+              <tr>
+                <td>id_00659</td>
+                <td>2022-11-10</td>
+                <td>7:34:12</td>
+                <td>9.5</td>
+                <td>67</td>
+                <td>2022-11-10 7:34</td>
+              </tr>
+              <tr>
+                <td>id_00629</td>
+                <td>2022-10-11</td>
+                <td>7:33:24</td>
+                <td>9.5</td>
+                <td>61</td>
+                <td>2022-10-11 7:33</td>
+              </tr>
+              <tr>
+                <td>id_00125</td>
+                <td>2021-05-06</td>
+                <td>7:44:09</td>
+                <td>9.5</td>
+                <td>60</td>
+                <td>2021-05-06 7:44</td>
+              </tr>
+              <tr>
+                <td>id_00458</td>
+                <td>2022-04-14</td>
+                <td>7:08:50</td>
+                <td>9.5</td>
+                <td>59</td>
+                <td>2022-04-14 7:08</td>
+              </tr>
+              <tr>
+                <td>id_00479</td>
+                <td>2022-05-07</td>
+                <td>7:09:25</td>
+                <td>9.5</td>
+                <td>54</td>
+                <td>2022-05-07 7:09</td>
+              </tr>
+              <tr>
+                <td>id_00444</td>
+                <td>2022-03-31</td>
+                <td>7:14:30</td>
+                <td>9.4</td>
+                <td>69</td>
+                <td>2022-03-31 7:14</td>
+              </tr>
+              <tr>
+                <td>id_00640</td>
+                <td>2022-10-22</td>
+                <td>7:44:58</td>
+                <td>9.4</td>
+                <td>67</td>
+                <td>2022-10-22 7:44</td>
+              </tr>
+              <tr>
+                <td>id_00651</td>
+                <td>2022-11-02</td>
+                <td>7:45:40</td>
+                <td>9.4</td>
+                <td>67</td>
+                <td>2022-11-02 7:45</td>
+              </tr>
+              <tr>
+                <td>id_00088</td>
+                <td>2021-03-30</td>
+                <td>7:49:39</td>
+                <td>9.4</td>
+                <td>66</td>
+                <td>2021-03-30 7:49</td>
+              </tr>
+              <tr>
+                <td>id_00105</td>
+                <td>2021-04-16</td>
+                <td>7:00:08</td>
+                <td>9.4</td>
+                <td>65</td>
+                <td>2021-04-16 7:00</td>
+              </tr>
+              <tr>
+                <td>id_00259</td>
+                <td>2021-09-20</td>
+                <td>7:09:45</td>
+                <td>9.4</td>
+                <td>60</td>
+                <td>2021-09-20 7:09</td>
+              </tr>
+              <tr>
+                <td>id_00678</td>
+                <td>2022-11-30</td>
+                <td>7:52:20</td>
+                <td>9.3</td>
+                <td>70</td>
+                <td>2022-11-30 7:52</td>
+              </tr>
+              <tr>
+                <td>id_00477</td>
+                <td>2022-05-05</td>
+                <td>7:20:32</td>
+                <td>9.3</td>
+                <td>69</td>
+                <td>2022-05-05 7:20</td>
+              </tr>
+              <tr>
+                <td>id_00266</td>
+                <td>2021-09-27</td>
+                <td>7:32:14</td>
+                <td>9.3</td>
+                <td>65</td>
+                <td>2021-09-27 7:32</td>
+              </tr>
+              <tr>
+                <td>id_00324</td>
+                <td>2021-11-24</td>
+                <td>7:03:59</td>
+                <td>9.3</td>
+                <td>63</td>
+                <td>2021-11-24 7:03</td>
+              </tr>
+              <tr>
+                <td>id_00260</td>
+                <td>2021-09-21</td>
+                <td>7:09:40</td>
+                <td>9.2</td>
+                <td>69</td>
+                <td>2021-09-21 7:09</td>
+              </tr>
+              <tr>
+                <td>id_00289</td>
+                <td>2021-10-20</td>
+                <td>7:17:07</td>
+                <td>9.2</td>
+                <td>63</td>
+                <td>2021-10-20 7:17</td>
+              </tr>
+              <tr>
+                <td>id_00082</td>
+                <td>2021-03-24</td>
+                <td>7:30:07</td>
+                <td>9.2</td>
+                <td>60</td>
+                <td>2021-03-24 7:30</td>
+              </tr>
+              <tr>
+                <td>id_00439</td>
+                <td>2022-03-26</td>
+                <td>7:03:13</td>
+                <td>9.2</td>
+                <td>51</td>
+                <td>2022-03-26 7:03</td>
+              </tr>
+              <tr>
+                <td>id_00319</td>
+                <td>2021-11-19</td>
+                <td>7:11:12</td>
+                <td>9.1</td>
+                <td>70</td>
+                <td>2021-11-19 7:11</td>
+              </tr>
+              <tr>
+                <td>id_00251</td>
+                <td>2021-09-12</td>
+                <td>8:00:16</td>
+                <td>9.1</td>
+                <td>66</td>
+                <td>2021-09-12 8:00</td>
+              </tr>
+              <tr>
+                <td>id_00612</td>
+                <td>2022-09-23</td>
+                <td>7:40:03</td>
+                <td>9.1</td>
+                <td>63</td>
+                <td>2022-09-23 7:40</td>
+              </tr>
+              <tr>
+                <td>id_00276</td>
+                <td>2021-10-07</td>
+                <td>7:34:02</td>
+                <td>9.1</td>
+                <td>62</td>
+                <td>2021-10-07 7:34</td>
+              </tr>
+              <tr>
+                <td>id_00256</td>
+                <td>2021-09-17</td>
+                <td>7:13:14</td>
+                <td>9.1</td>
+                <td>60</td>
+                <td>2021-09-17 7:13</td>
+              </tr>
+              <tr>
+                <td>id_00429</td>
+                <td>2022-03-16</td>
+                <td>7:01:38</td>
+                <td>9.1</td>
+                <td>57</td>
+                <td>2022-03-16 7:01</td>
+              </tr>
+              <tr>
+                <td>id_00639</td>
+                <td>2022-10-21</td>
+                <td>7:20:35</td>
+                <td>9.0</td>
+                <td>69</td>
+                <td>2022-10-21 7:20</td>
+              </tr>
+              <tr>
+                <td>id_00598</td>
+                <td>2022-09-08</td>
+                <td>7:23:18</td>
+                <td>9.0</td>
+                <td>68</td>
+                <td>2022-09-08 7:23</td>
+              </tr>
+              <tr>
+                <td>id_00242</td>
+                <td>2021-09-03</td>
+                <td>7:11:53</td>
+                <td>9.0</td>
+                <td>64</td>
+                <td>2021-09-03 7:11</td>
+              </tr>
+              <tr>
+                <td>id_00273</td>
+                <td>2021-10-04</td>
+                <td>7:38:05</td>
+                <td>9.0</td>
+                <td>64</td>
+                <td>2021-10-04 7:38</td>
+              </tr>
+              <tr>
+                <td>id_00634</td>
+                <td>2022-10-16</td>
+                <td>7:34:19</td>
+                <td>9.0</td>
+                <td>61</td>
+                <td>2022-10-16 7:34</td>
+              </tr>
+              <tr>
+                <td>id_00601</td>
+                <td>2022-09-12</td>
+                <td>7:38:49</td>
+                <td>9.0</td>
+                <td>60</td>
+                <td>2022-09-12 7:38</td>
+              </tr>
+              <tr>
+                <td>id_00594</td>
+                <td>2022-09-03</td>
+                <td>7:38:21</td>
+                <td>8.9</td>
+                <td>67</td>
+                <td>2022-09-03 7:38</td>
+              </tr>
+              <tr>
+                <td>id_00476</td>
+                <td>2022-05-04</td>
+                <td>7:07:56</td>
+                <td>8.9</td>
+                <td>66</td>
+                <td>2022-05-04 7:07</td>
+              </tr>
+              <tr>
+                <td>id_00076</td>
+                <td>2021-03-18</td>
+                <td>7:30:35</td>
+                <td>8.9</td>
+                <td>64</td>
+                <td>2021-03-18 7:30</td>
+              </tr>
+              <tr>
+                <td>id_00130</td>
+                <td>2021-05-11</td>
+                <td>7:55:36</td>
+                <td>8.9</td>
+                <td>62</td>
+                <td>2021-05-11 7:55</td>
+              </tr>
+              <tr>
+                <td>id_00135</td>
+                <td>2021-05-16</td>
+                <td>7:40:35</td>
+                <td>8.9</td>
+                <td>57</td>
+                <td>2021-05-16 7:40</td>
+              </tr>
+              <tr>
+                <td>id_00261</td>
+                <td>2021-09-22</td>
+                <td>7:39:31</td>
+                <td>8.8</td>
+                <td>61</td>
+                <td>2021-09-22 7:39</td>
+              </tr>
+              <tr>
+                <td>id_00671</td>
+                <td>2022-11-22</td>
+                <td>7:18:36</td>
+                <td>8.8</td>
+                <td>60</td>
+                <td>2022-11-22 7:18</td>
+              </tr>
+              <tr>
+                <td>id_00095</td>
+                <td>2021-04-06</td>
+                <td>7:26:08</td>
+                <td>8.7</td>
+                <td>65</td>
+                <td>2021-04-06 7:26</td>
+              </tr>
+              <tr>
+                <td>id_00447</td>
+                <td>2022-04-03</td>
+                <td>7:22:57</td>
+                <td>8.7</td>
+                <td>58</td>
+                <td>2022-04-03 7:22</td>
+              </tr>
+              <tr>
+                <td>id_00441</td>
+                <td>2022-03-28</td>
+                <td>7:30:32</td>
+                <td>8.6</td>
+                <td>69</td>
+                <td>2022-03-28 7:30</td>
+              </tr>
+              <tr>
+                <td>id_00294</td>
+                <td>2021-10-25</td>
+                <td>7:40:22</td>
+                <td>8.6</td>
+                <td>68</td>
+                <td>2021-10-25 7:40</td>
+              </tr>
+              <tr>
+                <td>id_00625</td>
+                <td>2022-10-07</td>
+                <td>7:52:27</td>
+                <td>8.6</td>
+                <td>60</td>
+                <td>2022-10-07 7:52</td>
+              </tr>
+              <tr>
+                <td>id_00108</td>
+                <td>2021-04-19</td>
+                <td>7:49:24</td>
+                <td>8.6</td>
+                <td>59</td>
+                <td>2021-04-19 7:49</td>
+              </tr>
+              <tr>
+                <td>id_00435</td>
+                <td>2022-03-22</td>
+                <td>7:15:06</td>
+                <td>8.6</td>
+                <td>53</td>
+                <td>2022-03-22 7:15</td>
+              </tr>
+              <tr>
+                <td>id_00445</td>
+                <td>2022-04-01</td>
+                <td>7:10:23</td>
+                <td>8.5</td>
+                <td>70</td>
+                <td>2022-04-01 7:10</td>
+              </tr>
+              <tr>
+                <td>id_00450</td>
+                <td>2022-04-06</td>
+                <td>7:42:52</td>
+                <td>8.5</td>
+                <td>64</td>
+                <td>2022-04-06 7:42</td>
+              </tr>
+              <tr>
+                <td>id_00074</td>
+                <td>2021-03-16</td>
+                <td>7:07:00</td>
+                <td>8.5</td>
+                <td>61</td>
+                <td>2021-03-16 7:07</td>
+              </tr>
+              <tr>
+                <td>id_00473</td>
+                <td>2022-05-01</td>
+                <td>7:09:52</td>
+                <td>8.5</td>
+                <td>55</td>
+                <td>2022-05-01 7:09</td>
+              </tr>
+              <tr>
+                <td>id_00494</td>
+                <td>2022-05-22</td>
+                <td>7:36:16</td>
+                <td>8.4</td>
+                <td>68</td>
+                <td>2022-05-22 7:36</td>
+              </tr>
+              <tr>
+                <td>id_00258</td>
+                <td>2021-09-19</td>
+                <td>7:05:35</td>
+                <td>8.4</td>
+                <td>63</td>
+                <td>2021-09-19 7:05</td>
+              </tr>
+              <tr>
+                <td>id_00110</td>
+                <td>2021-04-21</td>
+                <td>7:52:22</td>
+                <td>8.4</td>
+                <td>55</td>
+                <td>2021-04-21 7:52</td>
+              </tr>
+              <tr>
+                <td>id_00115</td>
+                <td>2021-04-26</td>
+                <td>7:25:14</td>
+                <td>8.3</td>
+                <td>69</td>
+                <td>2021-04-26 7:25</td>
+              </tr>
+              <tr>
+                <td>id_00098</td>
+                <td>2021-04-09</td>
+                <td>7:14:35</td>
+                <td>8.3</td>
+                <td>66</td>
+                <td>2021-04-09 7:14</td>
+              </tr>
+              <tr>
+                <td>id_00645</td>
+                <td>2022-10-27</td>
+                <td>7:11:46</td>
+                <td>8.3</td>
+                <td>61</td>
+                <td>2022-10-27 7:11</td>
+              </tr>
+              <tr>
+                <td>id_00240</td>
+                <td>2021-09-01</td>
+                <td>7:16:15</td>
+                <td>8.2</td>
+                <td>70</td>
+                <td>2021-09-01 7:16</td>
+              </tr>
+              <tr>
+                <td>id_00109</td>
+                <td>2021-04-20</td>
+                <td>7:50:21</td>
+                <td>8.2</td>
+                <td>63</td>
+                <td>2021-04-20 7:50</td>
+              </tr>
+              <tr>
+                <td>id_00432</td>
+                <td>2022-03-19</td>
+                <td>7:43:26</td>
+                <td>8.2</td>
+                <td>56</td>
+                <td>2022-03-19 7:43</td>
+              </tr>
+              <tr>
+                <td>id_00609</td>
+                <td>2022-09-20</td>
+                <td>7:12:54</td>
+                <td>8.1</td>
+                <td>70</td>
+                <td>2022-09-20 7:12</td>
+              </tr>
+              <tr>
+                <td>id_00486</td>
+                <td>2022-05-14</td>
+                <td>7:02:34</td>
+                <td>8.1</td>
+                <td>60</td>
+                <td>2022-05-14 7:02</td>
+              </tr>
+              <tr>
+                <td>id_00304</td>
+                <td>2021-11-04</td>
+                <td>7:54:12</td>
+                <td>8.0</td>
+                <td>68</td>
+                <td>2021-11-04 7:54</td>
+              </tr>
+              <tr>
+                <td>id_00437</td>
+                <td>2022-03-24</td>
+                <td>7:47:32</td>
+                <td>7.8</td>
+                <td>59</td>
+                <td>2022-03-24 7:47</td>
+              </tr>
+              <tr>
+                <td>id_00061</td>
+                <td>2021-03-03</td>
+                <td>7:46:34</td>
+                <td>7.6</td>
+                <td>63</td>
+                <td>2021-03-03 7:46</td>
+              </tr>
+              <tr>
+                <td>id_00422</td>
+                <td>2022-03-08</td>
+                <td>7:50:00</td>
+                <td>7.6</td>
+                <td>61</td>
+                <td>2022-03-08 7:50</td>
+              </tr>
+              <tr>
+                <td>id_00469</td>
+                <td>2022-04-27</td>
+                <td>7:28:54</td>
+                <td>7.6</td>
+                <td>50</td>
+                <td>2022-04-27 7:28</td>
+              </tr>
+              <tr>
+                <td>id_00451</td>
+                <td>2022-04-07</td>
+                <td>7:19:58</td>
+                <td>7.5</td>
+                <td>56</td>
+                <td>2022-04-07 7:19</td>
+              </tr>
+              <tr>
+                <td>id_00430</td>
+                <td>2022-03-17</td>
+                <td>7:21:32</td>
+                <td>7.4</td>
+                <td>64</td>
+                <td>2022-03-17 7:21</td>
+              </tr>
+              <tr>
+                <td>id_00490</td>
+                <td>2022-05-18</td>
+                <td>7:08:40</td>
+                <td>7.4</td>
+                <td>61</td>
+                <td>2022-05-18 7:08</td>
+              </tr>
+              <tr>
+                <td>id_00501</td>
+                <td>2022-05-29</td>
+                <td>7:42:25</td>
+                <td>7.2</td>
+                <td>58</td>
+                <td>2022-05-29 7:42</td>
+              </tr>
+              <tr>
+                <td>id_00425</td>
+                <td>2022-03-12</td>
+                <td>7:25:35</td>
+                <td>7.2</td>
+                <td>57</td>
+                <td>2022-03-12 7:25</td>
+              </tr>
+              <tr>
+                <td>id_00465</td>
+                <td>2022-04-22</td>
+                <td>7:18:48</td>
+                <td>7.2</td>
+                <td>56</td>
+                <td>2022-04-22 7:18</td>
+              </tr>
+              <tr>
+                <td>id_00145</td>
+                <td>2021-05-26</td>
+                <td>7:19:11</td>
+                <td>7.1</td>
+                <td>67</td>
+                <td>2021-05-26 7:19</td>
+              </tr>
+              <tr>
+                <td>id_00419</td>
+                <td>2022-03-04</td>
+                <td>7:19:21</td>
+                <td>7.1</td>
+                <td>63</td>
+                <td>2022-03-04 7:19</td>
+              </tr>
+              <tr>
+                <td>id_00090</td>
+                <td>2021-04-01</td>
+                <td>7:11:03</td>
+                <td>7.1</td>
+                <td>55</td>
+                <td>2021-04-01 7:11</td>
+              </tr>
+              <tr>
+                <td>id_00436</td>
+                <td>2022-03-23</td>
+                <td>7:58:47</td>
+                <td>7.0</td>
+                <td>63</td>
+                <td>2022-03-23 7:58</td>
+              </tr>
+              <tr>
+                <td>id_00397</td>
+                <td>2022-02-09</td>
+                <td>7:57:17</td>
+                <td>4.0</td>
+                <td>45</td>
+                <td>2022-02-09 7:57</td>
+              </tr>
+              <tr>
+                <td>id_00730</td>
+                <td>2023-01-23</td>
+                <td>7:42:26</td>
+                <td>4.0</td>
+                <td>42</td>
+                <td>2023-01-23 7:42</td>
+              </tr>
+              <tr>
+                <td>id_00757</td>
+                <td>2023-02-21</td>
+                <td>7:26:20</td>
+                <td>4.0</td>
+                <td>42</td>
+                <td>2023-02-21 7:26</td>
+              </tr>
+              <tr>
+                <td>id_00718</td>
+                <td>2023-01-11</td>
+                <td>7:56:54</td>
+                <td>3.9</td>
+                <td>50</td>
+                <td>2023-01-11 7:56</td>
+              </tr>
+              <tr>
+                <td>id_00342</td>
+                <td>2021-12-13</td>
+                <td>7:54:39</td>
+                <td>3.9</td>
+                <td>47</td>
+                <td>2021-12-13 7:54</td>
+              </tr>
+              <tr>
+                <td>id_00031</td>
+                <td>2021-02-01</td>
+                <td>7:02:34</td>
+                <td>3.9</td>
+                <td>46</td>
+                <td>2021-02-01 7:02</td>
+              </tr>
+              <tr>
+                <td>id_00405</td>
+                <td>2022-02-17</td>
+                <td>7:27:20</td>
+                <td>3.9</td>
+                <td>43</td>
+                <td>2022-02-17 7:27</td>
+              </tr>
+              <tr>
+                <td>id_00681</td>
+                <td>2022-12-03</td>
+                <td>7:33:14</td>
+                <td>3.9</td>
+                <td>42</td>
+                <td>2022-12-03 7:33</td>
+              </tr>
+              <tr>
+                <td>id_00717</td>
+                <td>2023-01-10</td>
+                <td>7:09:25</td>
+                <td>3.7</td>
+                <td>50</td>
+                <td>2023-01-10 7:09</td>
+              </tr>
+              <tr>
+                <td>id_00400</td>
+                <td>2022-02-12</td>
+                <td>7:15:05</td>
+                <td>3.7</td>
+                <td>48</td>
+                <td>2022-02-12 7:15</td>
+              </tr>
+              <tr>
+                <td>id_00370</td>
+                <td>2022-01-13</td>
+                <td>7:13:29</td>
+                <td>3.7</td>
+                <td>47</td>
+                <td>2022-01-13 7:13</td>
+              </tr>
+              <tr>
+                <td>id_00711</td>
+                <td>2023-01-04</td>
+                <td>7:52:10</td>
+                <td>3.7</td>
+                <td>45</td>
+                <td>2023-01-04 7:52</td>
+              </tr>
+              <tr>
+                <td>id_00331</td>
+                <td>2021-12-02</td>
+                <td>7:46:08</td>
+                <td>3.5</td>
+                <td>47</td>
+                <td>2021-12-02 7:46</td>
+              </tr>
+              <tr>
+                <td>id_00688</td>
+                <td>2022-12-10</td>
+                <td>7:50:36</td>
+                <td>3.4</td>
+                <td>45</td>
+                <td>2022-12-10 7:50</td>
+              </tr>
+              <tr>
+                <td>id_00728</td>
+                <td>2023-01-21</td>
+                <td>7:35:23</td>
+                <td>3.4</td>
+                <td>41</td>
+                <td>2023-01-21 7:35</td>
+              </tr>
+              <tr>
+                <td>id_00340</td>
+                <td>2021-12-11</td>
+                <td>7:28:00</td>
+                <td>3.3</td>
+                <td>50</td>
+                <td>2021-12-11 7:28</td>
+              </tr>
+              <tr>
+                <td>id_00008</td>
+                <td>2021-01-09</td>
+                <td>7:45:44</td>
+                <td>3.3</td>
+                <td>49</td>
+                <td>2021-01-09 7:45</td>
+              </tr>
+              <tr>
+                <td>id_00350</td>
+                <td>2021-12-21</td>
+                <td>7:04:55</td>
+                <td>3.3</td>
+                <td>48</td>
+                <td>2021-12-21 7:04</td>
+              </tr>
+              <tr>
+                <td>id_00736</td>
+                <td>2023-01-31</td>
+                <td>7:14:07</td>
+                <td>3.3</td>
+                <td>48</td>
+                <td>2023-01-31 7:14</td>
+              </tr>
+              <tr>
+                <td>id_00391</td>
+                <td>2022-02-03</td>
+                <td>7:11:02</td>
+                <td>3.2</td>
+                <td>43</td>
+                <td>2022-02-03 7:11</td>
+              </tr>
+              <tr>
+                <td>id_00719</td>
+                <td>2023-01-12</td>
+                <td>7:45:51</td>
+                <td>3.2</td>
+                <td>43</td>
+                <td>2023-01-12 7:45</td>
+              </tr>
+              <tr>
+                <td>id_00748</td>
+                <td>2023-02-12</td>
+                <td>7:29:08</td>
+                <td>3.2</td>
+                <td>41</td>
+                <td>2023-02-12 7:29</td>
+              </tr>
+              <tr>
+                <td>id_00015</td>
+                <td>2021-01-16</td>
+                <td>7:24:09</td>
+                <td>3.1</td>
+                <td>48</td>
+                <td>2021-01-16 7:24</td>
+              </tr>
+              <tr>
+                <td>id_00407</td>
+                <td>2022-02-19</td>
+                <td>7:27:02</td>
+                <td>3.0</td>
+                <td>43</td>
+                <td>2022-02-19 7:27</td>
+              </tr>
+              <tr>
+                <td>id_00335</td>
+                <td>2021-12-06</td>
+                <td>7:01:00</td>
+                <td>3.0</td>
+                <td>42</td>
+                <td>2021-12-06 7:01</td>
+              </tr>
+              <tr>
+                <td>id_00020</td>
+                <td>2021-01-21</td>
+                <td>7:23:00</td>
+                <td>3.0</td>
+                <td>41</td>
+                <td>2021-01-21 7:23</td>
+              </tr>
+              <tr>
+                <td>id_00333</td>
+                <td>2021-12-04</td>
+                <td>7:39:46</td>
+                <td>2.9</td>
+                <td>41</td>
+                <td>2021-12-04 7:39</td>
+              </tr>
+              <tr>
+                <td>id_00022</td>
+                <td>2021-01-23</td>
+                <td>7:53:56</td>
+                <td>2.9</td>
+                <td>40</td>
+                <td>2021-01-23 7:53</td>
+              </tr>
+              <tr>
+                <td>id_00380</td>
+                <td>2022-01-23</td>
+                <td>7:39:54</td>
+                <td>2.8</td>
+                <td>50</td>
+                <td>2022-01-23 7:39</td>
+              </tr>
+              <tr>
+                <td>id_00413</td>
+                <td>2022-02-26</td>
+                <td>7:31:23</td>
+                <td>2.8</td>
+                <td>47</td>
+                <td>2022-02-26 7:31</td>
+              </tr>
+              <tr>
+                <td>id_00694</td>
+                <td>2022-12-16</td>
+                <td>7:31:55</td>
+                <td>2.8</td>
+                <td>46</td>
+                <td>2022-12-16 7:31</td>
+              </tr>
+              <tr>
+                <td>id_00355</td>
+                <td>2021-12-26</td>
+                <td>7:09:56</td>
+                <td>2.7</td>
+                <td>43</td>
+                <td>2021-12-26 7:09</td>
+              </tr>
+              <tr>
+                <td>id_00356</td>
+                <td>2021-12-27</td>
+                <td>7:57:21</td>
+                <td>2.6</td>
+                <td>49</td>
+                <td>2021-12-27 7:57</td>
+              </tr>
+              <tr>
+                <td>id_00352</td>
+                <td>2021-12-23</td>
+                <td>7:08:43</td>
+                <td>2.6</td>
+                <td>48</td>
+                <td>2021-12-23 7:08</td>
+              </tr>
+              <tr>
+                <td>id_00032</td>
+                <td>2021-02-02</td>
+                <td>7:49:42</td>
+                <td>2.6</td>
+                <td>42</td>
+                <td>2021-02-02 7:49</td>
+              </tr>
+              <tr>
+                <td>id_00701</td>
+                <td>2022-12-23</td>
+                <td>7:04:34</td>
+                <td>2.6</td>
+                <td>40</td>
+                <td>2022-12-23 7:04</td>
+              </tr>
+              <tr>
+                <td>id_00692</td>
+                <td>2022-12-14</td>
+                <td>7:43:25</td>
+                <td>2.5</td>
+                <td>50</td>
+                <td>2022-12-14 7:43</td>
+              </tr>
+              <tr>
+                <td>id_00409</td>
+                <td>2022-02-21</td>
+                <td>7:28:34</td>
+                <td>2.5</td>
+                <td>49</td>
+                <td>2022-02-21 7:28</td>
+              </tr>
+              <tr>
+                <td>id_00359</td>
+                <td>2021-12-30</td>
+                <td>7:02:54</td>
+                <td>2.4</td>
+                <td>48</td>
+                <td>2021-12-30 7:02</td>
+              </tr>
+              <tr>
+                <td>id_00050</td>
+                <td>2021-02-20</td>
+                <td>7:56:05</td>
+                <td>2.3</td>
+                <td>50</td>
+                <td>2021-02-20 7:56</td>
+              </tr>
+              <tr>
+                <td>id_00341</td>
+                <td>2021-12-12</td>
+                <td>7:05:36</td>
+                <td>2.3</td>
+                <td>48</td>
+                <td>2021-12-12 7:05</td>
+              </tr>
+              <tr>
+                <td>id_00713</td>
+                <td>2023-01-06</td>
+                <td>7:28:19</td>
+                <td>2.3</td>
+                <td>47</td>
+                <td>2023-01-06 7:28</td>
+              </tr>
+              <tr>
+                <td>id_00373</td>
+                <td>2022-01-16</td>
+                <td>7:43:01</td>
+                <td>2.3</td>
+                <td>45</td>
+                <td>2022-01-16 7:43</td>
+              </tr>
+              <tr>
+                <td>id_00055</td>
+                <td>2021-02-25</td>
+                <td>7:55:28</td>
+                <td>2.2</td>
+                <td>50</td>
+                <td>2021-02-25 7:55</td>
+              </tr>
+              <tr>
+                <td>id_00690</td>
+                <td>2022-12-12</td>
+                <td>7:05:02</td>
+                <td>2.2</td>
+                <td>42</td>
+                <td>2022-12-12 7:05</td>
+              </tr>
+              <tr>
+                <td>id_00372</td>
+                <td>2022-01-15</td>
+                <td>7:39:05</td>
+                <td>2.2</td>
+                <td>41</td>
+                <td>2022-01-15 7:39</td>
+              </tr>
+              <tr>
+                <td>id_00411</td>
+                <td>2022-02-23</td>
+                <td>7:52:38</td>
+                <td>2.1</td>
+                <td>50</td>
+                <td>2022-02-23 7:52</td>
+              </tr>
+              <tr>
+                <td>id_00754</td>
+                <td>2023-02-18</td>
+                <td>7:26:38</td>
+                <td>2.1</td>
+                <td>47</td>
+                <td>2023-02-18 7:26</td>
+              </tr>
+              <tr>
+                <td>id_00057</td>
+                <td>2021-02-27</td>
+                <td>7:37:20</td>
+                <td>2.1</td>
+                <td>43</td>
+                <td>2021-02-27 7:37</td>
+              </tr>
+              <tr>
+                <td>id_00394</td>
+                <td>2022-02-06</td>
+                <td>7:44:16</td>
+                <td>2.1</td>
+                <td>43</td>
+                <td>2022-02-06 7:44</td>
+              </tr>
+              <tr>
+                <td>id_00054</td>
+                <td>2021-02-24</td>
+                <td>7:03:32</td>
+                <td>2.1</td>
+                <td>41</td>
+                <td>2021-02-24 7:03</td>
+              </tr>
+              <tr>
+                <td>id_00051</td>
+                <td>2021-02-21</td>
+                <td>7:01:19</td>
+                <td>2.0</td>
+                <td>45</td>
+                <td>2021-02-21 7:01</td>
+              </tr>
+              <tr>
+                <td>id_00404</td>
+                <td>2022-02-16</td>
+                <td>7:08:39</td>
+                <td>2.0</td>
+                <td>43</td>
+                <td>2022-02-16 7:08</td>
+              </tr>
+              <tr>
+                <td>id_00708</td>
+                <td>2022-12-31</td>
+                <td>7:26:09</td>
+                <td>2.0</td>
+                <td>42</td>
+                <td>2022-12-31 7:26</td>
+              </tr>
+              <tr>
+                <td>id_00720</td>
+                <td>2023-01-13</td>
+                <td>7:10:47</td>
+                <td>2.0</td>
+                <td>40</td>
+                <td>2023-01-13 7:10</td>
+              </tr>
+              <tr>
+                <td>id_00402</td>
+                <td>2022-02-14</td>
+                <td>7:04:50</td>
+                <td>1.9</td>
+                <td>43</td>
+                <td>2022-02-14 7:04</td>
+              </tr>
+              <tr>
+                <td>id_00384</td>
+                <td>2022-01-27</td>
+                <td>7:00:25</td>
+                <td>1.8</td>
+                <td>42</td>
+                <td>2022-01-27 7:00</td>
+              </tr>
+              <tr>
+                <td>id_00347</td>
+                <td>2021-12-18</td>
+                <td>7:54:49</td>
+                <td>1.6</td>
+                <td>48</td>
+                <td>2021-12-18 7:54</td>
+              </tr>
+              <tr>
+                <td>id_00742</td>
+                <td>2023-02-06</td>
+                <td>7:05:36</td>
+                <td>1.6</td>
+                <td>48</td>
+                <td>2023-02-06 7:05</td>
+              </tr>
+              <tr>
+                <td>id_00367</td>
+                <td>2022-01-10</td>
+                <td>7:15:47</td>
+                <td>1.5</td>
+                <td>41</td>
+                <td>2022-01-10 7:15</td>
+              </tr>
+              <tr>
+                <td>id_00052</td>
+                <td>2021-02-22</td>
+                <td>7:43:37</td>
+                <td>1.4</td>
+                <td>50</td>
+                <td>2021-02-22 7:43</td>
+              </tr>
+              <tr>
+                <td>id_00683</td>
+                <td>2022-12-05</td>
+                <td>7:31:38</td>
+                <td>1.4</td>
+                <td>50</td>
+                <td>2022-12-05 7:31</td>
+              </tr>
+              <tr>
+                <td>id_00399</td>
+                <td>2022-02-11</td>
+                <td>7:17:57</td>
+                <td>1.4</td>
+                <td>49</td>
+                <td>2022-02-11 7:17</td>
+              </tr>
+              <tr>
+                <td>id_00693</td>
+                <td>2022-12-15</td>
+                <td>7:28:06</td>
+                <td>1.4</td>
+                <td>44</td>
+                <td>2022-12-15 7:28</td>
+              </tr>
+              <tr>
+                <td>id_00697</td>
+                <td>2022-12-19</td>
+                <td>7:32:46</td>
+                <td>1.4</td>
+                <td>44</td>
+                <td>2022-12-19 7:32</td>
+              </tr>
+              <tr>
+                <td>id_00395</td>
+                <td>2022-02-07</td>
+                <td>7:30:02</td>
+                <td>1.4</td>
+                <td>40</td>
+                <td>2022-02-07 7:30</td>
+              </tr>
+              <tr>
+                <td>id_00398</td>
+                <td>2022-02-10</td>
+                <td>7:57:44</td>
+                <td>1.3</td>
+                <td>49</td>
+                <td>2022-02-10 7:57</td>
+              </tr>
+              <tr>
+                <td>id_00734</td>
+                <td>2023-01-28</td>
+                <td>7:18:33</td>
+                <td>1.3</td>
+                <td>44</td>
+                <td>2023-01-28 7:18</td>
+              </tr>
+              <tr>
+                <td>id_00012</td>
+                <td>2021-01-13</td>
+                <td>7:04:30</td>
+                <td>1.3</td>
+                <td>40</td>
+                <td>2021-01-13 7:04</td>
+              </tr>
+              <tr>
+                <td>id_00001</td>
+                <td>2021-01-02</td>
+                <td>7:32:37</td>
+                <td>1.2</td>
+                <td>49</td>
+                <td>2021-01-02 7:32</td>
+              </tr>
+              <tr>
+                <td>id_00386</td>
+                <td>2022-01-29</td>
+                <td>7:40:41</td>
+                <td>1.2</td>
+                <td>42</td>
+                <td>2022-01-29 7:40</td>
+              </tr>
+              <tr>
+                <td>id_00732</td>
+                <td>2023-01-25</td>
+                <td>7:43:43</td>
+                <td>1.2</td>
+                <td>40</td>
+                <td>2023-01-25 7:43</td>
+              </tr>
+              <tr>
+                <td>id_00731</td>
+                <td>2023-01-24</td>
+                <td>7:14:27</td>
+                <td>1.1</td>
+                <td>50</td>
+                <td>2023-01-24 7:14</td>
+              </tr>
+              <tr>
+                <td>id_00364</td>
+                <td>2022-01-06</td>
+                <td>7:57:02</td>
+                <td>1.1</td>
+                <td>44</td>
+                <td>2022-01-06 7:57</td>
+              </tr>
+              <tr>
+                <td>id_00028</td>
+                <td>2021-01-29</td>
+                <td>7:43:40</td>
+                <td>1.0</td>
+                <td>41</td>
+                <td>2021-01-29 7:43</td>
+              </tr>
+              <tr>
+                <td>id_00712</td>
+                <td>2023-01-05</td>
+                <td>7:55:51</td>
+                <td>0.8</td>
+                <td>42</td>
+                <td>2023-01-05 7:55</td>
+              </tr>
+              <tr>
+                <td>id_00746</td>
+                <td>2023-02-10</td>
+                <td>7:12:19</td>
+                <td>0.8</td>
+                <td>40</td>
+                <td>2023-02-10 7:12</td>
+              </tr>
+              <tr>
+                <td>id_00393</td>
+                <td>2022-02-05</td>
+                <td>7:34:59</td>
+                <td>0.7</td>
+                <td>49</td>
+                <td>2022-02-05 7:34</td>
+              </tr>
+              <tr>
+                <td>id_00043</td>
+                <td>2021-02-13</td>
+                <td>7:06:40</td>
+                <td>0.7</td>
+                <td>48</td>
+                <td>2021-02-13 7:06</td>
+              </tr>
+              <tr>
+                <td>id_00006</td>
+                <td>2021-01-07</td>
+                <td>7:41:35</td>
+                <td>0.7</td>
+                <td>47</td>
+                <td>2021-01-07 7:41</td>
+              </tr>
+              <tr>
+                <td>id_00053</td>
+                <td>2021-02-23</td>
+                <td>7:47:57</td>
+                <td>0.6</td>
+                <td>50</td>
+                <td>2021-02-23 7:47</td>
+              </tr>
+              <tr>
+                <td>id_00351</td>
+                <td>2021-12-22</td>
+                <td>7:13:00</td>
+                <td>0.6</td>
+                <td>45</td>
+                <td>2021-12-22 7:13</td>
+              </tr>
+              <tr>
+                <td>id_00390</td>
+                <td>2022-02-02</td>
+                <td>7:03:28</td>
+                <td>0.6</td>
+                <td>43</td>
+                <td>2022-02-02 7:03</td>
+              </tr>
+              <tr>
+                <td>id_00330</td>
+                <td>2021-12-01</td>
+                <td>7:50:10</td>
+                <td>0.5</td>
+                <td>48</td>
+                <td>2021-12-01 7:50</td>
+              </tr>
+              <tr>
+                <td>id_00348</td>
+                <td>2021-12-19</td>
+                <td>7:50:58</td>
+                <td>0.5</td>
+                <td>48</td>
+                <td>2021-12-19 7:50</td>
+              </tr>
+              <tr>
+                <td>id_00725</td>
+                <td>2023-01-18</td>
+                <td>7:45:59</td>
+                <td>0.4</td>
+                <td>47</td>
+                <td>2023-01-18 7:45</td>
+              </tr>
+              <tr>
+                <td>id_00382</td>
+                <td>2022-01-25</td>
+                <td>7:52:45</td>
+                <td>0.4</td>
+                <td>46</td>
+                <td>2022-01-25 7:52</td>
+              </tr>
+              <tr>
+                <td>id_00383</td>
+                <td>2022-01-26</td>
+                <td>7:22:47</td>
+                <td>0.4</td>
+                <td>46</td>
+                <td>2022-01-26 7:22</td>
+              </tr>
+              <tr>
+                <td>id_00716</td>
+                <td>2023-01-09</td>
+                <td>7:03:48</td>
+                <td>0.3</td>
+                <td>43</td>
+                <td>2023-01-09 7:03</td>
+              </tr>
+              <tr>
+                <td>id_00710</td>
+                <td>2023-01-02</td>
+                <td>7:13:03</td>
+                <td>0.0</td>
+                <td>49</td>
+                <td>2023-01-02 7:13</td>
+              </tr>
+              <tr>
+                <td>id_00365</td>
+                <td>2022-01-07</td>
+                <td>7:57:19</td>
+                <td>0.0</td>
+                <td>48</td>
+                <td>2022-01-07 7:57</td>
+              </tr>
+              <tr>
+                <td>id_00334</td>
+                <td>2021-12-05</td>
+                <td>7:44:00</td>
+                <td>0.0</td>
+                <td>46</td>
+                <td>2021-12-05 7:44</td>
+              </tr>
+              <tr>
+                <td>id_00753</td>
+                <td>2023-02-17</td>
+                <td>7:25:18</td>
+                <td>0.0</td>
+                <td>40</td>
+                <td>2023-02-17 7:25</td>
+              </tr>
+              <tr>
+                <td>id_00707</td>
+                <td>2022-12-30</td>
+                <td>7:33:19</td>
+                <td>-0.1</td>
+                <td>40</td>
+                <td>2022-12-30 7:33</td>
+              </tr>
+              <tr>
+                <td>id_00698</td>
+                <td>2022-12-20</td>
+                <td>7:10:49</td>
+                <td>-0.2</td>
+                <td>40</td>
+                <td>2022-12-20 7:10</td>
+              </tr>
+              <tr>
+                <td>id_00702</td>
+                <td>2022-12-24</td>
+                <td>7:16:43</td>
+                <td>-0.3</td>
+                <td>40</td>
+                <td>2022-12-24 7:16</td>
+              </tr>
+              <tr>
+                <td>id_00371</td>
+                <td>2022-01-14</td>
+                <td>7:05:46</td>
+                <td>-0.4</td>
+                <td>45</td>
+                <td>2022-01-14 7:05</td>
+              </tr>
+              <tr>
+                <td>id_00689</td>
+                <td>2022-12-11</td>
+                <td>8:00:44</td>
+                <td>-0.4</td>
+                <td>43</td>
+                <td>2022-12-11 8:00</td>
+              </tr>
+              <tr>
+                <td>id_00715</td>
+                <td>2023-01-08</td>
+                <td>7:43:55</td>
+                <td>-0.5</td>
+                <td>49</td>
+                <td>2023-01-08 7:43</td>
+              </tr>
+              <tr>
+                <td>id_00030</td>
+                <td>2021-01-31</td>
+                <td>7:04:34</td>
+                <td>-0.5</td>
+                <td>47</td>
+                <td>2021-01-31 7:04</td>
+              </tr>
+              <tr>
+                <td>id_00056</td>
+                <td>2021-02-26</td>
+                <td>7:46:59</td>
+                <td>-0.5</td>
+                <td>45</td>
+                <td>2021-02-26 7:46</td>
+              </tr>
+              <tr>
+                <td>id_00684</td>
+                <td>2022-12-06</td>
+                <td>7:16:09</td>
+                <td>-0.5</td>
+                <td>42</td>
+                <td>2022-12-06 7:16</td>
+              </tr>
+              <tr>
+                <td>id_00385</td>
+                <td>2022-01-28</td>
+                <td>7:42:22</td>
+                <td>-0.6</td>
+                <td>45</td>
+                <td>2022-01-28 7:42</td>
+              </tr>
+              <tr>
+                <td>id_00750</td>
+                <td>2023-02-14</td>
+                <td>7:43:17</td>
+                <td>-0.6</td>
+                <td>43</td>
+                <td>2023-02-14 7:43</td>
+              </tr>
+              <tr>
+                <td>id_00374</td>
+                <td>2022-01-17</td>
+                <td>7:25:44</td>
+                <td>-0.8</td>
+                <td>45</td>
+                <td>2022-01-17 7:25</td>
+              </tr>
+              <tr>
+                <td>id_00729</td>
+                <td>2023-01-22</td>
+                <td>7:10:33</td>
+                <td>-0.8</td>
+                <td>43</td>
+                <td>2023-01-22 7:10</td>
+              </tr>
+              <tr>
+                <td>id_00339</td>
+                <td>2021-12-10</td>
+                <td>7:14:00</td>
+                <td>-0.8</td>
+                <td>42</td>
+                <td>2021-12-10 7:14</td>
+              </tr>
+              <tr>
+                <td>id_00042</td>
+                <td>2021-02-12</td>
+                <td>7:11:47</td>
+                <td>-0.9</td>
+                <td>50</td>
+                <td>2021-02-12 7:11</td>
+              </tr>
+              <tr>
+                <td>id_00724</td>
+                <td>2023-01-17</td>
+                <td>7:58:29</td>
+                <td>-1.0</td>
+                <td>42</td>
+                <td>2023-01-17 7:58</td>
+              </tr>
+              <tr>
+                <td>id_00414</td>
+                <td>2022-02-27</td>
+                <td>7:25:02</td>
+                <td>-1.2</td>
+                <td>45</td>
+                <td>2022-02-27 7:25</td>
+              </tr>
+              <tr>
+                <td>id_00003</td>
+                <td>2021-01-04</td>
+                <td>8:00:56</td>
+                <td>-1.4</td>
+                <td>49</td>
+                <td>2021-01-04 8:00</td>
+              </tr>
+              <tr>
+                <td>id_00363</td>
+                <td>2022-01-05</td>
+                <td>7:27:24</td>
+                <td>-1.4</td>
+                <td>43</td>
+                <td>2022-01-05 7:27</td>
+              </tr>
+              <tr>
+                <td>id_00045</td>
+                <td>2021-02-15</td>
+                <td>7:16:43</td>
+                <td>-1.4</td>
+                <td>41</td>
+                <td>2021-02-15 7:16</td>
+              </tr>
+              <tr>
+                <td>id_00739</td>
+                <td>2023-02-03</td>
+                <td>7:02:49</td>
+                <td>-1.4</td>
+                <td>40</td>
+                <td>2023-02-03 7:02</td>
+              </tr>
+              <tr>
+                <td>id_00696</td>
+                <td>2022-12-18</td>
+                <td>7:01:40</td>
+                <td>-1.5</td>
+                <td>44</td>
+                <td>2022-12-18 7:01</td>
+              </tr>
+              <tr>
+                <td>id_00410</td>
+                <td>2022-02-22</td>
+                <td>7:19:07</td>
+                <td>-1.5</td>
+                <td>43</td>
+                <td>2022-02-22 7:19</td>
+              </tr>
+              <tr>
+                <td>id_00369</td>
+                <td>2022-01-12</td>
+                <td>7:24:11</td>
+                <td>-1.6</td>
+                <td>47</td>
+                <td>2022-01-12 7:24</td>
+              </tr>
+              <tr>
+                <td>id_00376</td>
+                <td>2022-01-19</td>
+                <td>7:08:43</td>
+                <td>-1.7</td>
+                <td>50</td>
+                <td>2022-01-19 7:08</td>
+              </tr>
+              <tr>
+                <td>id_00749</td>
+                <td>2023-02-13</td>
+                <td>7:35:16</td>
+                <td>-1.8</td>
+                <td>50</td>
+                <td>2023-02-13 7:35</td>
+              </tr>
+              <tr>
+                <td>id_00361</td>
+                <td>2022-01-02</td>
+                <td>7:54:53</td>
+                <td>-1.8</td>
+                <td>47</td>
+                <td>2022-01-02 7:54</td>
+              </tr>
+              <tr>
+                <td>id_00024</td>
+                <td>2021-01-25</td>
+                <td>7:56:09</td>
+                <td>-1.8</td>
+                <td>41</td>
+                <td>2021-01-25 7:56</td>
+              </tr>
+              <tr>
+                <td>id_00700</td>
+                <td>2022-12-22</td>
+                <td>7:19:35</td>
+                <td>-1.8</td>
+                <td>40</td>
+                <td>2022-12-22 7:19</td>
+              </tr>
+              <tr>
+                <td>id_00705</td>
+                <td>2022-12-28</td>
+                <td>7:06:31</td>
+                <td>-1.9</td>
+                <td>48</td>
+                <td>2022-12-28 7:06</td>
+              </tr>
+              <tr>
+                <td>id_00679</td>
+                <td>2022-12-01</td>
+                <td>7:03:06</td>
+                <td>-2.0</td>
+                <td>45</td>
+                <td>2022-12-01 7:03</td>
+              </tr>
+              <tr>
+                <td>id_00039</td>
+                <td>2021-02-09</td>
+                <td>7:35:16</td>
+                <td>-2.0</td>
+                <td>41</td>
+                <td>2021-02-09 7:35</td>
+              </tr>
+              <tr>
+                <td>id_00014</td>
+                <td>2021-01-15</td>
+                <td>7:34:31</td>
+                <td>-2.1</td>
+                <td>50</td>
+                <td>2021-01-15 7:34</td>
+              </tr>
+              <tr>
+                <td>id_00041</td>
+                <td>2021-02-11</td>
+                <td>7:48:20</td>
+                <td>-2.1</td>
+                <td>47</td>
+                <td>2021-02-11 7:48</td>
+              </tr>
+              <tr>
+                <td>id_00345</td>
+                <td>2021-12-16</td>
+                <td>7:40:40</td>
+                <td>-2.1</td>
+                <td>46</td>
+                <td>2021-12-16 7:40</td>
+              </tr>
+              <tr>
+                <td>id_00033</td>
+                <td>2021-02-03</td>
+                <td>7:12:31</td>
+                <td>-2.1</td>
+                <td>42</td>
+                <td>2021-02-03 7:12</td>
+              </tr>
+              <tr>
+                <td>id_00706</td>
+                <td>2022-12-29</td>
+                <td>7:52:34</td>
+                <td>-2.1</td>
+                <td>42</td>
+                <td>2022-12-29 7:52</td>
+              </tr>
+              <tr>
+                <td>id_00346</td>
+                <td>2021-12-17</td>
+                <td>7:22:25</td>
+                <td>-2.3</td>
+                <td>48</td>
+                <td>2021-12-17 7:22</td>
+              </tr>
+              <tr>
+                <td>id_00360</td>
+                <td>2021-12-31</td>
+                <td>7:45:45</td>
+                <td>-2.3</td>
+                <td>44</td>
+                <td>2021-12-31 7:45</td>
+              </tr>
+              <tr>
+                <td>id_00388</td>
+                <td>2022-01-31</td>
+                <td>7:31:54</td>
+                <td>-2.3</td>
+                <td>43</td>
+                <td>2022-01-31 7:31</td>
+              </tr>
+              <tr>
+                <td>id_00709</td>
+                <td>2023-01-01</td>
+                <td>7:46:10</td>
+                <td>-2.4</td>
+                <td>40</td>
+                <td>2023-01-01 7:46</td>
+              </tr>
+              <tr>
+                <td>id_00704</td>
+                <td>2022-12-26</td>
+                <td>7:12:06</td>
+                <td>-2.5</td>
+                <td>50</td>
+                <td>2022-12-26 7:12</td>
+              </tr>
+              <tr>
+                <td>id_00751</td>
+                <td>2023-02-15</td>
+                <td>7:14:46</td>
+                <td>-2.5</td>
+                <td>49</td>
+                <td>2023-02-15 7:14</td>
+              </tr>
+              <tr>
+                <td>id_00741</td>
+                <td>2023-02-05</td>
+                <td>7:24:00</td>
+                <td>-2.5</td>
+                <td>47</td>
+                <td>2023-02-05 7:24</td>
+              </tr>
+              <tr>
+                <td>id_00332</td>
+                <td>2021-12-03</td>
+                <td>7:10:30</td>
+                <td>-2.5</td>
+                <td>45</td>
+                <td>2021-12-03 7:10</td>
+              </tr>
+              <tr>
+                <td>id_00040</td>
+                <td>2021-02-10</td>
+                <td>7:11:31</td>
+                <td>-2.5</td>
+                <td>42</td>
+                <td>2021-02-10 7:11</td>
+              </tr>
+              <tr>
+                <td>id_00354</td>
+                <td>2021-12-25</td>
+                <td>7:30:15</td>
+                <td>-2.5</td>
+                <td>41</td>
+                <td>2021-12-25 7:30</td>
+              </tr>
+              <tr>
+                <td>id_00755</td>
+                <td>2023-02-19</td>
+                <td>7:21:04</td>
+                <td>-2.6</td>
+                <td>41</td>
+                <td>2023-02-19 7:21</td>
+              </tr>
+              <tr>
+                <td>id_00695</td>
+                <td>2022-12-17</td>
+                <td>7:33:29</td>
+                <td>-2.7</td>
+                <td>48</td>
+                <td>2022-12-17 7:33</td>
+              </tr>
+              <tr>
+                <td>id_00343</td>
+                <td>2021-12-14</td>
+                <td>7:36:55</td>
+                <td>-2.7</td>
+                <td>47</td>
+                <td>2021-12-14 7:36</td>
+              </tr>
+              <tr>
+                <td>id_00686</td>
+                <td>2022-12-08</td>
+                <td>7:23:33</td>
+                <td>-2.7</td>
+                <td>44</td>
+                <td>2022-12-08 7:23</td>
+              </tr>
+              <tr>
+                <td>id_00406</td>
+                <td>2022-02-18</td>
+                <td>7:23:38</td>
+                <td>-2.8</td>
+                <td>48</td>
+                <td>2022-02-18 7:23</td>
+              </tr>
+              <tr>
+                <td>id_00337</td>
+                <td>2021-12-08</td>
+                <td>7:57:11</td>
+                <td>-2.8</td>
+                <td>44</td>
+                <td>2021-12-08 7:57</td>
+              </tr>
+              <tr>
+                <td>id_00691</td>
+                <td>2022-12-13</td>
+                <td>7:19:57</td>
+                <td>-2.9</td>
+                <td>40</td>
+                <td>2022-12-13 7:19</td>
+              </tr>
+              <tr>
+                <td>id_00049</td>
+                <td>2021-02-19</td>
+                <td>7:35:16</td>
+                <td>-3.0</td>
+                <td>46</td>
+                <td>2021-02-19 7:35</td>
+              </tr>
+              <tr>
+                <td>id_00362</td>
+                <td>2022-01-04</td>
+                <td>7:05:13</td>
+                <td>-3.0</td>
+                <td>43</td>
+                <td>2022-01-04 7:05</td>
+              </tr>
+              <tr>
+                <td>id_00378</td>
+                <td>2022-01-21</td>
+                <td>7:33:43</td>
+                <td>-3.0</td>
+                <td>43</td>
+                <td>2022-01-21 7:33</td>
+              </tr>
+              <tr>
+                <td>id_00379</td>
+                <td>2022-01-22</td>
+                <td>7:56:06</td>
+                <td>-3.0</td>
+                <td>42</td>
+                <td>2022-01-22 7:56</td>
+              </tr>
+              <tr>
+                <td>id_00047</td>
+                <td>2021-02-17</td>
+                <td>7:29:01</td>
+                <td>-3.1</td>
+                <td>50</td>
+                <td>2021-02-17 7:29</td>
+              </tr>
+              <tr>
+                <td>id_00019</td>
+                <td>2021-01-20</td>
+                <td>7:19:40</td>
+                <td>-3.1</td>
+                <td>43</td>
+                <td>2021-01-20 7:19</td>
+              </tr>
+              <tr>
+                <td>id_00336</td>
+                <td>2021-12-07</td>
+                <td>7:59:37</td>
+                <td>-3.1</td>
+                <td>43</td>
+                <td>2021-12-07 7:59</td>
+              </tr>
+              <tr>
+                <td>id_00740</td>
+                <td>2023-02-04</td>
+                <td>7:34:43</td>
+                <td>-3.2</td>
+                <td>50</td>
+                <td>2023-02-04 7:34</td>
+              </tr>
+              <tr>
+                <td>id_00058</td>
+                <td>2021-02-28</td>
+                <td>7:25:46</td>
+                <td>-3.3</td>
+                <td>45</td>
+                <td>2021-02-28 7:25</td>
+              </tr>
+              <tr>
+                <td>id_00389</td>
+                <td>2022-02-01</td>
+                <td>7:12:29</td>
+                <td>-3.3</td>
+                <td>40</td>
+                <td>2022-02-01 7:12</td>
+              </tr>
+              <tr>
+                <td>id_00685</td>
+                <td>2022-12-07</td>
+                <td>7:37:10</td>
+                <td>-3.5</td>
+                <td>50</td>
+                <td>2022-12-07 7:37</td>
+              </tr>
+              <tr>
+                <td>id_00699</td>
+                <td>2022-12-21</td>
+                <td>7:18:12</td>
+                <td>-3.6</td>
+                <td>46</td>
+                <td>2022-12-21 7:18</td>
+              </tr>
+              <tr>
+                <td>id_00013</td>
+                <td>2021-01-14</td>
+                <td>7:25:05</td>
+                <td>-3.6</td>
+                <td>43</td>
+                <td>2021-01-14 7:25</td>
+              </tr>
+              <tr>
+                <td>id_00726</td>
+                <td>2023-01-19</td>
+                <td>7:28:19</td>
+                <td>-3.6</td>
+                <td>42</td>
+                <td>2023-01-19 7:28</td>
+              </tr>
+              <tr>
+                <td>id_00023</td>
+                <td>2021-01-24</td>
+                <td>7:24:31</td>
+                <td>-3.6</td>
+                <td>41</td>
+                <td>2021-01-24 7:24</td>
+              </tr>
+              <tr>
+                <td>id_00737</td>
+                <td>2023-02-01</td>
+                <td>7:27:01</td>
+                <td>-3.6</td>
+                <td>40</td>
+                <td>2023-02-01 7:27</td>
+              </tr>
+              <tr>
+                <td>id_00687</td>
+                <td>2022-12-09</td>
+                <td>7:44:00</td>
+                <td>-3.8</td>
+                <td>50</td>
+                <td>2022-12-09 7:44</td>
+              </tr>
+              <tr>
+                <td>id_00338</td>
+                <td>2021-12-09</td>
+                <td>7:22:55</td>
+                <td>-3.8</td>
+                <td>48</td>
+                <td>2021-12-09 7:22</td>
+              </tr>
+              <tr>
+                <td>id_00353</td>
+                <td>2021-12-24</td>
+                <td>7:35:02</td>
+                <td>-3.8</td>
+                <td>46</td>
+                <td>2021-12-24 7:35</td>
+              </tr>
+              <tr>
+                <td>id_00756</td>
+                <td>2023-02-20</td>
+                <td>7:41:35</td>
+                <td>-4.0</td>
+                <td>47</td>
+                <td>2023-02-20 7:41</td>
+              </tr>
+              <tr>
+                <td>id_00727</td>
+                <td>2023-01-20</td>
+                <td>7:17:59</td>
+                <td>-4.1</td>
+                <td>46</td>
+                <td>2023-01-20 7:17</td>
+              </tr>
+              <tr>
+                <td>id_00344</td>
+                <td>2021-12-15</td>
+                <td>7:44:44</td>
+                <td>-4.1</td>
+                <td>43</td>
+                <td>2021-12-15 7:44</td>
+              </tr>
+              <tr>
+                <td>id_00703</td>
+                <td>2022-12-25</td>
+                <td>7:47:50</td>
+                <td>-4.2</td>
+                <td>46</td>
+                <td>2022-12-25 7:47</td>
+              </tr>
+              <tr>
+                <td>id_00721</td>
+                <td>2023-01-14</td>
+                <td>7:30:20</td>
+                <td>-4.2</td>
+                <td>43</td>
+                <td>2023-01-14 7:30</td>
+              </tr>
+              <tr>
+                <td>id_00349</td>
+                <td>2021-12-20</td>
+                <td>7:24:06</td>
+                <td>-4.3</td>
+                <td>43</td>
+                <td>2021-12-20 7:24</td>
+              </tr>
+              <tr>
+                <td>id_00044</td>
+                <td>2021-02-14</td>
+                <td>7:45:52</td>
+                <td>-4.4</td>
+                <td>48</td>
+                <td>2021-02-14 7:45</td>
+              </tr>
+              <tr>
+                <td>id_00682</td>
+                <td>2022-12-04</td>
+                <td>7:17:46</td>
+                <td>-4.4</td>
+                <td>48</td>
+                <td>2022-12-04 7:17</td>
+              </tr>
+              <tr>
+                <td>id_00009</td>
+                <td>2021-01-10</td>
+                <td>7:21:38</td>
+                <td>-4.6</td>
+                <td>48</td>
+                <td>2021-01-10 7:21</td>
+              </tr>
+              <tr>
+                <td>id_00377</td>
+                <td>2022-01-20</td>
+                <td>7:10:52</td>
+                <td>-4.8</td>
+                <td>45</td>
+                <td>2022-01-20 7:10</td>
+              </tr>
+              <tr>
+                <td>id_00722</td>
+                <td>2023-01-15</td>
+                <td>7:37:32</td>
+                <td>-4.9</td>
+                <td>49</td>
+                <td>2023-01-15 7:37</td>
+              </tr>
+              <tr>
+                <td>id_00035</td>
+                <td>2021-02-05</td>
+                <td>7:41:31</td>
+                <td>-4.9</td>
+                <td>46</td>
+                <td>2021-02-05 7:41</td>
+              </tr>
+              <tr>
+                <td>id_00038</td>
+                <td>2021-02-08</td>
+                <td>7:36:38</td>
+                <td>-5.0</td>
+                <td>45</td>
+                <td>2021-02-08 7:36</td>
+              </tr>
+              <tr>
+                <td>id_00381</td>
+                <td>2022-01-24</td>
+                <td>7:34:49</td>
+                <td>-5.0</td>
+                <td>44</td>
+                <td>2022-01-24 7:34</td>
+              </tr>
+              <tr>
+                <td>id_00387</td>
+                <td>2022-01-30</td>
+                <td>7:28:15</td>
+                <td>-5.0</td>
+                <td>44</td>
+                <td>2022-01-30 7:28</td>
+              </tr>
+              <tr>
+                <td>id_00037</td>
+                <td>2021-02-07</td>
+                <td>7:24:56</td>
+                <td>-5.1</td>
+                <td>47</td>
+                <td>2021-02-07 7:24</td>
+              </tr>
+              <tr>
+                <td>id_00401</td>
+                <td>2022-02-13</td>
+                <td>7:07:01</td>
+                <td>-5.1</td>
+                <td>44</td>
+                <td>2022-02-13 7:07</td>
+              </tr>
+              <tr>
+                <td>id_00034</td>
+                <td>2021-02-04</td>
+                <td>7:14:24</td>
+                <td>-5.1</td>
+                <td>42</td>
+                <td>2021-02-04 7:14</td>
+              </tr>
+              <tr>
+                <td>id_00026</td>
+                <td>2021-01-27</td>
+                <td>7:47:52</td>
+                <td>-5.2</td>
+                <td>46</td>
+                <td>2021-01-27 7:47</td>
+              </tr>
+              <tr>
+                <td>id_00017</td>
+                <td>2021-01-18</td>
+                <td>7:46:58</td>
+                <td>-5.2</td>
+                <td>41</td>
+                <td>2021-01-18 7:46</td>
+              </tr>
+              <tr>
+                <td>id_00408</td>
+                <td>2022-02-20</td>
+                <td>7:03:30</td>
+                <td>-5.3</td>
+                <td>50</td>
+                <td>2022-02-20 7:03</td>
+              </tr>
+              <tr>
+                <td>id_00005</td>
+                <td>2021-01-06</td>
+                <td>7:39:52</td>
+                <td>-5.3</td>
+                <td>46</td>
+                <td>2021-01-06 7:39</td>
+              </tr>
+              <tr>
+                <td>id_00036</td>
+                <td>2021-02-06</td>
+                <td>7:26:30</td>
+                <td>-5.3</td>
+                <td>44</td>
+                <td>2021-02-06 7:26</td>
+              </tr>
+              <tr>
+                <td>id_00046</td>
+                <td>2021-02-16</td>
+                <td>7:42:09</td>
+                <td>-5.3</td>
+                <td>42</td>
+                <td>2021-02-16 7:42</td>
+              </tr>
+              <tr>
+                <td>id_00358</td>
+                <td>2021-12-29</td>
+                <td>7:59:50</td>
+                <td>-5.3</td>
+                <td>42</td>
+                <td>2021-12-29 7:59</td>
+              </tr>
+              <tr>
+                <td>id_00368</td>
+                <td>2022-01-11</td>
+                <td>7:00:20</td>
+                <td>-5.4</td>
+                <td>43</td>
+                <td>2022-01-11 7:00</td>
+              </tr>
+              <tr>
+                <td>id_00680</td>
+                <td>2022-12-02</td>
+                <td>7:17:33</td>
+                <td>-5.4</td>
+                <td>41</td>
+                <td>2022-12-02 7:17</td>
+              </tr>
+              <tr>
+                <td>id_00002</td>
+                <td>2021-01-03</td>
+                <td>7:53:33</td>
+                <td>-5.5</td>
+                <td>50</td>
+                <td>2021-01-03 7:53</td>
+              </tr>
+              <tr>
+                <td>id_00021</td>
+                <td>2021-01-22</td>
+                <td>7:15:14</td>
+                <td>-5.6</td>
+                <td>49</td>
+                <td>2021-01-22 7:15</td>
+              </tr>
+              <tr>
+                <td>id_00357</td>
+                <td>2021-12-28</td>
+                <td>7:05:57</td>
+                <td>-5.6</td>
+                <td>46</td>
+                <td>2021-12-28 7:05</td>
+              </tr>
+              <tr>
+                <td>id_00714</td>
+                <td>2023-01-07</td>
+                <td>7:01:06</td>
+                <td>-5.7</td>
+                <td>41</td>
+                <td>2023-01-07 7:01</td>
+              </tr>
+              <tr>
+                <td>id_00027</td>
+                <td>2021-01-28</td>
+                <td>7:48:46</td>
+                <td>-5.8</td>
+                <td>42</td>
+                <td>2021-01-28 7:48</td>
+              </tr>
+              <tr>
+                <td>id_00029</td>
+                <td>2021-01-30</td>
+                <td>7:34:22</td>
+                <td>-5.8</td>
+                <td>42</td>
+                <td>2021-01-30 7:34</td>
+              </tr>
+              <tr>
+                <td>id_00743</td>
+                <td>2023-02-07</td>
+                <td>7:12:54</td>
+                <td>-5.9</td>
+                <td>45</td>
+                <td>2023-02-07 7:12</td>
+              </tr>
+              <tr>
+                <td>id_00011</td>
+                <td>2021-01-12</td>
+                <td>7:34:24</td>
+                <td>-6.0</td>
+                <td>49</td>
+                <td>2021-01-12 7:34</td>
+              </tr>
+              <tr>
+                <td>id_00733</td>
+                <td>2023-01-27</td>
+                <td>7:38:55</td>
+                <td>-6.0</td>
+                <td>49</td>
+                <td>2023-01-27 7:38</td>
+              </tr>
+              <tr>
+                <td>id_00007</td>
+                <td>2021-01-08</td>
+                <td>7:56:55</td>
+                <td>-6.0</td>
+                <td>48</td>
+                <td>2021-01-08 7:56</td>
+              </tr>
+              <tr>
+                <td>id_00735</td>
+                <td>2023-01-29</td>
+                <td>7:41:32</td>
+                <td>-6.2</td>
+                <td>49</td>
+                <td>2023-01-29 7:41</td>
+              </tr>
+              <tr>
+                <td>id_00018</td>
+                <td>2021-01-19</td>
+                <td>7:26:59</td>
+                <td>-6.2</td>
+                <td>47</td>
+                <td>2021-01-19 7:26</td>
+              </tr>
+              <tr>
+                <td>id_00752</td>
+                <td>2023-02-16</td>
+                <td>7:24:45</td>
+                <td>-6.2</td>
+                <td>43</td>
+                <td>2023-02-16 7:24</td>
+              </tr>
+              <tr>
+                <td>id_00366</td>
+                <td>2022-01-09</td>
+                <td>7:58:00</td>
+                <td>-6.2</td>
+                <td>42</td>
+                <td>2022-01-09 7:58</td>
+              </tr>
+              <tr>
+                <td>id_00016</td>
+                <td>2021-01-17</td>
+                <td>7:27:10</td>
+                <td>-6.4</td>
+                <td>48</td>
+                <td>2021-01-17 7:27</td>
+              </tr>
+              <tr>
+                <td>id_00375</td>
+                <td>2022-01-18</td>
+                <td>7:52:21</td>
+                <td>-6.4</td>
+                <td>48</td>
+                <td>2022-01-18 7:52</td>
+              </tr>
+              <tr>
+                <td>id_00403</td>
+                <td>2022-02-15</td>
+                <td>7:17:55</td>
+                <td>-6.4</td>
+                <td>41</td>
+                <td>2022-02-15 7:17</td>
+              </tr>
+              <tr>
+                <td>id_00745</td>
+                <td>2023-02-09</td>
+                <td>7:36:10</td>
+                <td>-6.5</td>
+                <td>47</td>
+                <td>2023-02-09 7:36</td>
+              </tr>
+              <tr>
+                <td>id_00010</td>
+                <td>2021-01-11</td>
+                <td>7:50:04</td>
+                <td>-6.5</td>
+                <td>46</td>
+                <td>2021-01-11 7:50</td>
+              </tr>
+              <tr>
+                <td>id_00004</td>
+                <td>2021-01-05</td>
+                <td>7:50:06</td>
+                <td>-6.5</td>
+                <td>43</td>
+                <td>2021-01-05 7:50</td>
+              </tr>
+              <tr>
+                <td>id_00415</td>
+                <td>2022-02-28</td>
+                <td>7:12:23</td>
+                <td>-6.5</td>
+                <td>43</td>
+                <td>2022-02-28 7:12</td>
+              </tr>
+              <tr>
+                <td>id_00396</td>
+                <td>2022-02-08</td>
+                <td>7:57:44</td>
+                <td>-6.5</td>
+                <td>40</td>
+                <td>2022-02-08 7:57</td>
+              </tr>
+              <tr>
+                <td>id_00738</td>
+                <td>2023-02-02</td>
+                <td>7:24:45</td>
+                <td>-6.6</td>
+                <td>49</td>
+                <td>2023-02-02 7:24</td>
+              </tr>
+              <tr>
+                <td>id_00048</td>
+                <td>2021-02-18</td>
+                <td>7:21:45</td>
+                <td>-6.6</td>
+                <td>41</td>
+                <td>2021-02-18 7:21</td>
+              </tr>
+              <tr>
+                <td>id_00747</td>
+                <td>2023-02-11</td>
+                <td>7:49:13</td>
+                <td>-6.7</td>
+                <td>45</td>
+                <td>2023-02-11 7:49</td>
+              </tr>
+              <tr>
+                <td>id_00412</td>
+                <td>2022-02-24</td>
+                <td>7:42:01</td>
+                <td>-6.8</td>
+                <td>44</td>
+                <td>2022-02-24 7:42</td>
+              </tr>
+              <tr>
+                <td>id_00723</td>
+                <td>2023-01-16</td>
+                <td>7:30:50</td>
+                <td>-6.8</td>
+                <td>44</td>
+                <td>2023-01-16 7:30</td>
+              </tr>
+              <tr>
+                <td>id_00392</td>
+                <td>2022-02-04</td>
+                <td>7:53:16</td>
+                <td>-6.9</td>
+                <td>48</td>
+                <td>2022-02-04 7:53</td>
+              </tr>
+              <tr>
+                <td>id_00025</td>
+                <td>2021-01-26</td>
+                <td>7:53:07</td>
+                <td>-7.0</td>
+                <td>48</td>
+                <td>2021-01-26 7:53</td>
+              </tr>
+              <tr>
+                <td>id_00744</td>
+                <td>2023-02-08</td>
+                <td>7:11:21</td>
+                <td>-7.0</td>
+                <td>42</td>
+                <td>2023-02-08 7:11</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row gy-4">
+            <div class="col-lg-5 col-md-12 footer-info">
+              <a href="main" class="logo d-flex align-items-center">
+                <img src="{%static 'img/logo1.png'%}" alt="" />
+                <span>WhitePepper</span>
+              </a>
+              <p>We provides dried red pepper bacteria detection results.</p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"
+                  ><i class="bi bi-instagram"></i
+                ></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-2 col-6 footer-links">
+                <h4>Useful Links</h4>
+                <ul>
+                  <li>
+                    <i class="bi bi-chevron-right"></i> <a href="main#home">Home</a>
+                  </li>
+                  <li>
+                    <i class="bi bi-chevron-right"></i> <a href="main#scan">카메라</a>
+                  </li>
+                  <li>
+                    <i class="bi bi-chevron-right"></i> <a href="main#data">데이터</a>
+                  </li>
+                  <li>
+                    <i class="bi bi-chevron-right"></i>
+                    <a href="main#data-Analysis">분석</a>
+                  </li>
+                  <li>
+                    <i class="bi bi-chevron-right"></i>
+                    <a href="#">알림</a>
+                  </li>
+                </ul>
+              </div>
+    
+              <div class="col-lg-2 col-6 footer-links">
+                <h4>Our Services</h4>
+                <ul>
+                  <li>
+                    <i class="bi bi-chevron-right"></i> <a href="main#scan">Scan Kit</a>
+                  </li>
+                  <li>
+                    <i class="bi bi-chevron-right"></i>
+                    <a href="scandata">Show Data</a>
+                  </li>
+                  <li>
+                    <i class="bi bi-chevron-right"></i>
+                    <a href="totaldata">Total Data</a>
+                  </li>
+                  <li>
+                    <i class="bi bi-chevron-right"></i> 
+                    <a href="averagedata">Average Data</a>
+                  </li>
+                  <li>
+                    <i class="bi bi-chevron-right"></i>
+                    <a href="perioddata">Period Data</a>
+                  </li>
+                </ul>
+              </div>
+
+            <div
+              class="col-lg-3 col-md-12 footer-contact text-center text-md-start"
+            >
+              <h4>Contact Us</h4>
+              <p>
+                경기도 수원시 <br />
+                영통구 광교산로 154-42<br />
+                경기대학교<br /><br />
+                <strong>Phone :</strong> +82 10 1111 2222<br />
+                <strong>Email :</strong> WhitePepper@gmail.com<br />
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="copyright">
+          <!-- 원래 FlexStart -->
+          &copy; Copyright <strong><span>WhitePepper</span></strong
+          >. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
+          Designed by <a href="https://bootstrapmade.com/">WhitePepper</a>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Vendor JS Files -->
+    <script src="{%static 'vendor/purecounter/purecounter_vanilla.js'%}"></script>
+    <script src="{%static 'vendor/aos/aos.js'%}"></script>
+    <script src="{%static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{%static 'vendor/glightbox/js/glightbox.min.js'%}"></script>
+    <script src="{%static 'vendor/isotope-layout/isotope.pkgd.min.js'%}"></script>
+    <script src="{%static 'vendor/swiper/swiper-bundle.min.js'%}"></script>
+    <script src="{%static 'vendor/php-email-form/validate.js'%}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{%static 'js/main.js'%}"></script>
+  </body>
+</html>

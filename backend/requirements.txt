@@ -1,0 +1,9 @@
+Django
+psycopg2-binary
+gunicorn
+mysqlclient
+google-cloud
+google-cloud-vision
+pymysql
+django-apscheduler
+apscheduler

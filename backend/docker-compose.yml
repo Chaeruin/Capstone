@@ -1,0 +1,46 @@
+version: '3'
+
+volumes:
+  mysql_data: {}
+
+services:
+  db:
+    image: mysql
+    container_name: mysql
+    volumes:
+      - mysql_data:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=mysql
+      - MYSQL_USER=chm
+      - MYSQL_PASSWORD=1234
+      - MYSQL_ROOT_PASSWORD=1234
+    networks:
+      mynet:
+        ipv4_address: 192.168.119.119
+
+  django:
+    build:
+      context: .
+      dockerfile: ./compose/django/Dockerfile-dev
+    container_name: django
+    volumes:
+      - ./:/app/
+    command: ["./manage.py", "runserver", "0:8000"]
+    environment:
+      - DJANGO_DB_HOST=192.168.119.119
+      - DJANGO_DB_PORT=3306
+      - DJANGO_SETTINGS_MODULE=cap.settings
+    depends_on:
+      - db
+    restart: always
+    ports:
+      - 8000:8000
+    dns:
+      - 8.8.8.8
+    networks:
+      mynet:
+        ipv4_address: 192.168.119.120
+
+networks:
+  mynet:
+    external: true

@@ -1,0 +1,173 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>팝업 창</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- CSS 스타일 -->
+<style>
+  p {
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight:bolder;
+    font-size:33px;
+  }
+
+  .container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgb(211, 211, 211);
+  }
+  
+  .code {
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius:15px;
+    box-shadow:5px 5px 5px rgba(0,0,0,0.2)
+  }
+
+  input[type="file"] {
+    margin-bottom: 10px;
+  }
+
+  input[type="submit"] {
+    padding: 10px 20px;
+    background: #054f03;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  h3
+  {
+    float:right;
+    cursor: pointer;
+    margin-top: -10px;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+  
+  .label-file {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #888;
+    cursor: pointer;
+    border: 2px solid #dddddd;
+    width:350px;
+  }
+  
+  .file-name {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #888;
+  }
+
+</style>
+</head>
+<body>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title>Inner Page 1</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
+
+  <!-- Favicons -->
+  <link href="{% static 'img/WP.png' %}" rel="icon" />
+  <link href="{% static 'img/WP.png' %}" rel="apple-touch-icon" />
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet"
+  />
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet" />
+  <link
+    href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}"
+    rel="stylesheet"
+  />
+  <link
+    href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}"
+    rel="stylesheet"
+  />
+  <link
+    href="{% static 'vendor/glightbox/css/glightbox.min.css' %}"
+    rel="stylesheet"
+  />
+  <link href="{% static 'vendor/remixicon/remixicon.css' %}" rel="stylesheet" />
+  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet" />
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/main.css' %}" rel="stylesheet" />
+  <link href="{% static 'css/home.css' %}" rel="stylesheet" />
+  <link href="{% static 'css/scan.css' %}" rel="stylesheet" />
+  <link href="{% static 'css/data.css' %}" rel="stylesheet" />
+  <link href="{% static 'css/inner/innerPage.css' %}" rel="stylesheet" />
+  <link href="{% static 'css/inner/table.css' %}" rel="stylesheet" />
+  <script src="{% static 'js/table.js' %}"></script>
+
+  <!-- =======================================================
+* Template Name: FlexStart
+* Updated: Mar 10 2023 with Bootstrap v5.2.3
+* Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+======================================================== -->
+</head>
+
+<body>
+  <!-- 팝업창 관련해서 추가한 부분은 <style>이랑 여기서부터 -->
+  <div class="container2">
+    <div class="code">
+      <!-- <h3>x</h3> 혹시 닫는 창도 필요할까봐 만들어놨엉 -->
+      <br>
+      <p>첨부파일</p>
+      <br>
+      <form method="post" action="imageupload" name="image" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label class="label-file" for="imageInput">업로드할 파일을 선택하세요.</label>
+        <input type="file" id="imageInput" name="result_img">
+        <input type="submit" value="Upload">
+      </form>
+    <!-- 여기까지양 그 밑엔 Footer 제외하고 하나도 안 건들였엉 -->
+  
+      <script>
+        // 파일 업로드 후 팝업 닫고 경로 변경 함수
+        function closePopup() {
+          window.opener.location.href = '/main/scandata';
+          window.close();
+        }
+    
+        // 파일 업로드 폼 제출 이벤트 리스너
+        document.forms['image'].addEventListener('submit', function(event) {
+          event.preventDefault(); // 기본 동작 중단
+          var form = event.target;
+          var formData = new FormData(form);
+          
+          fetch(form.action, {
+            method: form.method,
+            body: formData
+          })
+          .then(function(response) {
+            // 파일 업로드 완료 후 팝업 닫기 함수 호출
+            closePopup();
+          })
+          .catch(function(error) {
+            console.error('Error:', error);
+          });
+        });
+      </script>
+    </div>
+  </div>

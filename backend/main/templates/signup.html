@@ -1,0 +1,41 @@
+
+{%load static%}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>회원가입 페이지</title>
+    <link href="{%static 'css/signup.css'%}" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="{% static 'js/member.js'%}"></script>
+  </head>
+  <body>
+    <div class="signup-form">
+      <h2><a href="main" class="link">WhitePepper</a></h2>
+      <form method="post" action="signup" name="inputform">
+        {% csrf_token %}
+        <input class="form-control" type="text" name="name" placeholder="이름" required />
+        
+        <input class="form-control" type="id" name="id" placeholder="아이디" maxlength="50" required />
+        <span id="chk" class="text-danger"></span>
+        <input class="form-control" type="phone" name="phone" placeholder="전화번호" required />
+        <input class="form-control" type="email" name="email" placeholder="이메일" onkeyup="emailchk()"  required />
+        <input class="form-control" type="password" name="pw" placeholder="비밀번호" onkeyup="pwchk()" required />
+        <span id="pwchk" class="text-danger"></span>
+        <input class="form-control" type="password" name="repw" placeholder="비밀번호 확인" onkeyup="repwchk()" required />
+        <span id="repwchk" class="text-danger"></span>
+        
+        <div class="text-center py-4">
+          <input class="ok" type="submit" value="가입하기">
+        </div>
+        <!--<a href="login" button type="submit">가입하기</a>-->
+      </form>
+    </div>
+    
+    
+
+  </body>
+</html>
